@@ -1,0 +1,26 @@
+# Dependencies
+markdown:         redcarpet
+highlighter:      pygments
+
+# Permalinks
+permalink:        pretty
+relative_permalinks: true
+
+# Setup
+title:            École
+tagline:          'Learning Environments'
+description:      'Extensible Combinatorial Optimization Learning Environments to encourage reporducible OR research.'
+url:              http://ecole.ai
+baseurl:          /
+
+author:
+  name:           'Chair'
+  url:            https://cerc-datascience.polymtl.ca/
+
+paginate:         5
+
+# Custom vars
+version:          0.0.0
+
+github:
+  repo:           https://github.com/ecole
