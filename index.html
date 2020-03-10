@@ -3,35 +3,21 @@ layout: default
 title: Home
 ---
 
-<div class="posts">
-  {% for post in paginator.posts %}
-  <div class="post">
-    <h1 class="post-title">
-      <a href="{{ post.url }}">
-        {{ post.title }}
-      </a>
-    </h1>
-
-    <span class="post-date">{{ post.date | date_to_string }}</span>
-
-    {{ post.content }}
-  </div>
-  {% endfor %}
-</div>
-
-<div class="pagination">
-  {% if paginator.next_page %}
-    <a class="pagination-item older" href="{{ site.baseurl }}page{{paginator.next_page}}">Older</a>
-  {% else %}
-    <span class="pagination-item older">Older</span>
-  {% endif %}
-  {% if paginator.previous_page %}
-    {% if paginator.page == 2 %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}">Newer</a>
-    {% else %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}page{{paginator.previous_page}}">Newer</a>
-    {% endif %}
-  {% else %}
-    <span class="pagination-item newer">Newer</span>
-  {% endif %}
-</div>
+<h1 >Introducing École</h1>
+<p>
+	Ecole (pronounced [ekɔl]) stands for
+	<span style="font-style: italic;">Extensible Combinatorial Optimization Learning
+	Environments</span> and aims to expose a number of control problems arising in
+	combinatorial optimization solvers as Markov
+	Decision Processes (<span style="font-style: italic;">i.e.</span>, Reinforcement
+	Learning environments).
+	Rather than trying to predict solutions to combinatorial optimization problems directly, the
+	philosophy behind Ecole is to work
+	in cooperation with a state-of-the-art Mixed Integer Linear Programming solver
+	that acts as a controllable algorithm.
+</p>
+<p>
+	The underlying solver used is <a href="https://scip.zib.de/">SCIP</a>, and the user
+	facing API is meant to mimic the <a href="https://gym.openai.com/">OpenAi Gym</a>
+	API (as much as possible).
+</p>
