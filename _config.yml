@@ -13,8 +13,6 @@ author:
   name:           'Chair'
   url:            https://cerc-datascience.polymtl.ca/
 
-paginate:         5
-
 # Custom vars
 version:          0.0.0
 
