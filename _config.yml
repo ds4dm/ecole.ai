@@ -1,5 +1,6 @@
-# Dependencies
-highlighter:      pygments
+# Jekyll 3 Github defaults
+markdown: kramdown
+highlighter: rouge
 
 # Setup
 title:            École
