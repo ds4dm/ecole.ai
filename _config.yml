@@ -5,8 +5,8 @@ highlighter:      pygments
 title:            École
 tagline:          'Learning Environments'
 description:      'Extensible Combinatorial Optimization Learning Environments to encourage reporducible OR research.'
-url:              https://ds4dm.github.io/ecole.ai
-baseurl:          https://ds4dm.github.io/ecole.ai/
+url:              https://www.ecole.ai/
+baseurl:          /
 
 
 author:
