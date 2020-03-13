@@ -3,19 +3,20 @@ markdown: kramdown
 highlighter: rouge
 
 # Setup
-title:            École
-tagline:          'Learning Environments'
-description:      'Extensible Combinatorial Optimization Learning Environments to encourage reporducible OR research.'
-url:              https://www.ecole.ai/
-baseurl:          /
-
+title: "École"
+tagline: "Learning Environments"
+description: >-
+  Extensible Combinatorial Optimization Learning Environments
+  to encourage reporducible OR research."
+url: "https://www.ecole.ai/"
+baseurl: "/"
 
 author:
-  name:           'Chair'
-  url:            https://cerc-datascience.polymtl.ca/
+  name: "Chair"
+  url: "https://cerc-datascience.polymtl.ca/"
 
 # Custom vars
-version:          0.0.0
+version: "0.0.0"
 
 github:
-  repo:           https://github.com/ds4dm/ecole
+  repo: "https://github.com/ds4dm/ecole"
