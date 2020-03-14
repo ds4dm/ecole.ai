@@ -4,13 +4,10 @@ title: About
 ---
 
 <p class="message">
-Ideaology of École
+Ideology of École
 </p>
 
 
-Learn more and contribute on [GitHub](https://ds4dm/ecole).
+Learn more and contribute on [GitHub](https://github.com/ds4dm/ecole).
 
 ## Setup
-
-
-Thanks for reading!
