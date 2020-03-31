@@ -2,6 +2,7 @@
 layout: page
 title: About
 ---
+
 ## MILPs
 
 The problems in discrete optimization are everywhere around us.
@@ -31,6 +32,7 @@ The commercially available solvers like Gurobi, SCIP, Cplex, etc. implement B&B 
 For example, there are several branching strategies well studied in the field that decides how to split the region.
 
 ## Use of Machine Learning in branch and bound
+
 Various decisions in B&B framework have been traditionally designed manually with expert knowledge, and the patter recognition techniques have enabled richer and complex modeling of these decisions.
 For example, Khalil et al. learns a branching decision with the help of SVMs in an online fashion.
 Gasse et al. uses GCNN to predict a good quality branching variable with higher accuracy.
@@ -38,13 +40,14 @@ more examples ...
 
 
 ## Need for reproducibility
+
 Various designs are evaluated on a **class of problems** with respect to **metrics** like number of iterations, runtime, etc.
 However, reproducibility has bee a major hinderance in OR research because of the multiple sources of randomness in the solver and machine learning component.
-In addition to the source of randomness from within the solver, the methods are not exactly comparable with commercial solvers because of the highly optimized libraries and incomparable platforms. 
+In addition to the source of randomness from within the solver, the methods are not exactly comparable with commercial solvers because of the highly optimized libraries and incomparable platforms.
 With the increasing number of publications in the field, it will only get more problematic to provide a fair comparison to the relevant methods.
 
 
-## Platform école
+## Platform Ecole
 
 ### Features -
 1. SCIP integration
