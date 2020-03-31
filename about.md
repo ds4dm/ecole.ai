@@ -39,13 +39,8 @@ more examples ...
 
 ## Need for reproducibility
 Various designs are evaluated on a **class of problems** with respect to **metrics** like number of iterations, runtime, etc.
-
--- for progress in research, fair comparison of methods is needed
--- solver - decision component. a highly optimized decision component will enable a fair comparison to the commercially available solvers
---
-
-As researchers in MILP, we have encountered problems in reproducing other works in the field for fair comparisons.
-
+However, reproducibility has bee a major hinderance in OR research because of the multiple sources of randomness in the solver and machine learning component.
+In addition to the source of randomness from within the solver, the methods are not exactly comparable with commercial solvers because of the highly optimized libraries and incomparable platforms. 
 With the increasing number of publications in the field, it will only get more problematic to provide a fair comparison to the relevant methods.
 
 
