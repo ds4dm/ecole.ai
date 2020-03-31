@@ -6,7 +6,7 @@ title: About
 ## MILPs
 
 The problems in discrete optimization are everywhere around us.
-It appears in the form of deciding which route to follow to get to the destination (Shortest Path Problem), fitting luggage in the trunk of the car (Bin Packing Problem), or planning a multi-city trip to name a few.
+It appears in the form of deciding which route to follow to get to the destination (Shortest Path Problem), fitting luggage in the trunk of the car (Bin Packing Problem), or planning a multi-city trip, just to name a few.
 Even when we are not the ones to handle them, we regularly interact with them indirectly.
 For example, a "prime" customer from Amazon will have a direct impact on the package deliver route (Traveling Salesman Problem), or our shopping preference influences the items that a nearby supermarket stocks up.
 Zooming out from our daily life, such problems arise naturally in many areas like computational biology, policy planning, supply chain management etc.
