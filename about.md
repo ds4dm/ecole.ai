@@ -8,7 +8,7 @@ title: About
 The problems in discrete optimization are everywhere around us.
 It appears in the form of deciding which route to follow to get to the destination (Shortest Path Problem), fitting luggage in the trunk of the car (Bin Packing Problem), or planning a multi-city trip, just to name a few.
 Even when we are not the ones to handle them, we regularly interact with them indirectly.
-For example, a "prime" customer from Amazon will have a direct impact on the package deliver route (Traveling Salesman Problem), or our shopping preference influences the items that a nearby supermarket stocks up.
+For example, a "prime" customer from Amazon will have a direct impact on the package delivery route (Traveling Salesman Problem), or our shopping preference influences the items that a nearby supermarket stocks up.
 Zooming out from our daily life, such problems arise naturally in many areas like computational biology, policy planning, supply chain management etc.
 Thus, the organizations and researchers in these field rely on solving them on daily basis.
 
@@ -33,7 +33,7 @@ For example, there are several branching strategies well studied in the field th
 
 ## Use of Machine Learning in branch and bound
 
-Various decisions in B&B framework have been traditionally designed manually with expert knowledge, and the patter recognition techniques have enabled richer and complex modeling of these decisions.
+Various decisions in B&B framework have been traditionally designed manually with expert knowledge, and the pattern recognition techniques have enabled richer and complex modeling of these decisions.
 For example, Khalil et al. learns a branching decision with the help of SVMs in an online fashion.
 Gasse et al. uses GCNN to predict a good quality branching variable with higher accuracy.
 more examples ...
