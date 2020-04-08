@@ -4,7 +4,7 @@ title: About
 ---
 
 <p class="message">
-Ideology of École
+Ideology of Ecole
 </p>
 
 

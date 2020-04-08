@@ -3,7 +3,7 @@ markdown: kramdown
 highlighter: rouge
 
 # Setup
-title: "École"
+title: "Ecole"
 tagline: "Learning Environments"
 description: "Extensible Combinatorial Optimization Learning Environments to encourage reproducible OR research"
 url: "https://www.ecole.ai/"

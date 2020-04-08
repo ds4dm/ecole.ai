@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Introducing École
+title: Introducing Ecole
 ---
 
 Ecole (pronounced [ekɔl]) stands for _Extensible Combinatorial Optimization Learning
@@ -15,7 +15,7 @@ that acts as a controllable algorithm.
 The underlying solver used is [SCIP](https://scip.zib.de/), and the user facing API is
 meant to mimic the [OpenAi Gym](https://gym.openai.com/) API (as much as possible).
 
-### École features
+### Ecole features
 
 
 Thanks!
