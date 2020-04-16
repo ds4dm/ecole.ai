@@ -5,7 +5,7 @@ highlighter: rouge
 # Setup
 title: "Ecole"
 tagline: "Learning Environments"
-description: "Extensible Combinatorial Optimization Learning Environments to encourage reproducible OR research"
+description: "Extensible Combinatorial Optimization Learning Environments"
 url: "https://www.ecole.ai/"
 baseurl: "/"
 
