@@ -79,6 +79,38 @@
 					<h2>Description</h2>
 				</header>
 				<p>
+					The Machine Learning for Combinatorial Optimization (ML4CO) competition aims at
+					improving a state-of-the-art mathematical solver,
+					<a href="https://www.scipopt.org/">SCIP</a>, by replacing key heuristic
+					components with machine learning models. To that end participants will compete
+					on three disctinct control tasks arising in a branch-and-bound solver, namely:
+					<ol>
+						<li>producing good <em>primal solutions</em></li>
+						<li>proving optimality via <em>branching</em></li>
+						<li>tuning the solving algorithm by choosing the best <em>solver configuration</em></li>
+					</ol>
+				</p>
+				<p>
+					While traditional combinatorial optimization solvers mostly consist of
+					general-purpose algorithms, the competition instead focuses on the design
+					of application-specific solvers using historical data. This corresponds to
+					the realistic situation where a practitioner needs to solve specific problem
+					instances repeatedly, which share similar patterns and characteristics. As such,
+					the participants' submissions will be evaluated independently on three distinct
+					problem benchmarks:
+					<ul>
+						<li>first benchmark: to be annouced</li>
+						<li>second benchmark: to be annouced</li>
+						<li>third benchmark: to be annouced</li>
+					</ul>
+					For each control task, participants can either provide a single control policy
+					(which can be trained ML model or an algorithmic solution) that works for all
+					three benchmarks, or benchmark-specific policies.
+				</p>
+
+				<h3>Challenges</h2>
+					
+				<p>
 					We formulate each of our three tasks as an algorithmic control problem,
 					where participants (i.e., the agent) control a specific component of a
 					traditional solver (i.e., the environment). Each task will be exposed
@@ -88,6 +120,13 @@
 					solutions derived from the reinforcement learning paradigm, any algorithmic solution
 					respecting the proposed API is accepted.
 				</p>
+
+				<h3>Datasets</h2>
+
+				<p>
+					To be annouced.
+				</p>
+
 			</div>
 		</div>
 	</section>
