@@ -61,7 +61,9 @@
 <!-- Nav -->
 <nav id="nav">
 	<ul>
-		<li><a href="#description" class="active">Description</a></li>
+		<li><a href="#challenges" class="active">Challenges</a></li>
+		<li><a href="#metrics">Metrics</a></li>
+		<li><a href="#datasets">Datasets</a></li>
 		<li><a href="#rules">Rules</a></li>
 		<li><a href="#getting-started">Getting started</a></li>
 		<li><a href="#leaderboard">Leaderboard</a></li>
@@ -71,68 +73,234 @@
 <!-- Main -->
 <div id="main">
 
-	<!-- Description -->
-	<section id="description" class="main">
+
+	<section class="main">
+		<div class="spotlight">
+		<div class="content">
+			<header class="major">
+				<h2>Presentation</h2>
+			</header>
+			<p>
+				The Machine Learning for Combinatorial Optimization (ML4CO)
+				competition aims at improving a state-of-the-art combinatorial
+				optimization solver, by replacing key <b>heuristic components</b>
+				with <b>machine learning models</b> trained on historical data.
+				It exposes several control tasks arising in the open-source
+				solver <a href="https://www.scipopt.org/"><b>SCIP</b></a> as
+				challenges for ML, exposed through a unified OpenAI-gym API
+				using the dedicated Python library
+				<a href="https://www.ecole.ai/"><b>Ecole</b></a>.
+			</p>
+			<p>
+				<em>Note: while we encourage solutions derived from the
+				machine learning and reinforcement learning paradigms, any
+				algorithmic solution respecting the competition's API is
+				accepted.</em>
+			</p>
+		</div>
+		<span class="image" style="border: 0; border-radius: 0">
+			<a href="https://www.scipopt.org/" style="border-bottom-style: none;">
+				<img style="border: 0; border-radius: 0; width: 8em;" src="/images/newscippy.png" alt="SCIP logo"/>
+			</a>
+			<br/>
+			<a href="https://doc.ecole.ai/" style="border-bottom-style: none;">
+				<img style="border: 0; border-radius: 0; width: 9em; margin-left: 3em;" src="/images/ecole-logo.png" alt="Ecole logo"/>
+			</a>
+		</span>
+		</div>
+	</section>
+
+	<!-- Challenges -->
+	<section id="challenges" class="main">
 		<div class="spotlight">
 			<div class="content">
 				<header class="major">
-					<h2>Description</h2>
+					<h2>Challenges</h2>
 				</header>
 				<p>
-					The Machine Learning for Combinatorial Optimization (ML4CO) competition aims at
-					improving a state-of-the-art mathematical solver,
-					<a href="https://www.scipopt.org/">SCIP</a>, by replacing key heuristic
-					components with machine learning models. To that end participants will compete
-					on three distinct control tasks arising in a branch-and-bound solver, namely:
-					<ul>
-						<li><b>The primal task</b></dt>: producing good <em>primal solutions</em></li>
-						<li><b>The dual task</b>: proving optimality via <em>branching</em></li>
-						<li><b>The configuration task</b>: choosing the best <em>parameters</em> for the solver</li>
-					</ul>
+					Participants can compete in <b>three distinct challenges</b>,
+					each corresponding to a specific control task arising in
+					traditional solvers.
+				</p>
+				<ul class="features">
+					<li>
+						<h3>Primal task</h3>
+						<p>Produce feasible solutions, in order to minimize the <em>primal integral</em>.</p>
+					</li>
+					<li>
+						<h3>Dual task</h3>
+						<p>Select branching variables, in order to maximize the <em>dual integral</em>.</p>
+					</li>
+					<li>
+						<h3>Configuration task</h3>
+						<p>Choose the best solver parameters, in order to minimize the <em>primal-dual integral</em>.</p>
+					</li>
+				</ul>
+				<p style="text-align: center;">
+					<img style="border: 0; border-radius: 0; width: 50%;" src="/images/primal-dual.png" alt="Primal-dual bound solving curves"/>
+				</p>
+				<h2>Primal task - Finding feasible solutions</h2>
+				<p>
+					<b>Scientific question:</b>
+					can ML offer a viable option for generating good feasible
+					solutions to a CO problem, by exploiting historical data of
+					similar problems?
 				</p>
 				<p>
-					While traditional combinatorial optimization solvers mostly consist of
-					general-purpose algorithms, the competition instead focuses on the design
-					of application-specific solvers using historical data. This corresponds to
-					the realistic situation where a practitioner needs to solve specific problem
-					instances repeatedly, which share similar patterns and characteristics. As such,
-					the participants' submissions will be evaluated independently on three distinct
-					problem benchmarks:
-					<ul>
-						<li>first benchmark: to be annouced</li>
-						<li>second benchmark: to be annouced</li>
-						<li>third benchmark: to be annouced</li>
-					</ul>
-					For each control task, participants can either provide a single control policy
-					(which can be trained ML model or an algorithmic solution) that works for all
-					three benchmarks, or benchmark-specific policies.
+					The primal task deals with finding good primal solutions
+					at the root node of the branch-and-bound tree. To that end,
+					the environment (SCIP solver) will not perform any branching
+					but will collect the agent's solutions, evaluate their
+					feasibility, and update the overall best solution reached so
+					far, thus lowering the current <b>primal bound</b> (upper bound).
+					The metric of interest for this task is the primal integral,
+					which takes into account the speed at which the primal bound
+					decreases over time. To model a realistic scenario, each problem
+					instance will have been preprocessed by SCIP (including cutting
+					planes), and the root linear program (LP) relaxation will have
+					been solved before the participants are asked to produce
+					feasible solutions. Furthermore, a feasible, trivial solution
+					will be provided to SCIP at the very beginning of the solving
+					process to compute the primal integral unambiguously.
+					To prevent SCIP from searching for primal solutions by itself,
+					all primal heuristics will be deactivated.
 				</p>
-
-				<h3>Challenges</h2>
-					
 				<p>
-					We formulate each of our three tasks as an algorithmic control problem,
-					where participants (i.e., the agent) control a specific component of a
-					traditional solver (i.e., the environment). Each task will be exposed
-					through an OpenAI-gym Python API build on top of the open-source branch-and-bound solver
-					<a href="https://www.scipopt.org/">SCIP</a>, based upon the library
-					<a href="https://www.ecole.ai/">Ecole</a>. While we encourage
-					solutions derived from the reinforcement learning paradigm, any algorithmic solution
-					respecting the proposed API is accepted.
+					Relevant litterature:
+					<br/><a href="https://papers.nips.cc/paper/2017/hash/d9896106ca98d3d05b8cbdf4fd8b13a1-Abstract.html">
+						<i>Learning combinatorial optimization algorithms over graphs</i>
+					</a>, Dai et al., NeurIPS'17
+					<br/><a href="https://proceedings.neurips.cc/paper/2018/hash/9fb4651c05b2ed70fba5afe0b039a550-Abstract.html">
+						<i>Reinforcement Learning for Solving the Vehicle Routing Problem</i>
+					</a>, Nazari et al., NeurIPS'18
+					<br/><a href="https://proceedings.neurips.cc/paper/2018/hash/8d3bba7425e7c98c50f52ca1b52d3735-Abstract.html">
+						<i>Combinatorial Optimization with Graph Convolutional Networks and Guided Tree Search</i>
+					</a>, Li et al., NeurIPS'18
+					<br/><a href="https://deepmind.com/research/publications/Solving-Mixed-Integer-Programs-Using-Neural-Networks">
+						<i>Solving Mixed Integer Programs Using Neural Networks</i>
+					</a>, Nair et al., 2020 
 				</p>
 
-				<h3>Datasets</h2>
+				<h2>Dual task - Branching</h2>
 
 				<p>
-					To be annouced.
+					<b>Scientific question:</b>
+					can ML offer a viable option for learning how to branch,
+					by exploiting historical data of similar problems?
 				</p>
+				<p>
+					The dual task deals with obtaining tight optimality guarantees
+					(dual bounds) via branching. Making good branching decisions
+					is regarded as a critical component of modern branch-and-bound
+					solvers, yet has received little theoretical understanding to
+					this day (see <a href="https://link.springer.com/article/10.1007%2Fs11750-017-0451-6">Lodi et al., 2017</a>).
+					For this task, the environment will run a full-fledged
+					branch-and-cut algorithm with SCIP, and the participants' code
+					will only control the solver's branching decisions. The metric
+					of interest for this task is the dual integral, which takes
+					into account the speed at which the dual bound increases over
+					time. For the task's metric to reflect only the quality of
+					branching decisions, the optimal primal solution value will be
+					provided to SCIP at the start of the solving process, and
+					all primal heuristics will be deactivated.
+				</p>
+				<p>
+					Relevant litterature:
+					<br/><a href="https://dl.acm.org/doi/10.5555/3015812.3015920">
+						<i>Learning to Branch in Mixed Integer Programming</i>
+					</a>, Khalil et al., AAAI'16
+					<br/><a href="https://link.springer.com/article/10.1007/s11750-017-0451-6">
+						<i>On learning and branching: a survey</i>
+					</a>, Lodi et al., TOP, 2017
+					<br/><a href="http://proceedings.mlr.press/v80/balcan18a.html">
+						<i>Learning to Branch</i>
+					</a>, Balcan et al., ICML'18
+					<br/><a href="https://papers.nips.cc/paper/2019/hash/d14c2267d848abeb81fd590f371d39bd-Abstract.html">
+						<i>Exact Combinatorial Optimization with Graph Convolutional Neural Networks</i>
+					</a>, Gasse et al., NeurIPS'19
+					<br/><a href="https://papers.nips.cc/paper/2020/hash/d1e946f4e67db4b362ad23818a6fb78a-Abstract.html">
+						<i>Hybrid Models for Learning to Branch</i>
+					</a>, Gupta et al., NeurIPS'20
+					<br/><a href="https://deepmind.com/research/publications/Solving-Mixed-Integer-Programs-Using-Neural-Networks">
+						<i>Solving Mixed Integer Programs Using Neural Networks</i>
+					</a>, Nair et al., 2020 
+				</p>
+
+				<h2>Configuration task - Solver parameterization</h2>
+
+				<p>
+					<b>Scientific question:</b>
+					can ML offer a viable option for deciding on
+					instance-specific solver parameterization, based on
+					historical data of similar problems ?
+				</p>
+				<p>
+					The algorithm selection task deals with deciding on a good
+					parameterization of the solver for a given problem instance.
+					The environment required for this task is more straightforward
+					than for the two previous ones since it involves only a single
+					decision for the agents (i.e., contextual bandit problem).
+					Participants are allowed to tune any of the existing parameters
+					of SCIP. They can choose between providing a fixed set of
+					parameters that work well on average for each problem
+					benchmark or producing instance-specific parameterizations
+					based on each instance's characteristics. The metric of
+					interest for this task is the primal-dual gap integral,
+					which combines both improvements from the dual and from the
+					primal side over time.
+				</p>
+				<p>
+					Relevant litterature:
+					<br/><a href="https://dl.acm.org/doi/10.1007/978-3-642-25566-3_40">
+						<i>Sequential model-based optimization for general algorithm configuration</i>
+					</a>, Hutter et al., LION'11
+				</p>
+
 
 			</div>
 		</div>
 	</section>
 
+	<!-- Metrics-->
+	<section id="metrics" class="main">
+		<div class="content">
+			<header class="major">
+				<h2>Metrics</h2>
+			</header>
+			<p>
+				TODO
+			</p>
+		</div>
+	</section>
+
+	<!-- Datasets -->
+	<section id="datasets" class="main">
+		<div class="content">
+			<header class="major">
+				<h2>Datasets</h2>
+			</header>
+			<p>
+				While traditional combinatorial optimization solvers mostly consist of
+				general-purpose algorithms, the competition instead focuses on the design
+				of application-specific solvers using historical data. This corresponds to
+				the realistic situation where a practitioner needs to solve specific problem
+				instances repeatedly, which share similar patterns and characteristics. As such,
+				the participants' submissions will be evaluated independently on three distinct
+				problem benchmarks:
+				<ul>
+					<li>first benchmark: to be annouced</li>
+					<li>second benchmark: to be annouced</li>
+					<li>third benchmark: to be annouced</li>
+				</ul>
+				For each control task, participants can either provide a single control policy
+				(which can be trained ML model or an algorithmic solution) that works for all
+				three benchmarks, or benchmark-specific policies.
+			</p>
+		</div>
+	</section>
+
 	<!-- Rules -->
-	<section id="rules" class="main special">
+	<section id="rules" class="main">
 		<div class="content">
 			<header class="major">
 				<h2>Rules</h2>
@@ -144,7 +312,7 @@
 	</section>
 
 	<!-- Getting started -->
-	<section id="getting-started" class="main special">
+	<section id="getting-started" class="main">
 		<header class="major">
 			<h2>Getting started</h2>
 		</header>
@@ -154,7 +322,7 @@
 	</section>
 
 	<!-- Leaderboard -->
-	<section id="leaderboard" class="main special">
+	<section id="leaderboard" class="main">
 		<div class="content">
 			<header class="major">
 				<h2>Leaderboard</h2>
