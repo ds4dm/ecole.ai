@@ -12,6 +12,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
 	<link rel="stylesheet" href="/assets/sass/main.css" />
+	<link rel="stylesheet" href="style/main.css" />
 	<!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
 	<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
 	<!-- Coutersy of faviconit.com for providing all favicons-->
@@ -122,36 +123,38 @@
 					<h2>Challenges</h2>
 				</header>
 				<p>
-					Participants can compete in <b>three distinct challenges</b>,
+					The ML4CO competition asks the following
+					<b>scientific question</b>: can ML offer a viable option for improving
+					traditional CO solvers on specific problem families, by
+					exploiting historical data ? To do so
+					we propose <b>three distinct challenges</b>,
 					each corresponding to a specific control task arising in
-					traditional solvers.
+					traditional solvers. Participants can compete in any subset
+					of those challenges, and one winner will be declared for
+					each.
 				</p>
 				<ul class="features">
 					<li>
 						<h3>Primal task</h3>
-						<p>Produce feasible solutions, in order to minimize the <em>primal integral</em>.</p>
+						<p>Produce feasible solutions, in order to minimize the <em>primal integral</em> over time.</p>
 					</li>
 					<li>
 						<h3>Dual task</h3>
-						<p>Select branching variables, in order to maximize the <em>dual integral</em>.</p>
+						<p>Select branching variables, in order to maximize the <em>dual integral</em> over time.</p>
 					</li>
 					<li>
 						<h3>Configuration task</h3>
-						<p>Choose the best solver parameters, in order to minimize the <em>primal-dual integral</em>.</p>
+						<p>Choose the best solver parameters, in order to minimize the <em>primal-dual integral</em> over time.</p>
 					</li>
 				</ul>
 				<p style="text-align: center;">
 					<img style="border: 0; border-radius: 0; width: 50%;" src="/images/primal-dual.png" alt="Primal-dual bound solving curves"/>
 				</p>
+
 				<h2>Primal task - Finding feasible solutions</h2>
+
 				<p>
-					<b>Scientific question:</b>
-					can ML offer a viable option for generating good feasible
-					solutions to a CO problem, by exploiting historical data of
-					similar problems?
-				</p>
-				<p>
-					The primal task deals with finding good primal solutions
+					The primal task deals with finding good <b>primal solutions</b>
 					at the root node of the branch-and-bound tree. To that end,
 					the environment (SCIP solver) will not perform any branching
 					but will collect the agent's solutions, evaluate their
@@ -160,87 +163,161 @@
 					The metric of interest for this task is the primal integral,
 					which takes into account the speed at which the primal bound
 					decreases over time. To model a realistic scenario, each problem
-					instance will have been preprocessed by SCIP (including cutting
-					planes), and the root linear program (LP) relaxation will have
+					instance will have been preprocessed by SCIP (problem
+					reduction, cutting
+					planes etc.), and the root linear program (LP) relaxation will have
 					been solved before the participants are asked to produce
-					feasible solutions. Furthermore, a feasible, trivial solution
-					will be provided to SCIP at the very beginning of the solving
-					process to compute the primal integral unambiguously.
+					feasible solutions.
 					To prevent SCIP from searching for primal solutions by itself,
 					all primal heuristics will be deactivated.
+					A feasible, trivial solution
+					will be provided to SCIP at the very beginning of the solving
+					process to compute the primal integral unambiguously.
 				</p>
-				<p>
-					Relevant litterature:
-					<br/><a href="https://papers.nips.cc/paper/2017/hash/d9896106ca98d3d05b8cbdf4fd8b13a1-Abstract.html">
-						<i>Learning combinatorial optimization algorithms over graphs</i>
-					</a>, Dai et al., NeurIPS'17
-					<br/><a href="https://proceedings.neurips.cc/paper/2018/hash/9fb4651c05b2ed70fba5afe0b039a550-Abstract.html">
-						<i>Reinforcement Learning for Solving the Vehicle Routing Problem</i>
-					</a>, Nazari et al., NeurIPS'18
-					<br/><a href="https://proceedings.neurips.cc/paper/2018/hash/8d3bba7425e7c98c50f52ca1b52d3735-Abstract.html">
-						<i>Combinatorial Optimization with Graph Convolutional Networks and Guided Tree Search</i>
-					</a>, Li et al., NeurIPS'18
-					<br/><a href="https://deepmind.com/research/publications/Solving-Mixed-Integer-Programs-Using-Neural-Networks">
-						<i>Solving Mixed Integer Programs Using Neural Networks</i>
-					</a>, Nair et al., 2020 
-				</p>
+				<dl class="description">
+					<dt>
+						Environment	
+					</dt>
+					<dd>
+						The solver is stopped at the root node, after the root
+						LP has been solved, and enters an infinite loop. At each
+						transition the environment evaluates the given candidate
+						solution and updates the primal bound. Nothing else
+						happens. The solver remains in the <a href="https://www.scipopt.org/doc/html/type__set_8h.php#ac8ea6cabb843c57e1232f3132959e197">SOLVING</a>
+						stage until the episode terminates (15 minutes time
+						limit, or when the problem is solved).
+					</dd>
+					<dt>
+						Action
+					</dt>
+					<dd>
+						A candidate problem solution (variable assignment values, <b>x</b>).
+					</dd>
+					<dt>
+						Metric
+					</dt>
+					<dd>
+						Primal integral.
+					</dd>
+					<dt>
+						Relevant litterature:
+					</dt>
+					<dd>
+						<ul class="papers">
+						<li>
+							<a href="https://papers.nips.cc/paper/2017/hash/d9896106ca98d3d05b8cbdf4fd8b13a1-Abstract.html">
+							<i>Learning combinatorial optimization algorithms over graphs</i>
+							</a>, Dai et al., NeurIPS'17
+						</li>
+						<li>
+							<a href="https://proceedings.neurips.cc/paper/2018/hash/9fb4651c05b2ed70fba5afe0b039a550-Abstract.html">
+							<i>Reinforcement Learning for Solving the Vehicle Routing Problem</i>
+							</a>, Nazari et al., NeurIPS'18
+						</li>
+						<li>
+							<a href="https://proceedings.neurips.cc/paper/2018/hash/8d3bba7425e7c98c50f52ca1b52d3735-Abstract.html">
+							<i>Combinatorial Optimization with Graph Convolutional Networks and Guided Tree Search</i>
+							</a>, Li et al., NeurIPS'18
+						</li>
+						<li>
+							<a href="https://deepmind.com/research/publications/Solving-Mixed-Integer-Programs-Using-Neural-Networks">
+							<i>Solving Mixed Integer Programs Using Neural Networks</i>
+							</a>, Nair et al., 2020 
+						</li>
+						</ul>
+					</dd>
+				</dl>
 
 				<h2>Dual task - Branching</h2>
 
 				<p>
-					<b>Scientific question:</b>
-					can ML offer a viable option for learning how to branch,
-					by exploiting historical data of similar problems?
-				</p>
-				<p>
 					The dual task deals with obtaining tight optimality guarantees
-					(dual bounds) via branching. Making good branching decisions
+					(dual bounds) via branching. Making good <b>branching decisions</b>
 					is regarded as a critical component of modern branch-and-bound
 					solvers, yet has received little theoretical understanding to
 					this day (see <a href="https://link.springer.com/article/10.1007%2Fs11750-017-0451-6">Lodi et al., 2017</a>).
 					For this task, the environment will run a full-fledged
 					branch-and-cut algorithm with SCIP, and the participants' code
 					will only control the solver's branching decisions. The metric
-					of interest for this task is the dual integral, which takes
-					into account the speed at which the dual bound increases over
+					of interest for this task is the dual integral,
+					which takes into account the speed at which the
+					<b>dual bound</b> increases over
 					time. For the task's metric to reflect only the quality of
 					branching decisions, the optimal primal solution value will be
 					provided to SCIP at the start of the solving process, and
 					all primal heuristics will be deactivated.
 				</p>
-				<p>
-					Relevant litterature:
-					<br/><a href="https://dl.acm.org/doi/10.5555/3015812.3015920">
-						<i>Learning to Branch in Mixed Integer Programming</i>
-					</a>, Khalil et al., AAAI'16
-					<br/><a href="https://link.springer.com/article/10.1007/s11750-017-0451-6">
-						<i>On learning and branching: a survey</i>
-					</a>, Lodi et al., TOP, 2017
-					<br/><a href="http://proceedings.mlr.press/v80/balcan18a.html">
-						<i>Learning to Branch</i>
-					</a>, Balcan et al., ICML'18
-					<br/><a href="https://papers.nips.cc/paper/2019/hash/d14c2267d848abeb81fd590f371d39bd-Abstract.html">
-						<i>Exact Combinatorial Optimization with Graph Convolutional Neural Networks</i>
-					</a>, Gasse et al., NeurIPS'19
-					<br/><a href="https://papers.nips.cc/paper/2020/hash/d1e946f4e67db4b362ad23818a6fb78a-Abstract.html">
-						<i>Hybrid Models for Learning to Branch</i>
-					</a>, Gupta et al., NeurIPS'20
-					<br/><a href="https://deepmind.com/research/publications/Solving-Mixed-Integer-Programs-Using-Neural-Networks">
-						<i>Solving Mixed Integer Programs Using Neural Networks</i>
-					</a>, Nair et al., 2020 
-				</p>
+				<dl class="description">
+					<dt>
+						Environment	
+					</dt>
+					<dd>
+						Traditional branch-and-bound algorithm. The solver stops
+						after each node is processed (LP solved), receives a
+						branching decision, performs branching and selects the
+						next open node to process.
+						The solver remains in the <a href="https://www.scipopt.org/doc/html/type__set_8h.php#ac8ea6cabb843c57e1232f3132959e197">SOLVING</a>
+						stage until the episode terminates (15 minutes time
+						limit, or when the problem is solved).
+					</dd>
+					<dt>
+						Action
+					</dt>
+					<dd>
+						Any non-empty subset of the current branching
+						candidates (non-fixed integer variables). Single-variable
+						and multi-variable branching is allowed.
+					</dd>
+					<dt>
+						Metric
+					</dt>
+					<dd>
+						Dual integral.
+					</dd>
+					<dt>
+						Relevant litterature:
+					</dt>
+					<dd>
+						<ul class="papers">
+						<li>
+							<a href="https://dl.acm.org/doi/10.5555/3015812.3015920">
+							<i>Learning to Branch in Mixed Integer Programming</i>
+							</a>, Khalil et al., AAAI'16
+						</li>
+						<li>
+							<a href="https://link.springer.com/article/10.1007/s11750-017-0451-6">
+							<i>On learning and branching: a survey</i>
+							</a>, Lodi et al., TOP, 2017
+						</li>
+						<li>
+							<a href="http://proceedings.mlr.press/v80/balcan18a.html">
+							<i>Learning to Branch</i>
+							</a>, Balcan et al., ICML'18
+						</li>
+						<li>
+							<a href="https://papers.nips.cc/paper/2019/hash/d14c2267d848abeb81fd590f371d39bd-Abstract.html">
+							<i>Exact Combinatorial Optimization with Graph Convolutional Neural Networks</i>
+							</a>, Gasse et al., NeurIPS'19
+						</li>
+						<li>
+							<a href="https://papers.nips.cc/paper/2020/hash/d1e946f4e67db4b362ad23818a6fb78a-Abstract.html">
+							<i>Hybrid Models for Learning to Branch</i>
+							</a>, Gupta et al., NeurIPS'20
+						</li>
+						<li>
+							<a href="https://deepmind.com/research/publications/Solving-Mixed-Integer-Programs-Using-Neural-Networks">
+							<i>Solving Mixed Integer Programs Using Neural Networks</i>
+							</a>, Nair et al., 2020 
+						</li>
+						</ul>
+					</dd>
+				</dl>
 
 				<h2>Configuration task - Solver parameterization</h2>
 
 				<p>
-					<b>Scientific question:</b>
-					can ML offer a viable option for deciding on
-					instance-specific solver parameterization, based on
-					historical data of similar problems ?
-				</p>
-				<p>
-					The algorithm selection task deals with deciding on a good
-					parameterization of the solver for a given problem instance.
+					The configuration task deals with deciding on a good
+					<b>parameterization</b> of the solver for a given problem instance.
 					The environment required for this task is more straightforward
 					than for the two previous ones since it involves only a single
 					decision for the agents (i.e., contextual bandit problem).
@@ -249,17 +326,51 @@
 					parameters that work well on average for each problem
 					benchmark or producing instance-specific parameterizations
 					based on each instance's characteristics. The metric of
-					interest for this task is the primal-dual gap integral,
+					interest for this task is the <b>primal-dual gap</b> integral,
 					which combines both improvements from the dual and from the
 					primal side over time.
 				</p>
-				<p>
-					Relevant litterature:
-					<br/><a href="https://dl.acm.org/doi/10.1007/978-3-642-25566-3_40">
-						<i>Sequential model-based optimization for general algorithm configuration</i>
-					</a>, Hutter et al., LION'11
-				</p>
-
+				<dl class="description">
+					<dt>
+						Environment	
+					</dt>
+					<dd>
+						The solver loads a problem instance, and immediately
+						stops. It then receives a parameterization, applies it,
+						and pursues with the solving process until it terminates
+						(15 minutes time limit, or when the problem is solved).
+						During the first and only transition, the solver is in the
+						<a href="https://www.scipopt.org/doc/html/type__set_8h.php#ac8ea6cabb843c57e1232f3132959e197">PROBLEM</a>
+						stage. As such participants will not be able to extract
+						advanced features from the solver, such as those
+						relying on the LP being solved.
+					</dd>
+					<dt>
+						Action
+					</dt>
+					<dd>
+						A set of <a href="https://www.scipopt.org/doc/html/PARAMETERS.php">SCIP parameters</a>,
+						in the form of a key/value dictionnary.
+					</dd>
+					<dt>
+						Metric
+					</dt>
+					<dd>
+						Primal-dual gap integral.
+					</dd>
+					<dt>
+						Relevant litterature
+					</dt>
+					<dd>
+						<ul class="papers">
+							<li>
+								<a href="https://dl.acm.org/doi/10.1007/978-3-642-25566-3_40">
+								<i>Sequential model-based optimization for general algorithm configuration</i>
+								</a>, Hutter et al., LION'11
+							</li>
+						</ul>
+					</dd>
+				</dl>
 
 			</div>
 		</div>

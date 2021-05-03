@@ -1,0 +1,5 @@
+ul.papers { list-style: none; padding-left: 0; }
+ul.papers li { padding: 0.2em 0; }
+ul.papers li:first-child { padding-top: 0; }
+dl.description dt { margin: 1em 0 0 0;}
+dl.description dt:first-child { margin: 0 0 0 0; }
