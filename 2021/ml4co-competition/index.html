@@ -190,7 +190,7 @@
 					</li>
 					<li>
 						<h3><a href="#dual-task" class="button">Dual task</a></h3>
-						<p>Select branching variables, in order to minimize the <em>dual integral</em> over time.</p>
+						<p>Select branching variables, in order to maximize the <em>dual integral</em> over time.</p>
 					</li>
 					<li>
 						<h3><a href="#config-task" class="button">Configuration task</a></h3>
@@ -200,9 +200,9 @@
 				<p style="text-align: center;">
 					<img style="border: 0; border-radius: 0; width: 50%;" src="/images/primal-dual.png" alt="Primal-dual bound solving curves"/>
 					<br/>
-					Primal and dual bounds evolution vs solving time (minimization problem).
+					Primal and dual bounds evolution vs solving time
+					(for a minimization MILP).
 				</p>
-
 			</div>
 		</div>
 		<div id="primal-task" class="content" style="padding-top: 4em; border-top: solid 1px #dddddd;">
@@ -487,7 +487,7 @@
 					\]
 					where \(\mathbf{x}^\star_t\) is the best solution found at
 					time \(t\), \(\mathbf{c}\) is the MILP linear objective, and
-					\(T\) is the solving time limit. The primal integral is to be minimized, and
+					\(T\) is the solving time limit. The primal integral is to be <b>minimized</b>, and
 					takes a minimal value of \(T\mathbf{c}^\top \mathbf{x}^\star\)
 					for each problem instance, with \(\mathbf{x}^\star\) the
 					optimal solution value for that instance.
@@ -510,7 +510,7 @@
 					    \text{,}
 					\]
 					where \(\mathbf{z}^\star_t\) is the best dual bound at
-					time \(t\). The dual integral is to be maximized and takes
+					time \(t\). The dual integral is to be <b>maximized</b> and takes
 					a maximal value of \(T\mathbf{c}^\top \mathbf{x}^\star\) for
 					each problem instance, with \(\mathbf{x}^\star\) the optimal
 					solution value for that instance.
@@ -531,10 +531,18 @@
 					    \int_{t=0}^{T} \mathbf{c}^\top \mathbf{x}^\star_t - \mathbf{z}^\star_t\;\mathrm{d}t
 					    \text{.}
 					\]
-					The primal-dual gap integral is to be minimized and takes
+					The primal-dual gap integral is to be <b>minimized</b> and takes
 					an optimal value of 0.
 				</dd>
 			</dl>
+			<p style="text-align: center;">
+				<img style="border: 0; border-radius: 0; width: 50%; margin: auto;" src="/images/primal-dual.png" alt="Primal-dual bound solving curves"/>
+				<br/>
+				Note that this figure
+				shows the primal and dual integrals minus
+				\(T\mathbf{c}^\top \mathbf{x}^\star\), which takes a
+				constant value for a particular MILP instance.
+			</p>
 		</div>
 	</section>
 
