@@ -77,41 +77,94 @@
 
 	<section class="main">
 		<div class="spotlight">
+			<div class="content">
+				<header class="major">
+					<h2>Introduction</h2>
+				</header>
+				<p>
+					The Machine Learning for Combinatorial Optimization (ML4CO)
+					NeurIPS 2021
+					competition aims at improving state-of-the-art combinatorial
+					optimization solvers by replacing key <b>heuristic components</b>
+					with <b>machine learning models</b>.
+					It exposes several control tasks arising in the open-source
+					solver <a href="https://www.scipopt.org/">SCIP</a> as open
+					challenges for ML, exposed via a unified OpenAI-gym API
+					through the Python library
+					<a href="https://www.ecole.ai/">Ecole</a>.
+				</p>
+			</div>
+			<span class="image" style="border: 0; border-radius: 0; width: 12em;">
+				<a href="https://neurips.cc/Conferences/2021/CompetitionTrack" style="border-bottom-style: none;">
+					<img style="border: 0; border-radius: 0; width: 12em;" src="/images/neurips-logo-new.png" alt="NeurIPS logo"/>
+				</a>
+			</span>
+		</div>
+		<div class="spotlight">
+			<div class="content">
+				<p>
+					While most combinatorial optimization solvers are presented
+					as a general-purpose, <em>one-fit-all</em> algorithm, the
+					ML4CO competition focuses on the design of
+					<b>application-specific algorithms</b> from historical data.
+					This general problem captures a highly practical scenario
+					relevant to many application areas, where a practitioner
+					repeatedly solves problem instances from a specific
+					distribution, with redundant patterns and characteristics. 
+					For example, managing a large-scale energy
+					distribution network requires solving very similar CO
+					problems on a daily basis, with a fixed power grid
+					structure while only the demand changes over time. This
+					change of demand is hard to capture by hand-engineered
+					expert rules, and ML-enhanced approaches offer a possible
+					solution to detect typical patterns in the demand history.
+					Other examples include crew scheduling problems that have
+					to be solved daily or weekly with minor variations, or
+					vehicle routing where the traffic conditions change over
+					time, but the overall transportation network does not.
+				</p>
+			</div>
+			<span class="image" style="border: 0; border-radius: 0; width: 12em;">
+				<a href="https://doc.ecole.ai/" style="border-bottom-style: none;">
+					<img style="border: 0; border-radius: 0; width: 10em;" src="/images/ecole-logo.png" alt="Ecole logo"/>
+				</a>
+			</span>
+		</div>
+		<div class="spotlight">
+			<div class="content">
+				<p>
+					The competition's purpose is to ask the following
+					question: <em>can ML offer a viable option for improving
+					traditional CO solvers on specific problem distributions, by
+					exploiting historical data ? </em>
+					To answer that question, participants will be evaluated on
+					<b>three problem
+					benchmarks</b> originating from diverse application areas,
+					represented as three collections of <b>mixed-integer
+					linear programs</b> (MILPs).
+					Benchmark-specific submissions are encouraged (algorithms
+					or trained ML models), but of course generic submissions
+					that work for all three benchmarks are allowed.
+				</p>
+				<p>
+					Important dates: the competition is scheduled to start
+					on <b>July 1st, 2021</b>, when we release the training
+					datasets, and will end on <b>October 31st, 2021</b>.
+				</p>
+			</div>
+			<span class="image" style="border: 0; border-radius: 0; width: 12em;">
+				<a href="https://www.scipopt.org/" style="border-bottom-style: none;">
+					<img style="border: 0; border-radius: 0; width: 9em;" src="/images/newscippy.png" alt="SCIP logo"/>
+				</a>
+			</span>
+		</div>
 		<div class="content">
-			<header class="major">
-				<h2>Presentation</h2>
-			</header>
-			<p>
-				The Machine Learning for Combinatorial Optimization (ML4CO)
-				competition aims at improving a state-of-the-art combinatorial
-				optimization solver, by replacing key <b>heuristic components</b>
-				with <b>machine learning models</b> trained on historical data.
-				It exposes several control tasks arising in the open-source
-				solver <a href="https://www.scipopt.org/"><b>SCIP</b></a> as
-				challenges for ML, exposed through a unified OpenAI-gym API
-				using the dedicated Python library
-				<a href="https://www.ecole.ai/"><b>Ecole</b></a>.
-			</p>
-			<p>
-				Important dates: the competition is scheduled to start on <b>July 1st, 2021</b>,
-				when we release the training datasets, and will end on <b>October 31st, 2021</b>.
-			</p>
 			<p>
 				<em>Note: while we encourage solutions derived from the
 				machine learning and reinforcement learning paradigms, any
 				algorithmic solution respecting the competition's API is
 				accepted.</em>
 			</p>
-		</div>
-		<span class="image" style="border: 0; border-radius: 0">
-			<a href="https://www.scipopt.org/" style="border-bottom-style: none;">
-				<img style="border: 0; border-radius: 0; width: 8em;" src="/images/newscippy.png" alt="SCIP logo"/>
-			</a>
-			<br/>
-			<a href="https://doc.ecole.ai/" style="border-bottom-style: none;">
-				<img style="border: 0; border-radius: 0; width: 9em; margin-left: 3em;" src="/images/ecole-logo.png" alt="Ecole logo"/>
-			</a>
-		</span>
 		</div>
 	</section>
 
@@ -123,11 +176,7 @@
 					<h2>Challenges</h2>
 				</header>
 				<p>
-					The ML4CO competition asks the following
-					<b>scientific question</b>: can ML offer a viable option for improving
-					traditional CO solvers on specific problem families, by
-					exploiting historical data ? To do so
-					we propose <b>three distinct challenges</b>,
+					We propose <b>three distinct challenges</b>,
 					each corresponding to a specific control task arising in
 					traditional solvers. Participants can compete in any subset
 					of those challenges, and one winner will be declared for
@@ -135,244 +184,257 @@
 				</p>
 				<ul class="features">
 					<li>
-						<h3>Primal task</h3>
+						<h3><a href="#primal-task" class="button">Primal task</a></h3>
 						<p>Produce feasible solutions, in order to minimize the <em>primal integral</em> over time.</p>
 					</li>
 					<li>
-						<h3>Dual task</h3>
-						<p>Select branching variables, in order to maximize the <em>dual integral</em> over time.</p>
+						<h3><a href="#dual-task" class="button">Dual task</a></h3>
+						<p>Select branching variables, in order to minimize the <em>dual integral</em> over time.</p>
 					</li>
 					<li>
-						<h3>Configuration task</h3>
+						<h3><a href="#config-task" class="button">Configuration task</a></h3>
 						<p>Choose the best solver parameters, in order to minimize the <em>primal-dual integral</em> over time.</p>
 					</li>
 				</ul>
 				<p style="text-align: center;">
 					<img style="border: 0; border-radius: 0; width: 50%;" src="/images/primal-dual.png" alt="Primal-dual bound solving curves"/>
+					<br/>
+					Primal and dual bounds evolution vs solving time (minimization problem).
 				</p>
-
-				<h2>Primal task - Finding feasible solutions</h2>
-
-				<p>
-					The primal task deals with finding good <b>primal solutions</b>
-					at the root node of the branch-and-bound tree. To that end,
-					the environment (SCIP solver) will not perform any branching
-					but will collect the agent's solutions, evaluate their
-					feasibility, and update the overall best solution reached so
-					far, thus lowering the current <b>primal bound</b> (upper bound).
-					The metric of interest for this task is the primal integral,
-					which takes into account the speed at which the primal bound
-					decreases over time. To model a realistic scenario, each problem
-					instance will have been preprocessed by SCIP (problem
-					reduction, cutting
-					planes etc.), and the root linear program (LP) relaxation will have
-					been solved before the participants are asked to produce
-					feasible solutions.
-					To prevent SCIP from searching for primal solutions by itself,
-					all primal heuristics will be deactivated.
-					A feasible, trivial solution
-					will be provided to SCIP at the very beginning of the solving
-					process to compute the primal integral unambiguously.
-				</p>
-				<dl class="description">
-					<dt>
-						Environment	
-					</dt>
-					<dd>
-						The solver is stopped at the root node, after the root
-						LP has been solved, and enters an infinite loop. At each
-						transition the environment evaluates the given candidate
-						solution and updates the primal bound. Nothing else
-						happens. The solver remains in the <a href="https://www.scipopt.org/doc/html/type__set_8h.php#ac8ea6cabb843c57e1232f3132959e197">SOLVING</a>
-						stage until the episode terminates (15 minutes time
-						limit, or when the problem is solved).
-					</dd>
-					<dt>
-						Action
-					</dt>
-					<dd>
-						A candidate problem solution (variable assignment values, <b>x</b>).
-					</dd>
-					<dt>
-						Metric
-					</dt>
-					<dd>
-						Primal integral.
-					</dd>
-					<dt>
-						Relevant litterature:
-					</dt>
-					<dd>
-						<ul class="papers">
-						<li>
-							<a href="https://papers.nips.cc/paper/2017/hash/d9896106ca98d3d05b8cbdf4fd8b13a1-Abstract.html">
-							<i>Learning combinatorial optimization algorithms over graphs</i>
-							</a>, Dai et al., NeurIPS'17
-						</li>
-						<li>
-							<a href="https://proceedings.neurips.cc/paper/2018/hash/9fb4651c05b2ed70fba5afe0b039a550-Abstract.html">
-							<i>Reinforcement Learning for Solving the Vehicle Routing Problem</i>
-							</a>, Nazari et al., NeurIPS'18
-						</li>
-						<li>
-							<a href="https://proceedings.neurips.cc/paper/2018/hash/8d3bba7425e7c98c50f52ca1b52d3735-Abstract.html">
-							<i>Combinatorial Optimization with Graph Convolutional Networks and Guided Tree Search</i>
-							</a>, Li et al., NeurIPS'18
-						</li>
-						<li>
-							<a href="https://deepmind.com/research/publications/Solving-Mixed-Integer-Programs-Using-Neural-Networks">
-							<i>Solving Mixed Integer Programs Using Neural Networks</i>
-							</a>, Nair et al., 2020 
-						</li>
-						</ul>
-					</dd>
-				</dl>
-
-				<h2>Dual task - Branching</h2>
-
-				<p>
-					The dual task deals with obtaining tight optimality guarantees
-					(dual bounds) via branching. Making good <b>branching decisions</b>
-					is regarded as a critical component of modern branch-and-bound
-					solvers, yet has received little theoretical understanding to
-					this day (see <a href="https://link.springer.com/article/10.1007%2Fs11750-017-0451-6">Lodi et al., 2017</a>).
-					For this task, the environment will run a full-fledged
-					branch-and-cut algorithm with SCIP, and the participants' code
-					will only control the solver's branching decisions. The metric
-					of interest for this task is the dual integral,
-					which takes into account the speed at which the
-					<b>dual bound</b> increases over
-					time. For the task's metric to reflect only the quality of
-					branching decisions, the optimal primal solution value will be
-					provided to SCIP at the start of the solving process, and
-					all primal heuristics will be deactivated.
-				</p>
-				<dl class="description">
-					<dt>
-						Environment	
-					</dt>
-					<dd>
-						Traditional branch-and-bound algorithm. The solver stops
-						after each node is processed (LP solved), receives a
-						branching decision, performs branching and selects the
-						next open node to process.
-						The solver remains in the <a href="https://www.scipopt.org/doc/html/type__set_8h.php#ac8ea6cabb843c57e1232f3132959e197">SOLVING</a>
-						stage until the episode terminates (15 minutes time
-						limit, or when the problem is solved).
-					</dd>
-					<dt>
-						Action
-					</dt>
-					<dd>
-						Any non-empty subset of the current branching
-						candidates (non-fixed integer variables). Single-variable
-						and multi-variable branching is allowed.
-					</dd>
-					<dt>
-						Metric
-					</dt>
-					<dd>
-						Dual integral.
-					</dd>
-					<dt>
-						Relevant litterature:
-					</dt>
-					<dd>
-						<ul class="papers">
-						<li>
-							<a href="https://dl.acm.org/doi/10.5555/3015812.3015920">
-							<i>Learning to Branch in Mixed Integer Programming</i>
-							</a>, Khalil et al., AAAI'16
-						</li>
-						<li>
-							<a href="https://link.springer.com/article/10.1007/s11750-017-0451-6">
-							<i>On learning and branching: a survey</i>
-							</a>, Lodi et al., TOP, 2017
-						</li>
-						<li>
-							<a href="http://proceedings.mlr.press/v80/balcan18a.html">
-							<i>Learning to Branch</i>
-							</a>, Balcan et al., ICML'18
-						</li>
-						<li>
-							<a href="https://papers.nips.cc/paper/2019/hash/d14c2267d848abeb81fd590f371d39bd-Abstract.html">
-							<i>Exact Combinatorial Optimization with Graph Convolutional Neural Networks</i>
-							</a>, Gasse et al., NeurIPS'19
-						</li>
-						<li>
-							<a href="https://papers.nips.cc/paper/2020/hash/d1e946f4e67db4b362ad23818a6fb78a-Abstract.html">
-							<i>Hybrid Models for Learning to Branch</i>
-							</a>, Gupta et al., NeurIPS'20
-						</li>
-						<li>
-							<a href="https://deepmind.com/research/publications/Solving-Mixed-Integer-Programs-Using-Neural-Networks">
-							<i>Solving Mixed Integer Programs Using Neural Networks</i>
-							</a>, Nair et al., 2020 
-						</li>
-						</ul>
-					</dd>
-				</dl>
-
-				<h2>Configuration task - Solver parameterization</h2>
-
-				<p>
-					The configuration task deals with deciding on a good
-					<b>parameterization</b> of the solver for a given problem instance.
-					The environment required for this task is more straightforward
-					than for the two previous ones since it involves only a single
-					decision for the agents (i.e., contextual bandit problem).
-					Participants are allowed to tune any of the existing parameters
-					of SCIP. They can choose between providing a fixed set of
-					parameters that work well on average for each problem
-					benchmark or producing instance-specific parameterizations
-					based on each instance's characteristics. The metric of
-					interest for this task is the <b>primal-dual gap</b> integral,
-					which combines both improvements from the dual and from the
-					primal side over time.
-				</p>
-				<dl class="description">
-					<dt>
-						Environment	
-					</dt>
-					<dd>
-						The solver loads a problem instance, and immediately
-						stops. It then receives a parameterization, applies it,
-						and pursues with the solving process until it terminates
-						(15 minutes time limit, or when the problem is solved).
-						During the first and only transition, the solver is in the
-						<a href="https://www.scipopt.org/doc/html/type__set_8h.php#ac8ea6cabb843c57e1232f3132959e197">PROBLEM</a>
-						stage. As such participants will not be able to extract
-						advanced features from the solver, such as those
-						relying on the LP being solved.
-					</dd>
-					<dt>
-						Action
-					</dt>
-					<dd>
-						A set of <a href="https://www.scipopt.org/doc/html/PARAMETERS.php">SCIP parameters</a>,
-						in the form of a key/value dictionnary.
-					</dd>
-					<dt>
-						Metric
-					</dt>
-					<dd>
-						Primal-dual gap integral.
-					</dd>
-					<dt>
-						Relevant litterature
-					</dt>
-					<dd>
-						<ul class="papers">
-							<li>
-								<a href="https://dl.acm.org/doi/10.1007/978-3-642-25566-3_40">
-								<i>Sequential model-based optimization for general algorithm configuration</i>
-								</a>, Hutter et al., LION'11
-							</li>
-						</ul>
-					</dd>
-				</dl>
 
 			</div>
+		</div>
+		<div id="primal-task" class="content" style="padding-top: 4em; border-top: solid 1px #dddddd;">
+
+			<h2>Primal task - Finding feasible solutions</h2>
+
+			<p>
+				The primal task deals with finding good <b>primal solutions</b>
+				at the root node of the branch-and-bound tree. To that end,
+				the environment (SCIP solver) will not perform any branching
+				but will enter an infinite loop at the root node, which will
+				collect the agent's solutions, evaluate their
+				feasibility, and update the overall best solution reached so
+				far, thus lowering the current <b>primal bound</b> (upper bound).
+				The metric of interest for this task is the primal integral,
+				which takes into account the speed at which the primal bound
+				decreases over time. To model a realistic scenario, each problem
+				instance will have been preprocessed by SCIP (problem
+				reduction, cutting
+				planes etc.), and the root linear program (LP) relaxation will have
+				been solved before the participants are asked to produce
+				feasible solutions.
+				To prevent SCIP from searching for primal solutions by itself,
+				all primal heuristics will be deactivated.
+				A feasible, trivial solution
+				will be provided to SCIP at the very beginning of the solving
+				process to compute the primal integral unambiguously.
+			</p>
+			<dl class="description">
+				<dt>
+					Environment	
+				</dt>
+				<dd>
+					The solver is stopped at the root node, after the root
+					LP has been solved, and enters an infinite loop. At each
+					transition the environment evaluates the given solution
+					candidate and updates the primal bound. Nothing else
+					happens. The solver remains in the <a href="https://www.scipopt.org/doc/html/type__set_8h.php#ac8ea6cabb843c57e1232f3132959e197">SOLVING</a>
+					stage until the episode terminates (15 minutes time
+					limit, or when the problem is solved).
+				</dd>
+				<dt>
+					Action
+				</dt>
+				<dd>
+					A solution candidate for the current problem (variable assignment values, <b>x</b>).
+				</dd>
+				<dt>
+					Metric
+				</dt>
+				<dd>
+					Primal integral.
+				</dd>
+				<dt>
+					Relevant litterature:
+				</dt>
+				<dd>
+					<ul class="papers">
+					<li>
+						<a href="https://papers.nips.cc/paper/2017/hash/d9896106ca98d3d05b8cbdf4fd8b13a1-Abstract.html">
+						<i>Learning Combinatorial Optimization Algorithms over Graphs</i>
+						</a>, Dai et al., NeurIPS'17
+					</li>
+					<li>
+						<a href="https://proceedings.neurips.cc/paper/2018/hash/9fb4651c05b2ed70fba5afe0b039a550-Abstract.html">
+						<i>Reinforcement Learning for Solving the Vehicle Routing Problem</i>
+						</a>, Nazari et al., NeurIPS'18
+					</li>
+					<li>
+						<a href="https://proceedings.neurips.cc/paper/2018/hash/8d3bba7425e7c98c50f52ca1b52d3735-Abstract.html">
+						<i>Combinatorial Optimization with Graph Convolutional Networks and Guided Tree Search</i>
+						</a>, Li et al., NeurIPS'18
+					</li>
+					<li>
+						<a href="https://deepmind.com/research/publications/Solving-Mixed-Integer-Programs-Using-Neural-Networks">
+						<i>Solving Mixed Integer Programs Using Neural Networks</i>
+						</a>, Nair et al., 2020 
+					</li>
+					</ul>
+				</dd>
+			</dl>
+		</div>
+
+		<div id="dual-task" class="content" style="padding-top: 4em; border-top: solid 1px #dddddd;">
+
+			<h2>Dual task - Branching</h2>
+
+			<p>
+				The dual task deals with obtaining tight optimality guarantees
+				(dual bounds) via branching. Making good <b>branching decisions</b>
+				is regarded as a critical component of modern branch-and-bound
+				solvers, yet has received little theoretical understanding to
+				this day (see <a href="https://link.springer.com/article/10.1007%2Fs11750-017-0451-6">Lodi et al., 2017</a>).
+				In this task, the environment will run a full-fledged
+				branch-and-cut algorithm with SCIP, and the participants
+				will only control the solver's branching decisions. The metric
+				of interest is the dual integral,
+				which takes into account the speed at which the
+				<b>dual bound</b> increases over
+				time. Also, all primal heuristics will be
+				deactivated, and the optimal primal solution value will be
+				given to SCIP at the start of the solving process (as a
+				cutoff bound), so that the focus is only on proving
+				optimality via branching, and not on finding feasible solutions.
+			</p>
+			<dl class="description">
+				<dt>
+					Environment	
+				</dt>
+				<dd>
+					Traditional branch-and-bound algorithm. The solver stops
+					after each node is processed (LP solved), receives a
+					branching decision, performs branching and selects the
+					next open node to process.
+					The solver remains in the <a href="https://www.scipopt.org/doc/html/type__set_8h.php#ac8ea6cabb843c57e1232f3132959e197">SOLVING</a>
+					stage until the episode terminates (15 minutes time
+					limit, or when the problem is solved).
+				</dd>
+				<dt>
+					Action
+				</dt>
+				<dd>
+					Any non-empty subset of the current branching
+					candidates (non-fixed integer variables). Single-variable
+					and multi-variable branching is allowed.
+				</dd>
+				<dt>
+					Metric
+				</dt>
+				<dd>
+					Dual integral.
+				</dd>
+				<dt>
+					Relevant litterature:
+				</dt>
+				<dd>
+					<ul class="papers">
+					<li>
+						<a href="https://dl.acm.org/doi/10.5555/3015812.3015920">
+						<i>Learning to Branch in Mixed Integer Programming</i>
+						</a>, Khalil et al., AAAI'16
+					</li>
+					<li>
+						<a href="https://link.springer.com/article/10.1007/s11750-017-0451-6">
+						<i>On Learning and Branching: a Survey</i>
+						</a>, Lodi et al., TOP, 2017
+					</li>
+					<li>
+						<a href="http://proceedings.mlr.press/v80/balcan18a.html">
+						<i>Learning to Branch</i>
+						</a>, Balcan et al., ICML'18
+					</li>
+					<li>
+						<a href="https://papers.nips.cc/paper/2019/hash/d14c2267d848abeb81fd590f371d39bd-Abstract.html">
+						<i>Exact Combinatorial Optimization with Graph Convolutional Neural Networks</i>
+						</a>, Gasse et al., NeurIPS'19
+					</li>
+					<li>
+						<a href="https://papers.nips.cc/paper/2020/hash/d1e946f4e67db4b362ad23818a6fb78a-Abstract.html">
+						<i>Hybrid Models for Learning to Branch</i>
+						</a>, Gupta et al., NeurIPS'20
+					</li>
+					<li>
+						<a href="https://deepmind.com/research/publications/Solving-Mixed-Integer-Programs-Using-Neural-Networks">
+						<i>Solving Mixed Integer Programs Using Neural Networks</i>
+						</a>, Nair et al., 2020 
+					</li>
+					</ul>
+				</dd>
+			</dl>
+
+		</div>
+		<div id="config-task" class="content" style="padding-top: 4em; border-top: solid 1px #dddddd;">
+
+			<h2>Configuration task - Choosing solver parameters</h2>
+
+			<p>
+				The configuration task deals with deciding on a good
+				<b>parameterization</b> of the solver for a given problem instance.
+				The environment required for this task is more straightforward
+				than for the two previous ones since it involves only a single
+				decision for the agents (i.e., contextual bandit problem).
+				Participants are allowed to tune any of the existing parameters
+				of SCIP. They can choose between providing a fixed set of
+				parameters that work well on average for each problem
+				benchmark or producing instance-specific parameterizations
+				based on each instance's characteristics. The metric of
+				interest for this task is the <b>primal-dual gap</b> integral,
+				which combines both improvements from the dual and from the
+				primal side over time.
+			</p>
+			<dl class="description">
+				<dt>
+					Environment	
+				</dt>
+				<dd>
+					The solver loads a problem instance, and immediately
+					stops. It then receives a parameterization, applies it,
+					and pursues with the solving process until it terminates
+					(15 minutes time limit, or when the problem is solved).
+					During the first and only transition, the solver is in the
+					<a href="https://www.scipopt.org/doc/html/type__set_8h.php#ac8ea6cabb843c57e1232f3132959e197">PROBLEM</a>
+					stage. As such participants will not be able to extract
+					advanced features from the solver, such as those
+					relying on the LP being solved.
+				</dd>
+				<dt>
+					Action
+				</dt>
+				<dd>
+					A set of <a href="https://www.scipopt.org/doc/html/PARAMETERS.php">SCIP parameters</a>,
+					in the form of a key/value dictionnary.
+				</dd>
+				<dt>
+					Metric
+				</dt>
+				<dd>
+					Primal-dual gap integral.
+				</dd>
+				<dt>
+					Relevant litterature
+				</dt>
+				<dd>
+					<ul class="papers">
+						<li>
+							<a href="https://dl.acm.org/doi/10.1007/978-3-642-25566-3_40">
+							<i>Sequential model-based optimization for general algorithm configuration</i>
+							</a>, Hutter et al., LION'11
+						</li>
+					</ul>
+				</dd>
+			</dl>
+
 		</div>
 	</section>
 
@@ -383,8 +445,95 @@
 				<h2>Metrics</h2>
 			</header>
 			<p>
-				TODO
+				Each of our three challenges, the primal task, the
+				dual task and the configuration task,
+				is associated to a specific <b>evaluation metric</b>
+				that reflects a different objective. Here we describe how each
+				metric is computed over a single problem instance, while the final
+				goal of the participants is to optimize this metric in
+				expectation over a <b>hidden collection of test instances</b>.
 			</p>
+			<p>
+				Because our evaluation metrics are
+				time-dependent, evaluations will all be run on the same
+				hardware setup, including one CPU core and one GPU card,
+				which will be communicated at the start of the competition.
+				For practical reasons, for each task, a maximum <b>time
+				budget</b> of \(T=15\) minutes is given to process each test instance,
+				after which the environment necessarily terminates.
+				Participants should therefore focus on taking both
+				<b>good and fast decisions</b>.
+			</p>
+			<p>
+				<em>Note: for simplicity in the following we consider MILPs expressed as minimization problems, without loss of generality.</em>
+			</p>
+			<dl class="description">
+				<dt>
+					Primal integral
+				</dt>
+				<dd>
+					This evaluation metric measures the area under the curve of
+					the solver's <b>primal bound</b> (a.k.a.
+					global upper bound), which corresponds to the value of
+					the best feasible solution found so far. By providing
+					better solutions over time, the value of the primal bound
+					decreases. To compute this metric unambiguously, a trivial
+					initial solution \(x^0\) s always be provided to SCIP.
+					The primal integral then expresses as:
+					\[
+					    \int_{t=0}^{T} \mathbf{c}^\top \mathbf{x}^\star_t\;\mathrm{d}t
+					    \text{,}
+					\]
+					where \(\mathbf{x}^\star_t\) is the best solution found at
+					time \(t\), \(\mathbf{c}\) is the MILP linear objective, and
+					\(T\) is the solving time limit. The primal integral is to be minimized, and
+					takes a minimal value of \(T\mathbf{c}^\top \mathbf{x}^\star\)
+					for each problem instance, with \(\mathbf{x}^\star\) the
+					optimal solution value for that instance.
+				</dd>
+				<dt>
+					Dual integral
+				</dt>
+				<dd>
+					This objective measures the area under the curve of the
+					solver's <b>dual bound</b> (a.k.a. global lower bound),
+					which usually corresponds to a solution of a valid
+					relaxation of the MILP. By branching, the LP relaxations
+					corresponding to the branch-and-bound tree leaves get
+					tightened, and the dual bound increases over time. In the
+					context of branching, this metric is unambiguous to
+					compute, as the root node of the tree always provides an
+					initial dual bound. The dual integral then expresses as:
+					\[
+					    \int_{t=0}^{T} \mathbf{z}^\star_t\;\mathrm{d}t
+					    \text{,}
+					\]
+					where \(\mathbf{z}^\star_t\) is the best dual bound at
+					time \(t\). The dual integral is to be maximized and takes
+					a maximal value of \(T\mathbf{c}^\top \mathbf{x}^\star\) for
+					each problem instance, with \(\mathbf{x}^\star\) the optimal
+					solution value for that instance.
+				</dd>
+				<dt>
+					Primal-dual gap integral
+				</dt>
+				<dd>
+					This objective measures the area between two curves, the 
+					solver's <b>primal bound</b> and the solver's
+					<b>dual bound</b>. In the context of algorithm
+					configuration, an initial value is required for these
+					two curves at time \(t=0\). Therefore we provide both an
+					initial trivial solution and a valid initial dual bound to
+					SCIP for this task. The primal-dual gap integral then
+					expresses as:
+					\[
+					    \int_{t=0}^{T} \mathbf{c}^\top \mathbf{x}^\star_t - \mathbf{z}^\star_t\;\mathrm{d}t
+					    \text{.}
+					\]
+					The primal-dual gap integral is to be minimized and takes
+					an optimal value of 0.
+				</dd>
+			</dl>
 		</div>
 	</section>
 
@@ -395,22 +544,45 @@
 				<h2>Datasets</h2>
 			</header>
 			<p>
-				While traditional combinatorial optimization solvers mostly consist of
-				general-purpose algorithms, the competition instead focuses on the design
-				of application-specific solvers using historical data. This corresponds to
-				the realistic situation where a practitioner needs to solve specific problem
-				instances repeatedly, which share similar patterns and characteristics. As such,
-				the participants' submissions will be evaluated independently on three distinct
-				problem benchmarks:
-				<ul>
-					<li>first benchmark: to be annouced</li>
-					<li>second benchmark: to be annouced</li>
-					<li>third benchmark: to be annouced</li>
-				</ul>
-				For each control task, participants can either provide a single control policy
-				(which can be trained ML model or an algorithmic solution) that works for all
-				three benchmarks, or benchmark-specific policies.
+				For each individual challenge, the participants will be
+				evaluated on three
+				problem benchmarks. A problem benchmark consists in a
+				collection of mixed-integer linear program (MILP) instances
+				in the standard <a href="https://en.wikipedia.org/wiki/MPS_(format)">MPS file format</a>.
+				split into a training and a test set, which originate from
+				the same problem distribution. While the training instances
+				are	made public at the beginning of the competition for
+				participants to train their models, the test instances will
+				be kept hidden for evaluation purposes, and will
+				only be revealed at the end of the competition.
 			</p>
+			<p>
+				For each task, participants are expected to provide a different
+				decision-making policy (algorithmic solution or trained
+				ML model) for each of the three problem benchmark. Of course,
+				participants are also free to submit one generic policy that
+				works for all benchmarks.
+			</p>
+			<dl class="description">
+				<dt>
+					Problem benchmark 1
+				</dt>
+				<dd>
+					To be announced.
+				</dd>
+				<dt>
+					Problem benchmark 2
+				</dt>
+				<dd>
+					To be announced.
+				</dd>
+				<dt>
+					Problem benchmark 3
+				</dt>
+				<dd>
+					To be announced.
+				</dd>
+			</dl>
 		</div>
 	</section>
 
@@ -513,6 +685,11 @@
 	window.goatcounter = { path: function(p) { return location.host + p } }
 </script>
 <script data-goatcounter="https://ecoleai.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+<!-- MathJax -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 
 </body>
 </html>
