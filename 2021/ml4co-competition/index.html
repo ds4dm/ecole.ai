@@ -87,22 +87,23 @@
 					competition aims at improving state-of-the-art combinatorial
 					optimization solvers by replacing key <b>heuristic components</b>
 					with <b>machine learning models</b>.
-					It exposes several control tasks arising in the open-source
-					solver <a href="https://www.scipopt.org/">SCIP</a> as open
-					challenges for ML, exposed via a unified OpenAI-gym API
-					through the Python library
-					<a href="https://www.ecole.ai/">Ecole</a>.
+					The competition's main scientific question is the following:
+					<em>is machine learning a viable option for improving
+					traditional combinatorial optimization solvers on
+					specific problem distributions, when historical data is available ? </em>
 				</p>
 			</div>
-			<span class="image" style="border: 0; border-radius: 0; width: 12em;">
-				<img style="border: 0; border-radius: 0; width: 12em; margin: auto;" src="/images/ml4co-final.png" alt="ML4CO Competition logo"/>
+			<span class="image" style="border: 0; border-radius: 0;">
+				<a href="https://neurips.cc/Conferences/2021/CompetitionTrack" style="border-bottom-style: none;">
+					<img style="border: 0; border-radius: 0; width: 15em; margin: auto;" src="images/neurips-logo-new.png" alt="NeurIPS logo"/>
+				</a>
 			</span>
 		</div>
 		<div class="spotlight">
 			<div class="content">
 				<p>
 					While most combinatorial optimization solvers are presented
-					as a general-purpose, <em>one-fit-all</em> algorithm, the
+					as general-purpose, <em>one-fit-all</em> algorithms, the
 					ML4CO competition focuses on the design of
 					<b>application-specific algorithms</b> from historical data.
 					This general problem captures a highly practical scenario
@@ -121,43 +122,44 @@
 					vehicle routing where the traffic conditions change over
 					time, but the overall transportation network does not.
 				</p>
+			</div>
+			<span class="image" style="border: 0; border-radius: 0;">
+				<img style="border: 0; border-radius: 0; width: 15em; margin: auto;" src="images/ml4co-final.png" alt="ML4CO Competition logo"/>
+			</span>
+		</div>
+		<div class="spotlight">
+			<div class="content">
 				<p>
-					The competition's purpose is to ask the following
-					question: <em>can ML offer a viable option for improving
-					traditional CO solvers on specific problem distributions, by
-					exploiting historical data ? </em>
-					To answer that question, participants will be evaluated on
-					<b>three problem
-					benchmarks</b> originating from diverse application areas,
-					represented as three collections of <b>mixed-integer
-					linear programs</b> (MILPs).
+					The competition features <b>three challenges for ML</b>,
+					each corresponding to a specific control task arising in
+					the open-source solver <a href="https://www.scipopt.org/">SCIP</a>,
+					and exposed through a unified OpenAI-gym API
+					based on the Python library
+					<a href="https://www.ecole.ai/">Ecole</a>.
+					For each challenge, participants will be evaluated on
+					<b>three problem benchmarks</b> originating from diverse
+					application areas, each represented as a collection
+					of <b>mixed-integer linear program</b> (MILP) instances.
 					Benchmark-specific submissions are encouraged (algorithms
 					or trained ML models), but of course generic submissions
 					that work for all three benchmarks are allowed.
 				</p>
-				<p>
-					Important dates: the competition is scheduled to start
-					on <b>July 1st, 2021</b>, when we release the training
-					datasets, and will end on <b>October 31st, 2021</b>.
-				</p>
 			</div>
-			<span class="image" style="border: 0; border-radius: 0; width: 12em;">
+			<span class="image" style="border: 0; border-radius: 0;">
 				<a href="https://doc.ecole.ai/" style="border-bottom-style: none;">
-					<img style="border: 0; border-radius: 0; width: 10em; margin: auto;" src="/images/ecole-logo.png" alt="Ecole logo"/>
+					<img style="border: 0; border-radius: 0; width: 10em; margin: auto; display: inline-block;" src="/images/ecole-logo.png" alt="Ecole logo"/>
 				</a>
-				<br/>
-				<br/>
-				<br/>
 				<a href="https://www.scipopt.org/" style="border-bottom-style: none;">
-					<img style="border: 0; border-radius: 0; width: 9em; margin: auto;" src="/images/newscippy.png" alt="SCIP logo"/>
-				</a>
-				<br/>
-				<br/>
-				<br/>
-				<a href="https://neurips.cc/Conferences/2021/CompetitionTrack" style="border-bottom-style: none;">
-					<img style="border: 0; border-radius: 0; width: 12em; margin: auto;" src="/images/neurips-logo-new.png" alt="NeurIPS logo"/>
+					<img style="border: 0; border-radius: 0; width: 8em; margin: auto; display: inline-block;" src="images/newscippy.png" alt="SCIP logo"/>
 				</a>
 			</span>
+		</div>
+		<div class="content">
+			<p>
+				Important dates: the competition is scheduled to start
+				on <b>July 1st, 2021</b>, when we release the training
+				datasets, and will end on <b>October 31st, 2021</b>.
+			</p>
 		</div>
 		<div class="content">
 			<p>
@@ -198,10 +200,14 @@
 					</li>
 				</ul>
 				<p style="text-align: center;">
-					<img style="border: 0; border-radius: 0; width: 50%;" src="/images/primal-dual.png" alt="Primal-dual bound solving curves"/>
+					<img style="border: 0; border-radius: 0; width: 50%;" src="images/primal-dual.png" alt="Primal-dual bound solving curves"/>
 					<br/>
 					Primal and dual bounds evolution vs solving time
-					(for a minimization MILP).
+					(for a minimization MILP instance).
+					Note that this figure
+					shows the primal and dual integrals minus
+					\(T\mathbf{c}^\top \mathbf{x}^\star\), which takes a
+					constant value for a particular instance.
 				</p>
 			</div>
 		</div>
@@ -446,9 +452,9 @@
 				<h2>Metrics</h2>
 			</header>
 			<p>
-				Each of our three challenges, the primal task, the
+				Each of the three challenges, the primal task, the
 				dual task and the configuration task,
-				is associated to a specific <b>evaluation metric</b>
+				is associated with a specific <b>evaluation metric</b>
 				that reflects a different objective. Here we describe how each
 				metric is computed over a single problem instance, while the final
 				goal of the participants is to optimize this metric in
@@ -456,7 +462,7 @@
 			</p>
 			<p>
 				Because our evaluation metrics are
-				time-dependent, evaluations will all be run on the same
+				time-dependent, all evaluations will be run on the same
 				hardware setup, including one CPU core and one GPU card,
 				which will be communicated at the start of the competition.
 				For practical reasons, for each task, a maximum <b>time
@@ -468,81 +474,99 @@
 			<p>
 				<em>Note: for simplicity in the following we consider MILPs expressed as minimization problems, without loss of generality.</em>
 			</p>
-			<dl class="description">
-				<dt>
-					Primal integral
-				</dt>
-				<dd>
-					This evaluation metric measures the area under the curve of
-					the solver's <b>primal bound</b> (a.k.a.
-					global upper bound), which corresponds to the value of
-					the best feasible solution found so far. By providing
-					better solutions over time, the value of the primal bound
-					decreases. To compute this metric unambiguously, a trivial
-					initial solution \(x^0\) s always be provided to SCIP.
-					The primal integral then expresses as:
-					\[
-					    \int_{t=0}^{T} \mathbf{c}^\top \mathbf{x}^\star_t\;\mathrm{d}t
-					    \text{,}
-					\]
-					where \(\mathbf{x}^\star_t\) is the best solution found at
-					time \(t\), \(\mathbf{c}\) is the MILP linear objective, and
-					\(T\) is the solving time limit. The primal integral is to be <b>minimized</b>, and
-					takes a minimal value of \(T\mathbf{c}^\top \mathbf{x}^\star\)
-					for each problem instance, with \(\mathbf{x}^\star\) the
-					optimal solution value for that instance.
-				</dd>
-				<dt>
-					Dual integral
-				</dt>
-				<dd>
-					This objective measures the area under the curve of the
-					solver's <b>dual bound</b> (a.k.a. global lower bound),
-					which usually corresponds to a solution of a valid
-					relaxation of the MILP. By branching, the LP relaxations
-					corresponding to the branch-and-bound tree leaves get
-					tightened, and the dual bound increases over time. In the
-					context of branching, this metric is unambiguous to
-					compute, as the root node of the tree always provides an
-					initial dual bound. The dual integral then expresses as:
-					\[
-					    \int_{t=0}^{T} \mathbf{z}^\star_t\;\mathrm{d}t
-					    \text{,}
-					\]
-					where \(\mathbf{z}^\star_t\) is the best dual bound at
-					time \(t\). The dual integral is to be <b>maximized</b> and takes
-					a maximal value of \(T\mathbf{c}^\top \mathbf{x}^\star\) for
-					each problem instance, with \(\mathbf{x}^\star\) the optimal
-					solution value for that instance.
-				</dd>
-				<dt>
-					Primal-dual gap integral
-				</dt>
-				<dd>
-					This objective measures the area between two curves, the 
-					solver's <b>primal bound</b> and the solver's
-					<b>dual bound</b>. In the context of algorithm
-					configuration, an initial value is required for these
-					two curves at time \(t=0\). Therefore we provide both an
-					initial trivial solution and a valid initial dual bound to
-					SCIP for this task. The primal-dual gap integral then
-					expresses as:
-					\[
-					    \int_{t=0}^{T} \mathbf{c}^\top \mathbf{x}^\star_t - \mathbf{z}^\star_t\;\mathrm{d}t
-					    \text{.}
-					\]
-					The primal-dual gap integral is to be <b>minimized</b> and takes
-					an optimal value of 0.
-				</dd>
-			</dl>
-			<p style="text-align: center;">
-				<img style="border: 0; border-radius: 0; width: 50%; margin: auto;" src="/images/primal-dual.png" alt="Primal-dual bound solving curves"/>
-				<br/>
-				Note that this figure
-				shows the primal and dual integrals minus
-				\(T\mathbf{c}^\top \mathbf{x}^\star\), which takes a
-				constant value for a particular MILP instance.
-			</p>
+		</div>
+		<div class="spotlight">
+			<div class="content">
+				<dl class="description">
+					<dt>
+						Primal integral
+					</dt>
+					<dd>
+						This evaluation metric measures the area under the curve of
+						the solver's <b>primal bound</b> (a.k.a.
+						global upper bound), which corresponds to the value of
+						the best feasible solution found so far. By providing
+						better solutions over time, the value of the primal bound
+						decreases. To compute this metric unambiguously, a trivial
+						initial solution \(x^0\) is always be provided to SCIP
+						at the beginning of the solving process.
+						The primal integral then expresses as:
+						\[
+						    \int_{t=0}^{T} \mathbf{c}^\top \mathbf{x}^\star_t\;\mathrm{d}t
+						    \text{,}
+						\]
+						where \(\mathbf{x}^\star_t\) is the overall best solution found at
+						time \(t\), \(\mathbf{c}\) is the MILP linear objective, and
+						\(T\) is the solving time limit. The primal integral is to be <b>minimized</b>, and
+						takes a minimal value of \(T\mathbf{c}^\top \mathbf{x}^\star\)
+						for each problem instance, with \(\mathbf{x}^\star\) the
+						optimal solution value for that instance.
+					</dd>
+				</dl>
+			</div>
+			<span class="image" style="border: 0; border-radius: 0;">
+				<img style="border: 0; border-radius: 0; width: 20em; margin: auto;" src="images/primal-integral.png" alt="Primal integral illustration"/>
+			</span>
+		</div>
+		<div class="spotlight">
+			<div class="content">
+				<dl class="description">
+					<dt>
+						Dual integral
+					</dt>
+					<dd>
+						This objective measures the area under the curve of the
+						solver's <b>dual bound</b> (a.k.a. global lower bound),
+						which usually corresponds to a solution of a valid
+						relaxation of the MILP. By branching, the LP relaxations
+						corresponding to the branch-and-bound tree leaves get
+						tightened, and the dual bound increases over time. In the
+						context of branching, this metric is unambiguous to
+						compute, as the root node of the tree always provides an
+						initial dual bound. The dual integral then expresses as:
+						\[
+							\int_{t=0}^{T} \mathbf{z}^\star_t\;\mathrm{d}t
+							\text{,}
+						\]
+						where \(\mathbf{z}^\star_t\) is the best dual bound at
+						time \(t\). The dual integral is to be <b>maximized</b> and takes
+						a maximal value of \(T\mathbf{c}^\top \mathbf{x}^\star\) for
+						each problem instance, with \(\mathbf{x}^\star\) the optimal
+						solution value for that instance.
+					</dd>
+				</dl>
+			</div>
+			<span class="image" style="border: 0; border-radius: 0;">
+				<img style="border: 0; border-radius: 0; width: 20em; margin: auto;" src="images/dual-integral.png" alt="Dual integral illustration"/>
+			</span>
+		</div>
+		<div class="spotlight">
+			<div class="content">
+				<dl class="description">
+					<dt>
+						Primal-dual gap integral
+					</dt>
+					<dd>
+						This objective measures the area between two curves, the 
+						solver's <b>primal bound</b> and the solver's
+						<b>dual bound</b>. In the context of algorithm
+						configuration, an initial value is required for these
+						two curves at time \(t=0\). Therefore we provide both an
+						initial trivial solution and a valid initial dual bound to
+						SCIP for this task. The primal-dual gap integral then
+						expresses as:
+						\[
+							\int_{t=0}^{T} \mathbf{c}^\top \mathbf{x}^\star_t - \mathbf{z}^\star_t\;\mathrm{d}t
+							\text{.}
+						\]
+						The primal-dual gap integral is to be <b>minimized</b> and takes
+						an optimal value of 0.
+					</dd>
+				</dl>
+			</div>
+			<span class="image" style="border: 0; border-radius: 0;">
+				<img style="border: 0; border-radius: 0; width: 20em; margin: auto;" src="images/primal-dual-gap-integral.png" alt="Primal-dual gap integral illustration"/>
+			</span>
 		</div>
 	</section>
 
@@ -554,11 +578,18 @@
 			</header>
 			<p>
 				For each individual challenge, the participants will be
-				evaluated on three
-				problem benchmarks. A problem benchmark consists in a
-				collection of mixed-integer linear program (MILP) instances
-				in the standard <a href="https://en.wikipedia.org/wiki/MPS_(format)">MPS file format</a>.
-				split into a training and a test set, which originate from
+				evaluated on <b>three problem benchmarks</b> from diverse application
+				areas. Participants can provide a different
+				decision-making code (algorithmic solution or trained
+				ML model) for each of the benchmarks, or a single code that
+				works for all benchmarks.
+			</p>
+			<p>
+				A problem benchmark consists in a collection of
+				<b>mixed-integer linear program</b>
+				(MILP) instances in the standard
+				<a href="https://en.wikipedia.org/wiki/MPS_(format)">MPS file format</a>
+				split into <b>a training and a test set</b>, which originate from
 				the same problem distribution. While the training instances
 				are	made public at the beginning of the competition for
 				participants to train their models, the test instances will
@@ -566,30 +597,50 @@
 				only be revealed at the end of the competition.
 			</p>
 			<p>
-				For each task, participants are expected to provide a different
-				decision-making policy (algorithmic solution or trained
-				ML model) for each of the three problem benchmark. Of course,
-				participants are also free to submit one generic policy that
-				works for all benchmarks.
+			The first two problem benchmarks are inspired by real-life
+			applications of large-scale systems at Google, while the third
+			benchmark is an anonymous problem inspired by a real-world
+			large-scale industrial application.
 			</p>
 			<dl class="description">
 				<dt>
-					Problem benchmark 1
+					Problem benchmark 1: Balanced Item Placement
 				</dt>
 				<dd>
-					To be announced.
+					This problem deals with spreading items (e.g., files or
+					processes) across containers (e.g., disks or machines)
+					utilizing them <em>evenly</em>. Items can have multiple
+					copies, but at most one copy can be placed in a single
+					bin. The number of items that can be moved is
+					constrained, modeling the real-life situation of a
+					live system for which some placement already exists. Each
+					problem instance is modeled as a MILP, using a
+					multi-dimensional multi-knapsack formulation. This
+					dataset contains 10000 training instances.
 				</dd>
 				<dt>
-					Problem benchmark 2
+					Problem benchmark 2: Workload Apportionment
 				</dt>
 				<dd>
-					To be announced.
+					This problem deals with apportioning workloads (e.g.,
+					data streams) across as few workers (e.g., servers) as
+					possible. The apportionment is required to be robust to
+					any one worker's failure. Each instance problem is modeled
+					as a MILP, using a bin-packing with apportionment
+					formulation. This dataset contains 10000 training
+					instances.
 				</dd>
 				<dt>
-					Problem benchmark 3
+					Problem benchmark 3: Anonymous Problem
 				</dt>
 				<dd>
-					To be announced.
+					The MILP instances corresponding to this benchmark are
+					assembled from a public dataset, whose origin is kept
+					secret to prevent cheating.
+					Reverse-engineering for the purpose of recovering the
+					test set is explicitely forbidden
+					(see <a href="#rules">rules</a>). This dataset contains
+					270 training instances.
 				</dd>
 			</dl>
 		</div>
@@ -602,19 +653,169 @@
 				<h2>Rules</h2>
 			</header>
 			<p>
-				TODO
+				The spirit of the competition is as follows:
 			</p>
+			<ul>
+				<li>
+					we encourage contributions from both the
+					<b>OR and ML communities</b> by explicitely allowing non-ML
+					submissions;
+				</li>
+				<li>
+					we encourage student participation with a
+					<b>dedicated student leaderboard</b>;
+				</li>
+				<li> we encourage
+					original contributions
+					by specifically making the use of <b>highly-engineered
+					commercial solvers prohibited</b>.
+				</li>
+			</ul>
+			<p>
+				Participants must adhere to the following rules:
+			</p>
+			<dl class="description">
+				<dt>
+					Eligibility
+				</dt>
+				<dd>
+				<ol>
+					<li>
+						Participants can work in teams.
+					</li>
+					<li>
+						Participants can submit codes based on a machine
+						learning model, a human-designed algorithm, or any
+						combination of the two.
+					</li>
+					<li>
+						Participants are not allowed to use commercial
+						software in their code. The use of solvers such as
+						CPLEX, Gurobi, or FICO XPress is explicitly forbidden.
+					</li>
+					<li>
+						Student-only teams are eligible to a separate student
+						leaderboard, in addition to the main leaderboard of
+						the competition. A graduated PhD is not considered a
+						student.
+					</li>
+				</ol>
+				</dd>
+				<dt>
+					Data
+				</dt>
+				<dd>
+				<ol>
+					<li>
+    					The use of supplementary existing open-source
+						datasets, e.g., for pre-training, is permitted
+						provided they are credited.
+					</li>
+					<li>
+						The use of private, proprietary datasets is not
+						permitted.
+					</li>
+					<li>
+						In order to prevent cheating, the evaluation data
+						sets will be kept hidden to the participants during
+						the competition.
+					</li>
+					<li>
+						Participants are free and encouraged to extract
+						original features from the solver for training and
+						evaluation, though the Python interface of SCIP,
+						PySCIPOpt.
+					</li>
+				</ol>
+				</dd>
+				<dt>
+					Submission
+				</dt>
+				<dd>
+				<ol>
+					<li>
+    					The submitted codes must be written in Python, and
+						must run in the evaluation environment which we
+						provide.
+					</li>
+					<li>
+    					Parallel implementations using multiple processes
+						or multiple threads are allowed, although the hardware
+						on which the codes will be evaluated is single-core.
+					</li>
+					<li>
+    					The evaluation environment does not have access to
+						any external network, to prevent any information leak.
+					</li>
+					<li>
+    					Users may make use of open source libraries given
+						proper attribution. At the end of the competition,
+						we encourage all code to be open-sourced so the
+						results can be reproduced.
+					</li>
+					<li>
+    					The evaluation environment will provide a basic
+						ML ecosystem (Tensorflow, Pytorch, Scikit-learn).
+						Additional libraries will be added to the evaluation
+						environment upon reasonable requests.
+					</li>
+					<li>
+						At the end of the competition, the winners are
+						expected to provide a description of the method
+						they used.
+					</li>
+				</ol>
+				</dd>
+				<dt>
+					Cheating prevention
+				</dt>
+				<dd>
+				<ol>
+					<li>
+						Participants are forbidden to interact with the SCIP
+						solver in any other way than the one intended, that
+						is, extracting information or providing a control
+						decision related to the task at hand. Any interaction
+						with SCIP that results in changes of the internal
+						state of the solver will be considered cheating.
+					</li>
+					<li>
+						Some datasets have been anonymized, as they
+						rely on publicly accessible data. Any attempt at
+						reverse-engineering for the purpose of recovering
+						information about the test set is forbidden.
+					</li>
+					<li>
+						Any instance of cheating, defined as violation of the
+						rules above or any other attempt to circumvent the
+						spirit and intent of the competition, as determined
+						by the organizers, will result in the invalidation of
+						all of the offending team’s submissions and a
+						disqualification from the competition.
+					</li>
+				</ol>
+				</dd>
+			</dl>
 		</div>
 	</section>
 
 	<!-- Getting started -->
 	<section id="getting-started" class="main">
-		<header class="major">
-			<h2>Getting started</h2>
-		</header>
-		<p>
-    	TODO
-		</p>
+		<div class="content">
+			<header class="major">
+				<h2>Getting started</h2>
+			</header>
+			<p>
+				To pre-register a team and subscribe to the competition's
+				mailing list, please use the following form:
+				<a href="">to be announced</a>.
+			</p>
+			<p>
+				To access the datasets, tutorials and starting packages,
+				please visit the following repository:
+				<a href="">to be announced</a>.
+			</p>
+		</div>
 	</section>
 
 	<!-- Leaderboard -->
@@ -623,9 +824,22 @@
 			<header class="major">
 				<h2>Leaderboard</h2>
 			</header>
-			<p>
-				TODO
-			</p>
+			<dl class="description">
+				<dt>
+					Student leaderboard
+				</dt>
+				<dd>
+					To be announced.
+				</dd>
+			</dl>
+			<dl class="description">
+				<dt>
+					Global leaderboard
+				</dt>
+				<dd>
+					To be announced.
+				</dd>
+			</dl>
 		</div>
 	</section>
 
