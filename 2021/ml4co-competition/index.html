@@ -192,7 +192,7 @@
 					</li>
 					<li>
 						<h3><a href="#dual-task" class="button">Dual task</a></h3>
-						<p>Select branching variables, in order to maximize the <em>dual integral</em> over time.</p>
+						<p>Select branching variables, in order to minimize dual the <em>dual integral</em> over time.</p>
 					</li>
 					<li>
 						<h3><a href="#config-task" class="button">Configuration task</a></h3>
@@ -472,7 +472,23 @@
 				<b>good and fast decisions</b>.
 			</p>
 			<p>
-				<em>Note: for simplicity in the following we consider MILPs expressed as minimization problems, without loss of generality.</em>
+				In the following we consider instances of mixed-integer linear programs (MILPs)
+				expressed as follows:
+				\[
+				\begin{eqnarray}
+					\underset{\mathbf{x}}{\operatorname{arg\,min}} \quad \mathbf{c}^\top\mathbf{x} && \\
+					\text{subject to} \quad \mathbf{A}^\top\mathbf{x} & \leq & \mathbf{b} \text{,} \\
+					\mathbf{x} & \in & \mathbb{Z}^p \times \mathbb{R}^{n-p}
+					\text{,}
+				\end{eqnarray}
+				\]
+				where \(\mathbf{c} \in \mathbb{R}^n\)
+				denotes the coefficients of the linear objective,
+				\(\mathbf{A} \in \mathbb{R}^{m \times n}\) and \(\mathbf{b} \in \mathbb{R}^m\)
+				respectively denote the coefficients and upper bounds of the
+				linear constraints, while \(n\) is the total number of variables,
+				\(p \leq n\) is the number of integer-constrained variables, and
+				\(m\) the number of linear constraints.
 			</p>
 		</div>
 		<div class="spotlight">
@@ -482,25 +498,42 @@
 						Primal integral
 					</dt>
 					<dd>
-						This evaluation metric measures the area under the curve of
-						the solver's <b>primal bound</b> (a.k.a.
-						global upper bound), which corresponds to the value of
-						the best feasible solution found so far. By providing
-						better solutions over time, the value of the primal bound
-						decreases. To compute this metric unambiguously, a trivial
-						initial solution \(x^0\) is always be provided to SCIP
-						at the beginning of the solving process.
-						The primal integral then expresses as:
-						\[
-						    \int_{t=0}^{T} \mathbf{c}^\top \mathbf{x}^\star_t\;\mathrm{d}t
-						    \text{,}
-						\]
-						where \(\mathbf{x}^\star_t\) is the overall best solution found at
-						time \(t\), \(\mathbf{c}\) is the MILP linear objective, and
-						\(T\) is the solving time limit. The primal integral is to be <b>minimized</b>, and
-						takes a minimal value of \(T\mathbf{c}^\top \mathbf{x}^\star\)
-						for each problem instance, with \(\mathbf{x}^\star\) the
-						optimal solution value for that instance.
+						<p>
+							This objective measures the area under the curve of
+							the solver's <b>primal bound</b> (a.k.a.
+							global upper bound), which corresponds to the value of
+							the best feasible solution found so far. By providing
+							better feasible solutions over time, the value of the primal bound
+							decreases.
+							With a time limit \(T\), the primal integral expresses as:
+							\[
+								\int_{t=0}^{T} \mathbf{c}^\top \mathbf{x}^\star_t\;\mathrm{d}t - T\mathbf{c}^\top\mathbf{x}^\star
+								\text{,}
+							\]
+							where \(\mathbf{x}^\star_t\) is the best feasible
+							solution found at time \(t\) (so that
+							\(\mathbf{c}^\top \mathbf{x}^\star_t\) is the primal
+							bound at time \(t\)), and \(T\mathbf{c}^\top\mathbf{x}^\star\)
+							is an instance-specific constant that depends on the
+							optimal solution \(\mathbf{x}^\star\).
+							The primal integral is to be <b>minimized</b>, and takes
+							an optimal value of 0.
+						</p>
+						<p>
+							<em>
+								Note: to compute this metric unambiguously, a trivial
+								initial solution \(x^\star_0\) is always provided to SCIP
+								at the beginning of the solving process. Also,
+								the constant term \(\mathbf{c}^\top\mathbf{x}^\star\)
+								can be safely ignored at training time when
+								participants train their control policy, as the
+								learning problem is equivalent.
+								At test time however, when we will evaluate the
+								participant submissions, this constant
+								term (or a proper substitute) will be incorporated
+								in the reported metric.
+							</em>
+						</p>
 					</dd>
 				</dl>
 			</div>
@@ -515,24 +548,39 @@
 						Dual integral
 					</dt>
 					<dd>
-						This objective measures the area under the curve of the
-						solver's <b>dual bound</b> (a.k.a. global lower bound),
-						which usually corresponds to a solution of a valid
-						relaxation of the MILP. By branching, the LP relaxations
-						corresponding to the branch-and-bound tree leaves get
-						tightened, and the dual bound increases over time. In the
-						context of branching, this metric is unambiguous to
-						compute, as the root node of the tree always provides an
-						initial dual bound. The dual integral then expresses as:
-						\[
-							\int_{t=0}^{T} \mathbf{z}^\star_t\;\mathrm{d}t
-							\text{,}
-						\]
-						where \(\mathbf{z}^\star_t\) is the best dual bound at
-						time \(t\). The dual integral is to be <b>maximized</b> and takes
-						a maximal value of \(T\mathbf{c}^\top \mathbf{x}^\star\) for
-						each problem instance, with \(\mathbf{x}^\star\) the optimal
-						solution value for that instance.
+						<p>
+							This objective measures the area over the curve of the
+							solver's <b>dual bound</b> (a.k.a. global lower bound),
+							which usually corresponds to a solution of a valid
+							relaxation of the MILP. By branching, the LP relaxations
+							corresponding to the branch-and-bound tree leaves get
+							tightened, and the dual bound increases over time.
+							With a time limit \(T\), the dual
+							integral expresses as:
+							\[
+								- \int_{t=0}^{T} \mathbf{z}^\star_t\;\mathrm{d}t + T\mathbf{c}^\top\mathbf{x}^\star
+								\text{,}
+							\]
+							where \(\mathbf{z}^\star_t\) is the best dual bound at
+							time \(t\), and \(T\mathbf{c}^\top\mathbf{x}^\star\) is
+							an instance-specific constant that depends on the
+							optimal solution value \(\mathbf{c}^\top\mathbf{x}^\star\).
+							The dual integral is to be <b>minimized</b>, and takes
+							an optimal value of 0.
+						</p>
+						<p>
+							<em>
+								Note: in the context of branching, this metric is unambiguous to
+								compute, as the root node of the tree always provides an
+								initial dual bound \(\mathbf{z}^*_0\).
+								at the beginning of the solving process. Here again,
+								the constant term \(\mathbf{c}^\top\mathbf{x}^\star\)
+								can be safely ignored for training time,
+								but will be incorporated (or a proper substitute)
+								in the metrics that we will report when evaluating
+								the participants submissions.
+							</em>
+						</p>
 					</dd>
 				</dl>
 			</div>
@@ -547,20 +595,32 @@
 						Primal-dual gap integral
 					</dt>
 					<dd>
-						This objective measures the area between two curves, the 
-						solver's <b>primal bound</b> and the solver's
-						<b>dual bound</b>. In the context of algorithm
-						configuration, an initial value is required for these
-						two curves at time \(t=0\). Therefore we provide both an
-						initial trivial solution and a valid initial dual bound to
-						SCIP for this task. The primal-dual gap integral then
-						expresses as:
-						\[
-							\int_{t=0}^{T} \mathbf{c}^\top \mathbf{x}^\star_t - \mathbf{z}^\star_t\;\mathrm{d}t
-							\text{.}
-						\]
-						The primal-dual gap integral is to be <b>minimized</b> and takes
-						an optimal value of 0.
+						<p>
+							This objective measures the area between two curves, the
+							solver's <b>primal bound</b> and the solver's
+							<b>dual bound</b>. As such, this metric benefits
+							both from improvements obtained from the primal side
+							(finding good feasible solutions), and on the dual
+							side (producing a tight optimality certificate).
+							With a time limit \(T\), the
+							primal-dual gap integral expresses as:
+							\[
+								\int_{t=0}^{T} \mathbf{c}^\top \mathbf{x}^\star_t - \mathbf{z}^\star_t\;\mathrm{d}t
+								\text{.}
+							\]
+							The primal-dual gap integral is to be <b>minimized</b>,
+							and take an optimal value of 0.
+						</p>
+						<p>
+							<em>
+								Note: in the context of algorithm
+								configuration, an initial value is required for
+								the two curves at time \(t=0\). Therefore we
+								always provide both an initial trivial
+								solution \(x^\star_0\) and a valid initial
+								dual bound \(z^\star_0\) to SCIP for this task.
+							</em>
+						</p>
 					</dd>
 				</dl>
 			</div>
