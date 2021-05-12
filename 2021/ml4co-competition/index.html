@@ -192,15 +192,15 @@
 				<ul class="features">
 					<li>
 						<h3><a href="#primal-task" class="button">Primal task</a></h3>
-						<p>Produce feasible solutions, in order to minimize the <em>primal integral</em> over time.</p>
+						<p>Produce feasible solutions, minimizing the <em>primal integral</em> over time.</p>
 					</li>
 					<li>
 						<h3><a href="#dual-task" class="button">Dual task</a></h3>
-						<p>Select branching variables, in order to minimize dual the <em>dual integral</em> over time.</p>
+						<p>Select branching variables, minimizing dual the <em>dual integral</em> over time.</p>
 					</li>
 					<li>
 						<h3><a href="#config-task" class="button">Configuration task</a></h3>
-						<p>Choose the best solver parameters, in order to minimize the <em>primal-dual integral</em> over time.</p>
+						<p>Choose the best solver parameters, minimizing the <em>primal-dual integral</em> over time.</p>
 					</li>
 				</ul>
 				<p style="text-align: center;">
@@ -246,12 +246,13 @@
 					Environment	
 				</dt>
 				<dd>
-					The solver is stopped at the root node, after the root
-					LP has been solved, and enters an infinite loop. At each
-					transition the environment evaluates the given solution
-					candidate and updates the primal bound. Nothing else
-					happens. The solver remains in the <a href="https://www.scipopt.org/doc/html/type__set_8h.php#ac8ea6cabb843c57e1232f3132959e197">SOLVING</a>
-					stage until the episode terminates (15 minutes time
+				  The solver is stopped at the root node after the root LP has been solved and enters an infinite loop. At each transition, the environment evaluates the given solution
+				  candidate and updates the primal bond. Nothing else happens. The solver remains in the
+				  <a href="https://www.scipopt.org/doc/html/type__set_8h.php#ac8ea6cabb843c57e1232f3132959e197">SOLVING</a>stage until the episode terminates (15 minutes time limit, or when the problem is solved).
+				  The solver is stopped at the root node, after the root LP has been solved, and enters an infinite loop. At each
+				  transition the environment evaluates the given solution
+				  candidate and updates the primal bound. Nothing elss happens. The solver remains in the <a href="https://www.scipopt.org/doc/html/type__set_8h.php#ac8ea6cabb843c57e1232f3132959e197">SOLVING</a>
+				stage until the episode terminates (15 minutes time
 					limit, or when the problem is solved).
 				</dd>
 				<dt>
@@ -301,35 +302,21 @@
 			<h2>Dual task - Branching</h2>
 
 			<p>
-				The dual task deals with obtaining tight optimality guarantees
-				(dual bounds) via branching. Making good <b>branching decisions</b>
-				is regarded as a critical component of modern branch-and-bound
-				solvers, yet has received little theoretical understanding to
-				this day (see <a href="https://link.springer.com/article/10.1007%2Fs11750-017-0451-6">Lodi et al., 2017</a>).
-				In this task, the environment will run a full-fledged
-				branch-and-cut algorithm with SCIP, and the participants
-				will only control the solver's branching decisions. The metric
-				of interest is the dual integral,
-				which takes into account the speed at which the
-				<b>dual bound</b> increases over
-				time. Also, all primal heuristics will be
-				deactivated, and the optimal primal solution value will be
-				given to SCIP at the start of the solving process (as a
-				cutoff bound), so that the focus is only on proving
-				optimality via branching, and not on finding feasible solutions.
+			  The dual task deals with obtaining tight optimality guarantees (dual bounds) via branching. Making good <b>branching decisions</b>
+			  is regarded as a critical component of modern branch-and-bound
+			  solvers yet has received little theoretical understanding to
+			  this day (see <a href="https://link.springer.com/article/10.1007%2Fs11750-017-0451-6">Lodi et al., 2017</a>).
+			  In this task, the environment will run a full-fledged branch-and-cut algorithm with SCIP, and the participants will only control the solver's branching decisions. The metric of interest is the dual integral,
+			  which considers the speed at which the
+			  <b>dual bound</b> increases over time. Also, all primal heuristics will be
+			  deactivated, and the optimal primal solution value will be given to SCIP at the start of the solving process (as a cutoff bound) so that the focus is only on proving optimality via branching and not on finding feasible solutions.
 			</p>
 			<dl class="description">
 				<dt>
 					Environment	
 				</dt>
 				<dd>
-					Traditional branch-and-bound algorithm. The solver stops
-					after each node is processed (LP solved), receives a
-					branching decision, performs branching and selects the
-					next open node to process.
-					The solver remains in the <a href="https://www.scipopt.org/doc/html/type__set_8h.php#ac8ea6cabb843c57e1232f3132959e197">SOLVING</a>
-					stage until the episode terminates (15 minutes time
-					limit, or when the problem is solved).
+				  Traditional branch-and-bound algorithm. The solver stops after each node is processed (LP solved), receives a branching decision, performs branching, and selects the next open node to process. The solver remains in the <a href="https://www.scipopt.org/doc/html/type__set_8h.php#ac8ea6cabb843c57e1232f3132959e197">SOLVING</a> stage until the episode terminates (15 minutes time limit, or when the problem is solved).
 				</dd>
 				<dt>
 					Action
@@ -390,34 +377,16 @@
 			<h2>Configuration task - Choosing solver parameters</h2>
 
 			<p>
-				The configuration task deals with deciding on a good
-				<b>parameterization</b> of the solver for a given problem instance.
-				The environment required for this task is more straightforward
-				than for the two previous ones since it involves only a single
-				decision for the agents (i.e., contextual bandit problem).
-				Participants are allowed to tune any of the existing parameters
-				of SCIP. They can choose between providing a fixed set of
-				parameters that work well on average for each problem
-				benchmark or producing instance-specific parameterizations
-				based on each instance's characteristics. The metric of
-				interest for this task is the <b>primal-dual gap</b> integral,
-				which combines both improvements from the dual and from the
-				primal side over time.
+			  The configuration task deals with deciding on a good <b>parameterization</b> of the solver for a given problem instance.
+			  The environment required for this task is more straightforward than for the two previous ones since it involves only a single decision for the agents (i.e., contextual bandit problem). Participants are allowed to tune any of the existing parameters of SCIP. They can choose between providing a fixed set of parameters that work well on average for each problem benchmark or producing instance-specific parameterizations
+			  based on each instance's characteristics. The metric of interest for this task is the <b>primal-dual gap</b> integral, which combines both improvements from the dual and the primal side over time.
 			</p>
 			<dl class="description">
 				<dt>
 					Environment	
 				</dt>
 				<dd>
-					The solver loads a problem instance, and immediately
-					stops. It then receives a parameterization, applies it,
-					and pursues with the solving process until it terminates
-					(15 minutes time limit, or when the problem is solved).
-					During the first and only transition, the solver is in the
-					<a href="https://www.scipopt.org/doc/html/type__set_8h.php#ac8ea6cabb843c57e1232f3132959e197">PROBLEM</a>
-					stage. As such participants will not be able to extract
-					advanced features from the solver, such as those
-					relying on the LP being solved.
+				  The solver loads a problem instance and immediately stops. It then receives a parameterization, applies it, and pursues the solving process until it terminates (15 minutes time limit, or when the problem is solved). During the first and only transition, the solver is in the <a href="https://www.scipopt.org/doc/html/type__set_8h.php#ac8ea6cabb843c57e1232f3132959e197">PROBLEM</a> stage. As such, participants will not be able to extract advanced features from the solver, such as those relying on the LP being solved.
 				</dd>
 				<dt>
 					Action
@@ -456,24 +425,11 @@
 				<h2>Metrics</h2>
 			</header>
 			<p>
-				Each of the three challenges, the primal task, the
-				dual task and the configuration task,
-				is associated with a specific <b>evaluation metric</b>
-				that reflects a different objective. Here we describe how each
-				metric is computed over a single problem instance, while the final
-				goal of the participants is to optimize this metric in
-				expectation over a <b>hidden collection of test instances</b>.
+Each of the three challenges, the primal task, the dual task, and the configuration task, is associated with a specific <b>evaluation metric</b>
+that reflects a different objective. Here we describe how each metric is computed over a single problem instance, while the final goal of the participants is to optimize this metric in expectation over a <b>hidden collection of test instances</b>.
 			</p>
 			<p>
-				Because our evaluation metrics are
-				time-dependent, all evaluations will be run on the same
-				hardware setup, including one CPU core and one GPU card,
-				which will be communicated at the start of the competition.
-				For practical reasons, for each task, a maximum <b>time
-				budget</b> of \(T=15\) minutes is given to process each test instance,
-				after which the environment necessarily terminates.
-				Participants should therefore focus on taking both
-				<b>good and fast decisions</b>.
+
 			</p>
 			<p>
 				In the following we consider instances of mixed-integer linear programs (MILPs)
@@ -640,31 +596,20 @@
 			<header class="major">
 				<h2>Datasets</h2>
 			</header>
-			<p>
-				For each individual challenge, the participants will be
-				evaluated on <b>three problem benchmarks</b> from diverse application
-				areas. Participants can provide a different
-				decision-making code (algorithmic solution or trained
-				ML model) for each of the benchmarks, or a single code that
-				works for all benchmarks.
+The participants will be evaluated on <b>three problem benchmarks</b> from diverse application areas for each challenge. Participants can provide a different decision-making code (algorithmic solution or trained ML model) for each of the benchmarks or a single code that works for all benchmarks.
 			</p>
 			<p>
 				A problem benchmark consists in a collection of
 				<b>mixed-integer linear program</b>
 				(MILP) instances in the standard
 				<a href="https://en.wikipedia.org/wiki/MPS_(format)">MPS file format</a>.
-				Each benchmark is
-				split into <b>a training and a test set</b>, which originate from
-				the same problem distribution. While the training instances
-				are	made public at the beginning of the competition for
-				participants to train their models, the test instances will
-				be kept hidden for evaluation purposes, and will
-				only be revealed at the end of the competition.
+				Each benchmark is split into <b>a training and a test set</b>, resulting from the same problem distribution. While the training instances
+				are made public at the beginning of the competition for participants to train their models. The test instances will be kept hidden for evaluation purposes and will only be revealed at the end of the competition.
 			</p>
 			<p>
 			The first two problem benchmarks are inspired by real-life
 			applications of large-scale systems at Google, while the third
-			benchmark is an anonymous problem inspired by a real-world
+			benchmark is an anonymous problem inspired by a real-world,
 			large-scale industrial application.
 			</p>
 			<dl class="description">
@@ -675,7 +620,7 @@
 					This problem deals with spreading items (e.g., files or
 					processes) across containers (e.g., disks or machines)
 					utilizing them <em>evenly</em>. Items can have multiple
-					copies, but at most one copy can be placed in a single
+					copies, but at most, one copy can be placed in a single
 					bin. The number of items that can be moved is
 					constrained, modeling the real-life situation of a
 					live system for which some placement already exists. Each
@@ -837,12 +782,7 @@
 				<dd>
 				<ol>
 					<li>
-						Participants are forbidden to interact with the SCIP
-						solver in any other way than the one intended, that
-						is, extracting information or providing a control
-						decision related to the task at hand. Any interaction
-						with SCIP that results in changes of the internal
-						state of the solver will be considered cheating.
+					  Participants are forbidden to interact with the SCIP solver in any other way than the one intended, that is, extracting information or providing a control decision related to the task at hand. Any interaction with SCIP that results in changes in the solver's internal state will be considered cheating.
 					</li>
 					<li>
 						Some datasets have been anonymized, as they
