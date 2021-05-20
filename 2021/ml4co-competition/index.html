@@ -192,15 +192,15 @@
 				<ul class="features">
 					<li>
 						<h3><a href="#primal-task" class="button">Primal task</a></h3>
-						<p>Produce feasible solutions, minimizing the <em>primal integral</em> over time.</p>
+						<p>Produce feasible solutions, in order to minimize the <em>primal integral</em> over time.</p>
 					</li>
 					<li>
 						<h3><a href="#dual-task" class="button">Dual task</a></h3>
-						<p>Select branching variables, minimizing dual the <em>dual integral</em> over time.</p>
+						<p>Select branching variables, in order to minimize dual the <em>dual integral</em> over time.</p>
 					</li>
 					<li>
 						<h3><a href="#config-task" class="button">Configuration task</a></h3>
-						<p>Choose the best solver parameters, minimizing the <em>primal-dual integral</em> over time.</p>
+						<p>Choose the best solver parameters, in order to minimize the <em>primal-dual integral</em> over time.</p>
 					</li>
 				</ul>
 				<p style="text-align: center;">
@@ -304,7 +304,7 @@
 				The dual task deals with obtaining tight optimality guarantees
 				(dual bounds) via branching. Making good <b>branching decisions</b>
 				is regarded as a critical component of modern branch-and-bound
-				solvers yet has received little theoretical understanding to
+				solvers, yet has received little theoretical understanding to
 				this day (see <a href="https://link.springer.com/article/10.1007%2Fs11750-017-0451-6">Lodi et al., 2017</a>).
 				In this task, the environment will run a full-fledged
 				branch-and-cut algorithm with SCIP, and the participants
@@ -465,7 +465,15 @@
 				expectation over a <b>hidden collection of test instances</b>.
 			</p>
 			<p>
-
+				Because our evaluation metrics are
+				time-dependent, all evaluations will be run on the same
+				hardware setup, including one CPU core and one GPU card,
+				which will be communicated at the start of the competition.
+				For practical reasons, for each task, a maximum <b>time
+				budget</b> of \(T=15\) minutes is given to process each test instance,
+				after which the environment necessarily terminates.
+				Participants should therefore focus on taking both
+				<b>good and fast decisions</b>.
 			</p>
 			<p>
 				In the following we consider instances of mixed-integer linear programs (MILPs)
@@ -633,11 +641,11 @@
 				<h2>Datasets</h2>
 			</header>
 			<p>
-				The participants will be
+				For each individual challenge, participants will be
 				evaluated on <b>three problem benchmarks</b> from diverse application
-				areas for each challenge. Participants can provide a different
+				areas. Participants can provide a different
 				decision-making code (algorithmic solution or trained
-				ML model) for each of the benchmarks or a single code that
+				ML model) for each of the benchmarks, or a single code that
 				works for all benchmarks.
 			</p>
 			<p>
@@ -646,11 +654,12 @@
 				(MILP) instances in the standard
 				<a href="https://en.wikipedia.org/wiki/MPS_(format)">MPS file format</a>.
 				Each benchmark is
-				split into <b>a training and a test set</b>, resulting from
+				split into <b>a training and a test set</b>, originating from
 				the same problem distribution. While the training instances
-				are	made public at the beginning of the competition for
-				participants to train their models. The test instances will
+				are made public at the beginning of the competition for
+				participants to train their models, the test instances will
 				be kept hidden for evaluation purposes and will
+				only be revealed at the end of the competition.
 			</p>
 			<p>
 			The first two problem benchmarks are inspired by real-life
