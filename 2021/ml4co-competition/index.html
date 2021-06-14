@@ -274,8 +274,8 @@
 					transition, the environment evaluates the given solution
 					candidate and updates the primal bound. Nothing else
 					happens. The solver remains in the <a href="https://www.scipopt.org/doc/html/type__set_8h.php#ac8ea6cabb843c57e1232f3132959e197">SOLVING</a>
-					stage until the episode terminates (15 minutes time
-					limit, or when the problem is solved).
+					stage until the episode terminates (time
+					limit reached, or when the problem is solved).
 				</dd>
 				<dt>
 					Action
@@ -288,6 +288,12 @@
 				</dt>
 				<dd>
 					Primal integral.
+				</dd>
+				<dt>
+					Time limit
+				</dt>
+				<dd>
+					\(T=5\) minutes.
 				</dd>
 				<dt>
 					Relevant literature:
@@ -351,8 +357,8 @@
 					branching decision, performs branching, and selects the
 					next open node to process.
 					The solver remains in the <a href="https://www.scipopt.org/doc/html/type__set_8h.php#ac8ea6cabb843c57e1232f3132959e197">SOLVING</a>
-					stage until the episode terminates (15 minutes time
-					limit, or when the problem is solved).
+					stage until the episode terminates (time
+					limit reached, or when the problem is solved).
 				</dd>
 				<dt>
 					Action
@@ -367,6 +373,12 @@
 				</dt>
 				<dd>
 					Dual integral.
+				</dd>
+				<dt>
+					Time limit
+				</dt>
+				<dd>
+					\(T=15\) minutes.
 				</dd>
 				<dt>
 					Relevant literature:
@@ -435,7 +447,7 @@
 					The solver loads a problem instance and immediately
 					stops. It then receives a parameterization, applies it,
 					and pursues with the solving process until it terminates
-					(15 minutes time limit, or when the problem is solved).
+					(time limit reached, or when the problem is solved).
 					During the first and only transition, the solver is in the
 					<a href="https://www.scipopt.org/doc/html/type__set_8h.php#ac8ea6cabb843c57e1232f3132959e197">PROBLEM</a>
 					stage. As such, participants will not be able to extract
@@ -454,6 +466,12 @@
 				</dt>
 				<dd>
 					Primal-dual gap integral.
+				</dd>
+				<dt>
+					Time limit
+				</dt>
+				<dd>
+					\(T=15\) minutes.
 				</dd>
 				<dt>
 					Relevant literature
@@ -493,7 +511,9 @@
 				hardware setup, including one CPU core and one GPU card,
 				which will be communicated at the start of the competition.
 				For practical reasons, for each task, a maximum <b>time
-				budget</b> of \(T=15\) minutes is given to process each test instance,
+				budget</b> \(T\) is given to process each test instance (5,
+				15 and 15 minutes respectively for the primal,
+				dual and configuration tasks),
 				after which the environment necessarily terminates.
 				Participants should therefore focus on taking both
 				<b>good and fast decisions</b>.
