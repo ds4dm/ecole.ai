@@ -260,9 +260,10 @@
 				feasible solutions.
 				To prevent SCIP from searching for primal solutions by itself,
 				all primal heuristics will be deactivated.
-				A feasible, trivial solution
-				will be provided to SCIP at the very beginning of the solving
-				process to compute the primal integral unambiguously.
+ 				In order to compute this metric unambiguously, even when no solution has been found yet,
+				we provide an initial primal bound (trivial solution value) for each instance, which is to be
+				given to SCIP at the beginning of the solving
+				process in the form of a user objective limit.
 			</p>
 			<dl class="description">
 				<dt>
@@ -342,10 +343,8 @@
 				which considers the speed at which the
 				<b>dual bound</b> increases over
 				time. Also, all primal heuristics will be
-				deactivated, and the optimal primal solution value will be
-				given to SCIP at the start of the solving process (as a
-				cutoff bound) so that the focus is only on proving
-				optimality via branching and not on finding feasible solutions.
+				deactivated, so that the focus is only on proving
+				optimality via branching.
 			</p>
 			<dl class="description">
 				<dt>
@@ -364,9 +363,9 @@
 					Action
 				</dt>
 				<dd>
-					Any non-empty subset of the current branching
-					candidates (non-fixed integer variables). Single-variable
-					and multi-variable branching is allowed.
+					One of the current node's branching
+					candidates (non-fixed integer variables). Only single-variable
+					branching is allowed.
 				</dd>
 				<dt>
 					Metric
@@ -431,13 +430,17 @@
 				than for the two previous ones since it involves only a single
 				decision for the agents (i.e., contextual bandit problem).
 				Participants are allowed to tune any of the existing parameters
-				of SCIP. They can choose between providing a fixed set of
+				of SCIP (except parameters regarding the computation of time).
+				They can choose between providing a fixed set of
 				parameters that work well on average for each problem
 				benchmark or producing instance-specific parameterizations
 				based on each instance's characteristics. The metric of
 				interest for this task is the <b>primal-dual gap</b> integral,
 				which combines both improvements from the dual and from the
-				primal side over time.
+				primal side over time. In order to compute this metric unambiguously,
+				even when no primal or dual bound exists,
+				we provide both an initial primal bound (trivial solution value) and
+				an initial dual bound (pre-computed root LP solution value) for each instance.
 			</p>
 			<dl class="description">
 				<dt>
@@ -516,7 +519,7 @@
 				dual and configuration tasks),
 				after which the environment necessarily terminates.
 				Participants should therefore focus on taking both
-				<b>good and fast decisions</b>.
+				<b>good</b> and <b>fast</b> decisions.
 			</p>
 			<p>
 				In the following we consider instances of mixed-integer linear programs (MILPs)
@@ -619,8 +622,8 @@
 							<em>
 								Note: in the context of branching, this metric is unambiguous to
 								compute, as the root node of the tree always provides an
-								initial dual bound \(\mathbf{z}^*_0\).
-								at the beginning of the solving process. Here again,
+								initial dual bound \(\mathbf{z}^*_0\)
+								at the beginning of branching. Here again,
 								the constant term \(\mathbf{c}^\top\mathbf{x}^\star\)
 								can be safely ignored for training,
 								but it will be incorporated (or a proper substitute)
@@ -697,12 +700,22 @@
 				(MILP) instances in the standard
 				<a href="https://en.wikipedia.org/wiki/MPS_(format)">MPS file format</a>.
 				Each benchmark is
-				split into <b>a training and a test set</b>, originating from
+				split into a <b>training</b> and a <b>test</b> set, originating from
 				the same problem distribution. While the training instances
 				are made public at the beginning of the competition for
 				participants to train their models, the test instances will
 				be kept hidden for evaluation purposes and will
 				only be revealed at the end of the competition.
+			</p>
+			<p>
+				<em>
+					Note: for each problem benchmark we suggest a pre-established split
+					of the training instances into two distinct collections: <b>train</b> and
+					<b>valid</b>. This is only a suggestion, and all instance files in both
+					those collections can be likely considered as training instances. There
+					is no restriction regarding how participants should use the provided
+					instances during training.
+				</em>
 			</p>
 			<p>
 			The first two problem benchmarks are inspired by real-life
@@ -724,7 +737,8 @@
 					live system for which some placement already exists. Each
 					problem instance is modeled as a MILP, using a
 					multi-dimensional multi-knapsack formulation. This
-					dataset contains 1000 training instances.
+					dataset contains 10000 training instances
+					(pre-split into 9900 train and 100 valid instances).
 				</dd>
 				<dt>
 					Problem benchmark 2: Workload Apportionment
@@ -735,8 +749,8 @@
 					possible. The apportionment is required to be robust to
 					any one worker's failure. Each instance problem is modeled
 					as a MILP, using a bin-packing with apportionment
-					formulation. This dataset contains 1000 training
-					instances.
+					formulation. This dataset contains 10000 training
+					instances (pre-split into 9900 train and 100 valid instances).
 				</dd>
 				<dt>
 					Problem benchmark 3: Anonymous Problem
@@ -748,7 +762,7 @@
 					Reverse-engineering for the purpose of recovering the
 					test set is explicitly forbidden
 					(see <a href="#rules">rules</a>). This dataset contains
-					100 training instances.
+					118 training instances (pre-split into 98 train and 20 valid instances).
 				</dd>
 			</dl>
 		</div>
