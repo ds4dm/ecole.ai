@@ -3,3 +3,26 @@ ul.papers li { padding: 0.2em 0; }
 ul.papers li:first-child { padding-top: 0; }
 dl.description dt { margin: 1em 0 0 0;}
 dl.description dt:first-child { margin: 0 0 0 0; }
+
+table {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+thead th {
+  text-align: center;
+  vertical-align: middle;
+}
+
+tbody th {
+  text-align: center;
+}
+
+tbody td {
+  text-align: right;
+}
+
+th, td {
+  padding: 20px;
+}
