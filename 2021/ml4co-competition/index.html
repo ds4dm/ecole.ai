@@ -995,7 +995,7 @@
 				<h2>Leaderboard</h2>
 			</header>
 			<p>
-				Last update: September 8th.
+				Last update: September 18th.
 			</p>
 			<p>
 				Note: for each challenge and each benchmark, we report two performance measures:
@@ -1025,507 +1025,586 @@
 			</p>
 			<div style="padding-top: 4em; border-top: solid 1px #dddddd;">
 				<h3>Global leaderboard</h3>
-				Primal task
-				<table>
-					<thead>
-					<tr>
-						<th rowspan="2">rank</th>
-						<th rowspan="2">team</th>
-						<th colspan="3">item_placement</th>
-						<th colspan="3">load_balancing</th>
-						<th colspan="3">anonymous</th>
-						<th rowspan="1">score</th>
-					</tr>
-					<tr>
-						<th>primal integral</th>
-						<th>(cum. reward)</th>
-						<th rowspan="1">rank</th>
-						<th>primal integral</th>
-						<th>(cum. reward)</th>
-						<th rowspan="1">rank</th>
-						<th>primal integral</th>
-						<th>(cum. reward)</th>
-						<th rowspan="1">rank</th>
-					</tr>
-					</thead>
-					<tbody>
-					<tr>
-						<th>1</th>
-						<th>Nuri</th>
-						<td>3960.64</td>
-						<td>(-7046.63)</td>
-						<td>1</td>
-						<td>9105.18</td>
-						<td>(-222847.68)</td>
-						<td>1</td>
-						<td>nan</td>
-						<td>(nan)</td>
-						<td>2</td>
-						<td>2</td>
-					</tr>
-					<tr>
-						<th>2</th>
-						<th>generaleyes</th>
-						<td>4155.32</td>
-						<td>(-7241.31)</td>
-						<td>2</td>
-						<td>9489.22</td>
-						<td>(-223231.72)</td>
-						<td>2</td>
-						<td>399093261.68</td>
-						<td>(-421414550.70)</td>
-						<td>1</td>
-						<td>4</td>
-					</tr>
-					<tr>
-						<th>3</th>
-						<th>LIM</th>
-						<td>11975.97</td>
-						<td>(-15061.96)</td>
-						<td>3</td>
-						<td>nan</td>
-						<td>(nan)</td>
-						<td>3</td>
-						<td>nan</td>
-						<td>(nan)</td>
-						<td>2</td>
-						<td>18</td>
-					</tr>
-					</tbody>
-				</table>
-				Dual task
-				<table>
-					<thead>
-					<tr>
-						<th rowspan="2">rank</th>
-						<th rowspan="2">team</th>
-						<th colspan="3">item_placement</th>
-						<th colspan="3">load_balancing</th>
-						<th colspan="3">anonymous</th>
-						<th rowspan="1">score</th>
-					</tr>
-					<tr>
-						<th>dual integral</th>
-						<th>(cum. reward)</th>
-						<th rowspan="1">rank</th>
-						<th>dual integral</th>
-						<th>(cum. reward)</th>
-						<th rowspan="1">rank</th>
-						<th>dual integral</th>
-						<th>(cum. reward)</th>
-						<th rowspan="1">rank</th>
-					</tr>
-					</thead>
-					<tbody>
-					<tr>
-						<th>1</th>
-						<th>uofx</th>
-						<td>4338.85</td>
-						<td>(4919.12)</td>
-						<td>1</td>
-						<td>6535.29</td>
-						<td>(634692.21)</td>
-						<td>8</td>
-						<td>6816979.25</td>
-						<td>(60146887.82)</td>
-						<td>2</td>
-						<td>16</td>
-					</tr>
-					<tr>
-						<th>2</th>
-						<th>Nuri</th>
-						<td>4972.53</td>
-						<td>(4285.44)</td>
-						<td>6</td>
-						<td>6041.83</td>
-						<td>(635185.67)</td>
-						<td>3</td>
-						<td>6781285.44</td>
-						<td>(60182581.62)</td>
-						<td>1</td>
-						<td>18</td>
-					</tr>
-					<tr>
-						<th>3</th>
-						<th>royce</th>
-						<td>4461.73</td>
-						<td>(4796.23)</td>
-						<td>2</td>
-						<td>5993.26</td>
-						<td>(635234.24)</td>
-						<td>2</td>
-						<td>8271632.01</td>
-						<td>(58692235.05)</td>
-						<td>7</td>
-						<td>28</td>
-					</tr>
-					<tr>
-						<th>4</th>
-						<th>lxj24</th>
-						<td>6357.95</td>
-						<td>(2900.02)</td>
-						<td>8</td>
-						<td>5779.61</td>
-						<td>(635447.89)</td>
-						<td>1</td>
-						<td>7356549.62</td>
-						<td>(59607317.44)</td>
-						<td>4</td>
-						<td>32</td>
-					</tr>
-					<tr>
-						<th>5</th>
-						<th>qqy</th>
-						<td>4500.81</td>
-						<td>(4757.16)</td>
-						<td>3</td>
-						<td>6297.92</td>
-						<td>(634929.58)</td>
-						<td>5</td>
-						<td>6984349.01</td>
-						<td>(59979518.05)</td>
-						<td>3</td>
-						<td>45</td>
-					</tr>
-					<tr>
-						<th>6</th>
-						<th>EI-OROAS</th>
-						<td>4539.60</td>
-						<td>(4718.37)</td>
-						<td>4</td>
-						<td>6160.49</td>
-						<td>(635067.01)</td>
-						<td>4</td>
-						<td>7510712.11</td>
-						<td>(59453154.96)</td>
-						<td>5</td>
-						<td>80</td>
-					</tr>
-					<tr>
-						<th>7</th>
-						<th>nf-lzg</th>
-						<td>5002.42</td>
-						<td>(4255.55)</td>
-						<td>7</td>
-						<td>6366.78</td>
-						<td>(634860.72)</td>
-						<td>6</td>
-						<td>7524731.62</td>
-						<td>(59439135.44)</td>
-						<td>6</td>
-						<td>252</td>
-					</tr>
-					<tr>
-						<th>8</th>
-						<th>Columbia_Combinators</th>
-						<td>4673.36</td>
-						<td>(4584.61)</td>
-						<td>5</td>
-						<td>6378.88</td>
-						<td>(634848.62)</td>
-						<td>7</td>
-						<td>nan</td>
-						<td>(nan)</td>
-						<td>8</td>
-						<td>280</td>
-					</tr>
-					</tbody>
-				</table>
-				Configuration task
-				<table>
-					<thead>
-					<tr>
-						<th rowspan="2">rank</th>
-						<th rowspan="2">team</th>
-						<th colspan="3">item_placement</th>
-						<th colspan="3">load_balancing</th>
-						<th colspan="3">anonymous</th>
-						<th rowspan="1">score</th>
-					</tr>
-					<tr>
-						<th>primal-dual integral</th>
-						<th>(cum. reward)</th>
-						<th rowspan="1">rank</th>
-						<th>primal-dual integral</th>
-						<th>(cum. reward)</th>
-						<th rowspan="1">rank</th>
-						<th>primal-dual integral</th>
-						<th>(cum. reward)</th>
-						<th rowspan="1">rank</th>
-					</tr>
-					</thead>
-					<tbody>
-					<tr>
-						<th>1</th>
-						<th>EI-OROAS</th>
-						<td>12067.39</td>
-						<td>(-12067.39)</td>
-						<td>1</td>
-						<td>10700.18</td>
-						<td>(-10700.18)</td>
-						<td>1</td>
-						<td>870618026.46</td>
-						<td>(-870618026.46)</td>
-						<td>3</td>
-						<td>3</td>
-					</tr>
-					<tr>
-						<th>2</th>
-						<th>ECNUNoah001</th>
-						<td>15652.37</td>
-						<td>(-15652.37)</td>
-						<td>2</td>
-						<td>21607.26</td>
-						<td>(-21607.26)</td>
-						<td>2</td>
-						<td>844122824.19</td>
-						<td>(-844122824.19)</td>
-						<td>2</td>
-						<td>8</td>
-					</tr>
-					<tr>
-						<th>3</th>
-						<th>MixedInspiringLamePuns</th>
-						<td>15804.51</td>
-						<td>(-15804.51)</td>
-						<td>3</td>
-						<td>21624.00</td>
-						<td>(-21624.00)</td>
-						<td>3</td>
-						<td>843368159.90</td>
-						<td>(-843368159.90)</td>
-						<td>1</td>
-						<td>9</td>
-					</tr>
-					<tr>
-						<th>4</th>
-						<th>Nuri</th>
-						<td>51903.00</td>
-						<td>(-51903.00)</td>
-						<td>4</td>
-						<td>170778.99</td>
-						<td>(-170778.99)</td>
-						<td>4</td>
-						<td>1664220175.12</td>
-						<td>(-1664220175.12)</td>
-						<td>4</td>
-						<td>64</td>
-					</tr>
-					</tbody>
-				</table>
-
-
-
 			</div>
+Primal task
+<table>
+	<thead>
+	<tr>
+		<th rowspan="2">rank</th>
+		<th rowspan="2">team</th>
+		<th colspan="3">item_placement</th>
+		<th colspan="3">load_balancing</th>
+		<th colspan="3">anonymous</th>
+		<th rowspan="1">score</th>
+	</tr>
+	<tr>
+		<th>primal integral</th>
+		<th>(cum. reward)</th>
+		<th rowspan="1">rank</th>
+		<th>primal integral</th>
+		<th>(cum. reward)</th>
+		<th rowspan="1">rank</th>
+		<th>primal integral</th>
+		<th>(cum. reward)</th>
+		<th rowspan="1">rank</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<th>1</th>
+		<th>Mr_Tree</th>
+		<td>3732.71</td>
+		<td>(-6818.70)</td>
+		<td>1</td>
+		<td>9170.42</td>
+		<td>(-222912.92)</td>
+		<td>1</td>
+		<td>292115828.78</td>
+		<td>(-314437117.80)</td>
+		<td>1</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<th>2</th>
+		<th>Nuri</th>
+		<td>3940.64</td>
+		<td>(-7026.63)</td>
+		<td>2</td>
+		<td>9375.34</td>
+		<td>(-223117.84)</td>
+		<td>2</td>
+		<td>393047222.36</td>
+		<td>(-415368511.38)</td>
+		<td>2</td>
+		<td>8</td>
+	</tr>
+	<tr>
+		<th>3</th>
+		<th>generaleyes</th>
+		<td>4155.32</td>
+		<td>(-7241.31)</td>
+		<td>3</td>
+		<td>9489.22</td>
+		<td>(-223231.72)</td>
+		<td>3</td>
+		<td>399093261.68</td>
+		<td>(-421414550.70)</td>
+		<td>3</td>
+		<td>27</td>
+	</tr>
+	<tr>
+		<th>4</th>
+		<th>EI-OROAS</th>
+		<td>10198.37</td>
+		<td>(-13284.36)</td>
+		<td>4</td>
+		<td>45437.66</td>
+		<td>(-259180.16)</td>
+		<td>4</td>
+		<td>1133597396.21</td>
+		<td>(-1155918685.23)</td>
+		<td>4</td>
+		<td>64</td>
+	</tr>
+	<tr>
+		<th>5</th>
+		<th>LIM</th>
+		<td>11975.97</td>
+		<td>(-15061.96)</td>
+		<td>5</td>
+		<td>nan</td>
+		<td>(nan)</td>
+		<td>5</td>
+		<td>nan</td>
+		<td>(nan)</td>
+		<td>5</td>
+		<td>125</td>
+	</tr>
+	</tbody>
+</table>
+Dual task
+<table>
+	<thead>
+	<tr>
+		<th rowspan="2">rank</th>
+		<th rowspan="2">team</th>
+		<th colspan="3">item_placement</th>
+		<th colspan="3">load_balancing</th>
+		<th colspan="3">anonymous</th>
+		<th rowspan="1">score</th>
+	</tr>
+	<tr>
+		<th>dual integral</th>
+		<th>(cum. reward)</th>
+		<th rowspan="1">rank</th>
+		<th>dual integral</th>
+		<th>(cum. reward)</th>
+		<th rowspan="1">rank</th>
+		<th>dual integral</th>
+		<th>(cum. reward)</th>
+		<th rowspan="1">rank</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<th>1</th>
+		<th>Nuri</th>
+		<td>4413.37</td>
+		<td>(4844.60)</td>
+		<td>3</td>
+		<td>5933.01</td>
+		<td>(635294.49)</td>
+		<td>4</td>
+		<td>6784222.14</td>
+		<td>(60179644.92)</td>
+		<td>1</td>
+		<td>12</td>
+	</tr>
+	<tr>
+		<th>2</th>
+		<th>uofx</th>
+		<td>3976.77</td>
+		<td>(5281.20)</td>
+		<td>1</td>
+		<td>6394.06</td>
+		<td>(634833.44)</td>
+		<td>9</td>
+		<td>6834176.99</td>
+		<td>(60129690.07)</td>
+		<td>2</td>
+		<td>18</td>
+	</tr>
+	<tr>
+		<th>3</th>
+		<th>qqy</th>
+		<td>5366.12</td>
+		<td>(3891.85)</td>
+		<td>9</td>
+		<td>5638.23</td>
+		<td>(635589.27)</td>
+		<td>1</td>
+		<td>7475634.27</td>
+		<td>(59488232.80)</td>
+		<td>5</td>
+		<td>45</td>
+	</tr>
+	<tr>
+		<th>4</th>
+		<th>EI-OROAS</th>
+		<td>5174.04</td>
+		<td>(4083.93)</td>
+		<td>8</td>
+		<td>5913.95</td>
+		<td>(635313.55)</td>
+		<td>3</td>
+		<td>7216577.84</td>
+		<td>(59747289.23)</td>
+		<td>3</td>
+		<td>72</td>
+	</tr>
+	<tr>
+		<th>5</th>
+		<th>lxj24</th>
+		<td>6357.95</td>
+		<td>(2900.02)</td>
+		<td>10</td>
+		<td>5779.61</td>
+		<td>(635447.89)</td>
+		<td>2</td>
+		<td>7356549.62</td>
+		<td>(59607317.44)</td>
+		<td>4</td>
+		<td>80</td>
+	</tr>
+	<tr>
+		<th>6</th>
+		<th>gentlemenML4CO</th>
+		<td>4102.47</td>
+		<td>(5155.50)</td>
+		<td>2</td>
+		<td>6120.77</td>
+		<td>(635106.73)</td>
+		<td>6</td>
+		<td>7870071.64</td>
+		<td>(59093795.43)</td>
+		<td>7</td>
+		<td>84</td>
+	</tr>
+	<tr>
+		<th>7</th>
+		<th>royce</th>
+		<td>4461.73</td>
+		<td>(4796.23)</td>
+		<td>4</td>
+		<td>5993.26</td>
+		<td>(635234.24)</td>
+		<td>5</td>
+		<td>8271632.01</td>
+		<td>(58692235.05)</td>
+		<td>9</td>
+		<td>180</td>
+	</tr>
+	<tr>
+		<th>8</th>
+		<th>nf-lzg</th>
+		<td>5002.42</td>
+		<td>(4255.55)</td>
+		<td>7</td>
+		<td>6366.78</td>
+		<td>(634860.72)</td>
+		<td>7</td>
+		<td>7524731.62</td>
+		<td>(59439135.44)</td>
+		<td>6</td>
+		<td>294</td>
+	</tr>
+	<tr>
+		<th>9</th>
+		<th>Columbia_Combinators</th>
+		<td>4673.36</td>
+		<td>(4584.61)</td>
+		<td>5</td>
+		<td>6378.88</td>
+		<td>(634848.62)</td>
+		<td>8</td>
+		<td>nan</td>
+		<td>(nan)</td>
+		<td>10</td>
+		<td>400</td>
+	</tr>
+	<tr>
+		<th>10</th>
+		<th>ark</th>
+		<td>5001.61</td>
+		<td>(4256.36)</td>
+		<td>6</td>
+		<td>7489.33</td>
+		<td>(633738.17)</td>
+		<td>10</td>
+		<td>8038141.70</td>
+		<td>(58925725.36)</td>
+		<td>8</td>
+		<td>480</td>
+	</tr>
+	</tbody>
+</table>
+Configuration task
+<table>
+	<thead>
+	<tr>
+		<th rowspan="2">rank</th>
+		<th rowspan="2">team</th>
+		<th colspan="3">item_placement</th>
+		<th colspan="3">load_balancing</th>
+		<th colspan="3">anonymous</th>
+		<th rowspan="1">score</th>
+	</tr>
+	<tr>
+		<th>primal-dual integral</th>
+		<th>(cum. reward)</th>
+		<th rowspan="1">rank</th>
+		<th>primal-dual integral</th>
+		<th>(cum. reward)</th>
+		<th rowspan="1">rank</th>
+		<th>primal-dual integral</th>
+		<th>(cum. reward)</th>
+		<th rowspan="1">rank</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<th>1</th>
+		<th>EI-OROAS</th>
+		<td>9802.61</td>
+		<td>(-9802.61)</td>
+		<td>1</td>
+		<td>11044.28</td>
+		<td>(-11044.28)</td>
+		<td>1</td>
+		<td>768366817.90</td>
+		<td>(-768366817.90)</td>
+		<td>1</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<th>2</th>
+		<th>ECNUNoah001</th>
+		<td>13867.23</td>
+		<td>(-13867.23)</td>
+		<td>2</td>
+		<td>21015.18</td>
+		<td>(-21015.18)</td>
+		<td>2</td>
+		<td>nan</td>
+		<td>(nan)</td>
+		<td>4</td>
+		<td>16</td>
+	</tr>
+	<tr>
+		<th>3</th>
+		<th>MixedInspiringLamePuns</th>
+		<td>15804.51</td>
+		<td>(-15804.51)</td>
+		<td>4</td>
+		<td>21624.00</td>
+		<td>(-21624.00)</td>
+		<td>3</td>
+		<td>843368159.90</td>
+		<td>(-843368159.90)</td>
+		<td>2</td>
+		<td>24</td>
+	</tr>
+	<tr>
+		<th>4</th>
+		<th>royce</th>
+		<td>14534.74</td>
+		<td>(-14534.74)</td>
+		<td>3</td>
+		<td>22578.84</td>
+		<td>(-22578.84)</td>
+		<td>4</td>
+		<td>nan</td>
+		<td>(nan)</td>
+		<td>4</td>
+		<td>48</td>
+	</tr>
+	<tr>
+		<th>5</th>
+		<th>Nuri</th>
+		<td>52347.42</td>
+		<td>(-52347.42)</td>
+		<td>5</td>
+		<td>170775.65</td>
+		<td>(-170775.65)</td>
+		<td>5</td>
+		<td>1664221875.14</td>
+		<td>(-1664221875.14)</td>
+		<td>3</td>
+		<td>75</td>
+	</tr>
+	</tbody>
+</table>
+
 			<div style="padding-top: 4em; border-top: solid 1px #dddddd;">
 				<h3>Student leaderboard</h3>
-				Primal task
-				<table>
-					<thead>
-					<tr>
-						<th rowspan="2">rank</th>
-						<th rowspan="2">team</th>
-						<th colspan="3">item_placement</th>
-						<th colspan="3">load_balancing</th>
-						<th colspan="3">anonymous</th>
-						<th rowspan="1">score</th>
-					</tr>
-					<tr>
-						<th>primal integral</th>
-						<th>(cum. reward)</th>
-						<th rowspan="1">rank</th>
-						<th>primal integral</th>
-						<th>(cum. reward)</th>
-						<th rowspan="1">rank</th>
-						<th>primal integral</th>
-						<th>(cum. reward)</th>
-						<th rowspan="1">rank</th>
-					</tr>
-					</thead>
-					<tbody>
-					<tr>
-						<th>1</th>
-						<th>Nuri</th>
-						<td>3960.64</td>
-						<td>(-7046.63)</td>
-						<td>1</td>
-						<td>9105.18</td>
-						<td>(-222847.68)</td>
-						<td>1</td>
-						<td>nan</td>
-						<td>(nan)</td>
-						<td>1</td>
-						<td>1</td>
-					</tr>
-					<tr>
-						<th>2</th>
-						<th>LIM</th>
-						<td>11975.97</td>
-						<td>(-15061.96)</td>
-						<td>2</td>
-						<td>nan</td>
-						<td>(nan)</td>
-						<td>2</td>
-						<td>nan</td>
-						<td>(nan)</td>
-						<td>1</td>
-						<td>4</td>
-					</tr>
-					</tbody>
-				</table>
-				Dual task
-				<table>
-					<thead>
-					<tr>
-						<th rowspan="2">rank</th>
-						<th rowspan="2">team</th>
-						<th colspan="3">item_placement</th>
-						<th colspan="3">load_balancing</th>
-						<th colspan="3">anonymous</th>
-						<th rowspan="1">score</th>
-					</tr>
-					<tr>
-						<th>dual integral</th>
-						<th>(cum. reward)</th>
-						<th rowspan="1">rank</th>
-						<th>dual integral</th>
-						<th>(cum. reward)</th>
-						<th rowspan="1">rank</th>
-						<th>dual integral</th>
-						<th>(cum. reward)</th>
-						<th rowspan="1">rank</th>
-					</tr>
-					</thead>
-					<tbody>
-					<tr>
-						<th>1</th>
-						<th>qqy</th>
-						<td>4500.81</td>
-						<td>(4757.16)</td>
-						<td>1</td>
-						<td>6297.92</td>
-						<td>(634929.58)</td>
-						<td>3</td>
-						<td>6984349.01</td>
-						<td>(59979518.05)</td>
-						<td>2</td>
-						<td>6</td>
-					</tr>
-					<tr>
-						<th>2</th>
-						<th>Nuri</th>
-						<td>4972.53</td>
-						<td>(4285.44)</td>
-						<td>3</td>
-						<td>6041.83</td>
-						<td>(635185.67)</td>
-						<td>2</td>
-						<td>6781285.44</td>
-						<td>(60182581.62)</td>
-						<td>1</td>
-						<td>6</td>
-					</tr>
-					<tr>
-						<th>3</th>
-						<th>lxj24</th>
-						<td>6357.95</td>
-						<td>(2900.02)</td>
-						<td>5</td>
-						<td>5779.61</td>
-						<td>(635447.89)</td>
-						<td>1</td>
-						<td>7356549.62</td>
-						<td>(59607317.44)</td>
-						<td>3</td>
-						<td>15</td>
-					</tr>
-					<tr>
-						<th>4</th>
-						<th>Columbia_Combinators</th>
-						<td>4673.36</td>
-						<td>(4584.61)</td>
-						<td>2</td>
-						<td>6378.88</td>
-						<td>(634848.62)</td>
-						<td>5</td>
-						<td>nan</td>
-						<td>(nan)</td>
-						<td>5</td>
-						<td>50</td>
-					</tr>
-					<tr>
-						<th>5</th>
-						<th>nf-lzg</th>
-						<td>5002.42</td>
-						<td>(4255.55)</td>
-						<td>4</td>
-						<td>6366.78</td>
-						<td>(634860.72)</td>
-						<td>4</td>
-						<td>7524731.62</td>
-						<td>(59439135.44)</td>
-						<td>4</td>
-						<td>64</td>
-					</tr>
-					</tbody>
-				</table>
-				Configuration task
-				<table>
-					<thead>
-					<tr>
-						<th rowspan="2">rank</th>
-						<th rowspan="2">team</th>
-						<th colspan="3">item_placement</th>
-						<th colspan="3">load_balancing</th>
-						<th colspan="3">anonymous</th>
-						<th rowspan="1">score</th>
-					</tr>
-					<tr>
-						<th>primal-dual integral</th>
-						<th>(cum. reward)</th>
-						<th rowspan="1">rank</th>
-						<th>primal-dual integral</th>
-						<th>(cum. reward)</th>
-						<th rowspan="1">rank</th>
-						<th>primal-dual integral</th>
-						<th>(cum. reward)</th>
-						<th rowspan="1">rank</th>
-					</tr>
-					</thead>
-					<tbody>
-					<tr>
-						<th>1</th>
-						<th>MixedInspiringLamePuns</th>
-						<td>15804.51</td>
-						<td>(-15804.51)</td>
-						<td>1</td>
-						<td>21624.00</td>
-						<td>(-21624.00)</td>
-						<td>1</td>
-						<td>843368159.90</td>
-						<td>(-843368159.90)</td>
-						<td>1</td>
-						<td>1</td>
-					</tr>
-					<tr>
-						<th>2</th>
-						<th>Nuri</th>
-						<td>51903.00</td>
-						<td>(-51903.00)</td>
-						<td>2</td>
-						<td>170778.99</td>
-						<td>(-170778.99)</td>
-						<td>2</td>
-						<td>1664220175.12</td>
-						<td>(-1664220175.12)</td>
-						<td>2</td>
-						<td>8</td>
-					</tr>
-					</tbody>
-				</table>
-
-
-
+Primal task
+<table>
+	<thead>
+	<tr>
+		<th rowspan="2">rank</th>
+		<th rowspan="2">team</th>
+		<th colspan="3">item_placement</th>
+		<th colspan="3">load_balancing</th>
+		<th colspan="3">anonymous</th>
+		<th rowspan="1">score</th>
+	</tr>
+	<tr>
+		<th>primal integral</th>
+		<th>(cum. reward)</th>
+		<th rowspan="1">rank</th>
+		<th>primal integral</th>
+		<th>(cum. reward)</th>
+		<th rowspan="1">rank</th>
+		<th>primal integral</th>
+		<th>(cum. reward)</th>
+		<th rowspan="1">rank</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<th>1</th>
+		<th>Nuri</th>
+		<td>3940.64</td>
+		<td>(-7026.63)</td>
+		<td>1</td>
+		<td>9375.34</td>
+		<td>(-223117.84)</td>
+		<td>1</td>
+		<td>393047222.36</td>
+		<td>(-415368511.38)</td>
+		<td>1</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<th>2</th>
+		<th>LIM</th>
+		<td>11975.97</td>
+		<td>(-15061.96)</td>
+		<td>2</td>
+		<td>nan</td>
+		<td>(nan)</td>
+		<td>2</td>
+		<td>nan</td>
+		<td>(nan)</td>
+		<td>2</td>
+		<td>8</td>
+	</tr>
+	</tbody>
+</table>
+Dual task
+<table>
+	<thead>
+	<tr>
+		<th rowspan="2">rank</th>
+		<th rowspan="2">team</th>
+		<th colspan="3">item_placement</th>
+		<th colspan="3">load_balancing</th>
+		<th colspan="3">anonymous</th>
+		<th rowspan="1">score</th>
+	</tr>
+	<tr>
+		<th>dual integral</th>
+		<th>(cum. reward)</th>
+		<th rowspan="1">rank</th>
+		<th>dual integral</th>
+		<th>(cum. reward)</th>
+		<th rowspan="1">rank</th>
+		<th>dual integral</th>
+		<th>(cum. reward)</th>
+		<th rowspan="1">rank</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<th>1</th>
+		<th>Nuri</th>
+		<td>4413.37</td>
+		<td>(4844.60)</td>
+		<td>1</td>
+		<td>5933.01</td>
+		<td>(635294.49)</td>
+		<td>3</td>
+		<td>6784222.14</td>
+		<td>(60179644.92)</td>
+		<td>1</td>
+		<td>3</td>
+	</tr>
+	<tr>
+		<th>2</th>
+		<th>qqy</th>
+		<td>5366.12</td>
+		<td>(3891.85)</td>
+		<td>5</td>
+		<td>5638.23</td>
+		<td>(635589.27)</td>
+		<td>1</td>
+		<td>7475634.27</td>
+		<td>(59488232.80)</td>
+		<td>3</td>
+		<td>15</td>
+	</tr>
+	<tr>
+		<th>3</th>
+		<th>lxj24</th>
+		<td>6357.95</td>
+		<td>(2900.02)</td>
+		<td>6</td>
+		<td>5779.61</td>
+		<td>(635447.89)</td>
+		<td>2</td>
+		<td>7356549.62</td>
+		<td>(59607317.44)</td>
+		<td>2</td>
+		<td>24</td>
+	</tr>
+	<tr>
+		<th>4</th>
+		<th>Columbia_Combinators</th>
+		<td>4673.36</td>
+		<td>(4584.61)</td>
+		<td>2</td>
+		<td>6378.88</td>
+		<td>(634848.62)</td>
+		<td>5</td>
+		<td>nan</td>
+		<td>(nan)</td>
+		<td>6</td>
+		<td>60</td>
+	</tr>
+	<tr>
+		<th>5</th>
+		<th>nf-lzg</th>
+		<td>5002.42</td>
+		<td>(4255.55)</td>
+		<td>4</td>
+		<td>6366.78</td>
+		<td>(634860.72)</td>
+		<td>4</td>
+		<td>7524731.62</td>
+		<td>(59439135.44)</td>
+		<td>4</td>
+		<td>64</td>
+	</tr>
+	<tr>
+		<th>6</th>
+		<th>ark</th>
+		<td>5001.61</td>
+		<td>(4256.36)</td>
+		<td>3</td>
+		<td>7489.33</td>
+		<td>(633738.17)</td>
+		<td>6</td>
+		<td>8038141.70</td>
+		<td>(58925725.36)</td>
+		<td>5</td>
+		<td>90</td>
+	</tr>
+	</tbody>
+</table>
+Configuration task
+<table>
+	<thead>
+	<tr>
+		<th rowspan="2">rank</th>
+		<th rowspan="2">team</th>
+		<th colspan="3">item_placement</th>
+		<th colspan="3">load_balancing</th>
+		<th colspan="3">anonymous</th>
+		<th rowspan="1">score</th>
+	</tr>
+	<tr>
+		<th>primal-dual integral</th>
+		<th>(cum. reward)</th>
+		<th rowspan="1">rank</th>
+		<th>primal-dual integral</th>
+		<th>(cum. reward)</th>
+		<th rowspan="1">rank</th>
+		<th>primal-dual integral</th>
+		<th>(cum. reward)</th>
+		<th rowspan="1">rank</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<th>1</th>
+		<th>MixedInspiringLamePuns</th>
+		<td>15804.51</td>
+		<td>(-15804.51)</td>
+		<td>1</td>
+		<td>21624.00</td>
+		<td>(-21624.00)</td>
+		<td>1</td>
+		<td>843368159.90</td>
+		<td>(-843368159.90)</td>
+		<td>1</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<th>2</th>
+		<th>Nuri</th>
+		<td>52347.42</td>
+		<td>(-52347.42)</td>
+		<td>2</td>
+		<td>170775.65</td>
+		<td>(-170775.65)</td>
+		<td>2</td>
+		<td>1664221875.14</td>
+		<td>(-1664221875.14)</td>
+		<td>2</td>
+		<td>8</td>
+	</tr>
+	</tbody>
+</table>
 
 			</div>
 		</div>
