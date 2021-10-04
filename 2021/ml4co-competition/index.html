@@ -74,16 +74,12 @@
 <!-- Main -->
 <div id="main">
 
-
-	<section class="main">
+	<section class="main" style="border-top: 0;">
 		<div class="spotlight">
 			<div class="content" style="width: 100%; text-align: center;">
 				<img style="border: 0; border-radius: 0; width: 20em; margin: auto;" src="images/ml4co-final.png" alt="ML4CO Competition logo"/>
 			</div>
 		</div>
-	</section>
-
-	<section class="main" style="border-top: 0;">
 		<div class="spotlight">
 			<div class="content">
 				<header class="major">
@@ -1002,7 +998,7 @@
 				<h2>Leaderboard</h2>
 			</header>
 			<p>
-				Last update: September 28th.
+				Last update: October 3rd.
 			</p>
 			<p>
 				Note: for each challenge and each benchmark, we report two performance measures:
@@ -1032,7 +1028,6 @@
 			</p>
 			<div style="padding-top: 4em; border-top: solid 1px #dddddd;">
 				<h3>Global leaderboard</h3>
-			</div>
 Primal task
 <table>
 	<thead>
@@ -1042,7 +1037,7 @@ Primal task
 		<th colspan="3">item_placement</th>
 		<th colspan="3">load_balancing</th>
 		<th colspan="3">anonymous</th>
-		<th rowspan="1">score</th>
+		<th rowspan="2">score</th>
 	</tr>
 	<tr>
 		<th>primal integral</th>
@@ -1059,115 +1054,129 @@ Primal task
 	<tbody>
 	<tr>
 		<th>1</th>
-		<th>generaleyes</th>
-		<td>3931.26</td>
-		<td>(-7017.25)</td>
-		<td>4</td>
-		<td>7629.80</td>
-		<td>(-221372.30)</td>
+		<th>EI-OROAS</th>
+		<td>3374.42</td>
+		<td>(-6460.41)</td>
 		<td>1</td>
-		<td>392292059.66</td>
-		<td>(-414613348.68)</td>
-		<td>2</td>
-		<td>8</td>
+		<td>8760.60</td>
+		<td>(-222503.10)</td>
+		<td>3</td>
+		<td>393044971.69</td>
+		<td>(-415366260.71)</td>
+		<td>4</td>
+		<td>12</td>
 	</tr>
 	<tr>
 		<th>2</th>
-		<th>Mr_Tree</th>
-		<td>3732.71</td>
-		<td>(-6818.70)</td>
+		<th>generaleyes</th>
+		<td>3931.26</td>
+		<td>(-7017.25)</td>
+		<td>5</td>
+		<td>7629.80</td>
+		<td>(-221372.30)</td>
 		<td>2</td>
-		<td>9170.42</td>
-		<td>(-222912.92)</td>
-		<td>4</td>
-		<td>292115828.78</td>
-		<td>(-314437117.80)</td>
-		<td>1</td>
-		<td>8</td>
+		<td>392292059.66</td>
+		<td>(-414613348.68)</td>
+		<td>2</td>
+		<td>20</td>
 	</tr>
 	<tr>
 		<th>3</th>
-		<th>Nuri</th>
-		<td>4006.03</td>
-		<td>(-7092.02)</td>
-		<td>5</td>
-		<td>8947.16</td>
-		<td>(-222689.66)</td>
-		<td>2</td>
-		<td>392757636.47</td>
-		<td>(-415078925.49)</td>
+		<th>Mr_Tree</th>
+		<td>3732.71</td>
+		<td>(-6818.70)</td>
 		<td>3</td>
-		<td>30</td>
+		<td>9170.42</td>
+		<td>(-222912.92)</td>
+		<td>8</td>
+		<td>292115828.78</td>
+		<td>(-314437117.80)</td>
+		<td>1</td>
+		<td>24</td>
 	</tr>
 	<tr>
 		<th>4</th>
-		<th>CUHKSZ_ATD</th>
-		<td>3505.09</td>
-		<td>(-6591.08)</td>
+		<th>LIM</th>
+		<td>4086.11</td>
+		<td>(-7172.10)</td>
+		<td>8</td>
+		<td>5648.22</td>
+		<td>(-219390.72)</td>
 		<td>1</td>
-		<td>12179.33</td>
-		<td>(-225921.83)</td>
+		<td>402823419.68</td>
+		<td>(-425144708.70)</td>
 		<td>5</td>
-		<td>nan</td>
-		<td>(nan)</td>
-		<td>6</td>
-		<td>30</td>
+		<td>40</td>
 	</tr>
 	<tr>
 		<th>5</th>
-		<th>dt</th>
-		<td>3928.18</td>
-		<td>(-7014.17)</td>
-		<td>3</td>
-		<td>8968.14</td>
-		<td>(-222710.64)</td>
-		<td>3</td>
-		<td>nan</td>
-		<td>(nan)</td>
+		<th>Nuri</th>
+		<td>4006.03</td>
+		<td>(-7092.02)</td>
+		<td>7</td>
+		<td>8947.16</td>
+		<td>(-222689.66)</td>
 		<td>6</td>
-		<td>54</td>
+		<td>392757636.47</td>
+		<td>(-415078925.49)</td>
+		<td>3</td>
+		<td>126</td>
 	</tr>
 	<tr>
 		<th>6</th>
-		<th>EI-OROAS</th>
-		<td>10198.37</td>
-		<td>(-13284.36)</td>
-		<td>6</td>
-		<td>45437.66</td>
-		<td>(-259180.16)</td>
-		<td>6</td>
-		<td>1133597396.21</td>
-		<td>(-1155918685.23)</td>
-		<td>4</td>
+		<th>CUHKSZ_ATD</th>
+		<td>3505.09</td>
+		<td>(-6591.08)</td>
+		<td>2</td>
+		<td>12179.33</td>
+		<td>(-225921.83)</td>
+		<td>9</td>
+		<td>nan</td>
+		<td>(nan)</td>
+		<td>8</td>
 		<td>144</td>
 	</tr>
 	<tr>
 		<th>7</th>
-		<th>LIM</th>
-		<td>nan</td>
-		<td>(nan)</td>
-		<td>7</td>
-		<td>nan</td>
-		<td>(nan)</td>
-		<td>7</td>
-		<td>nan</td>
-		<td>(nan)</td>
+		<th>MILPandCookies</th>
+		<td>115302.18</td>
+		<td>(-118388.16)</td>
+		<td>9</td>
+		<td>8859.14</td>
+		<td>(-222601.64)</td>
+		<td>4</td>
+		<td>552129048.90</td>
+		<td>(-574450337.92)</td>
 		<td>6</td>
-		<td>294</td>
+		<td>216</td>
 	</tr>
 	<tr>
 		<th>8</th>
+		<th>dt</th>
+		<td>3928.18</td>
+		<td>(-7014.17)</td>
+		<td>4</td>
+		<td>8968.14</td>
+		<td>(-222710.64)</td>
+		<td>7</td>
+		<td>nan</td>
+		<td>(nan)</td>
+		<td>8</td>
+		<td>224</td>
+	</tr>
+	<tr>
+		<th>9</th>
 		<th>ethz-scuba</th>
-		<td>nan</td>
-		<td>(nan)</td>
-		<td>7</td>
-		<td>nan</td>
-		<td>(nan)</td>
-		<td>7</td>
-		<td>nan</td>
-		<td>(nan)</td>
+		<td>3999.04</td>
+		<td>(-7085.03)</td>
 		<td>6</td>
-		<td>294</td>
+		<td>8865.19</td>
+		<td>(-222607.69)</td>
+		<td>5</td>
+		<td>nan</td>
+		<td>(nan)</td>
+		<td>8</td>
+		<td>240</td>
 	</tr>
 	</tbody>
 </table>
@@ -1180,7 +1189,7 @@ Dual task
 		<th colspan="3">item_placement</th>
 		<th colspan="3">load_balancing</th>
 		<th colspan="3">anonymous</th>
-		<th rowspan="1">score</th>
+		<th rowspan="2">score</th>
 	</tr>
 	<tr>
 		<th>dual integral</th>
@@ -1197,143 +1206,157 @@ Dual task
 	<tbody>
 	<tr>
 		<th>1</th>
-		<th>uofx</th>
-		<td>2915.49</td>
-		<td>(6342.48)</td>
+		<th>EI-OROAS</th>
+		<td>2848.69</td>
+		<td>(6409.27)</td>
 		<td>1</td>
-		<td>6202.41</td>
-		<td>(635025.09)</td>
-		<td>6</td>
-		<td>6671189.63</td>
-		<td>(60292677.43)</td>
+		<td>4986.18</td>
+		<td>(636241.32)</td>
 		<td>1</td>
-		<td>6</td>
+		<td>6666709.33</td>
+		<td>(60297157.74)</td>
+		<td>1</td>
+		<td>1</td>
 	</tr>
 	<tr>
 		<th>2</th>
 		<th>Nuri</th>
 		<td>4098.88</td>
 		<td>(5159.09)</td>
-		<td>3</td>
+		<td>5</td>
 		<td>5675.69</td>
 		<td>(635551.81)</td>
 		<td>2</td>
 		<td>6786985.80</td>
 		<td>(60176881.27)</td>
 		<td>2</td>
-		<td>12</td>
+		<td>20</td>
 	</tr>
 	<tr>
 		<th>3</th>
-		<th>EI-OROAS</th>
-		<td>3612.42</td>
-		<td>(5645.55)</td>
-		<td>2</td>
-		<td>5976.67</td>
-		<td>(635250.83)</td>
-		<td>4</td>
-		<td>7175390.80</td>
-		<td>(59788476.26)</td>
+		<th>lxj24</th>
+		<td>3977.93</td>
+		<td>(5280.03)</td>
 		<td>3</td>
-		<td>24</td>
+		<td>6156.28</td>
+		<td>(635071.22)</td>
+		<td>4</td>
+		<td>7460203.85</td>
+		<td>(59503663.22)</td>
+		<td>4</td>
+		<td>48</td>
 	</tr>
 	<tr>
 		<th>4</th>
 		<th>qqy</th>
-		<td>5366.12</td>
-		<td>(3891.85)</td>
+		<td>3882.78</td>
+		<td>(5375.19)</td>
+		<td>2</td>
+		<td>6898.21</td>
+		<td>(634329.29)</td>
 		<td>9</td>
-		<td>5638.23</td>
-		<td>(635589.27)</td>
-		<td>1</td>
-		<td>7475634.27</td>
-		<td>(59488232.80)</td>
-		<td>5</td>
-		<td>45</td>
+		<td>7535266.83</td>
+		<td>(59428600.23)</td>
+		<td>6</td>
+		<td>108</td>
 	</tr>
 	<tr>
 		<th>5</th>
-		<th>lxj24</th>
-		<td>6357.95</td>
-		<td>(2900.02)</td>
-		<td>10</td>
-		<td>5779.61</td>
-		<td>(635447.89)</td>
-		<td>3</td>
-		<td>7356549.62</td>
-		<td>(59607317.44)</td>
-		<td>4</td>
-		<td>120</td>
-	</tr>
-	<tr>
-		<th>6</th>
 		<th>gentlemenML4CO</th>
 		<td>4102.47</td>
 		<td>(5155.50)</td>
-		<td>4</td>
+		<td>6</td>
 		<td>6120.77</td>
 		<td>(635106.73)</td>
-		<td>5</td>
+		<td>3</td>
 		<td>7870071.64</td>
 		<td>(59093795.43)</td>
+		<td>8</td>
+		<td>144</td>
+	</tr>
+	<tr>
+		<th>6</th>
+		<th>Columbia_Combinators</th>
+		<td>4807.43</td>
+		<td>(4450.54)</td>
+		<td>8</td>
+		<td>6520.23</td>
+		<td>(634707.27)</td>
 		<td>7</td>
-		<td>140</td>
+		<td>7123239.10</td>
+		<td>(59840627.96)</td>
+		<td>3</td>
+		<td>168</td>
 	</tr>
 	<tr>
 		<th>7</th>
 		<th>nf-lzg</th>
 		<td>5002.42</td>
 		<td>(4255.55)</td>
-		<td>8</td>
+		<td>11</td>
 		<td>6366.78</td>
 		<td>(634860.72)</td>
-		<td>7</td>
+		<td>5</td>
 		<td>7524731.62</td>
 		<td>(59439135.44)</td>
-		<td>6</td>
-		<td>336</td>
+		<td>5</td>
+		<td>275</td>
 	</tr>
 	<tr>
 		<th>8</th>
-		<th>Columbia_Combinators</th>
-		<td>4673.36</td>
-		<td>(4584.61)</td>
-		<td>5</td>
-		<td>6378.88</td>
-		<td>(634848.62)</td>
-		<td>8</td>
-		<td>nan</td>
-		<td>(nan)</td>
-		<td>10</td>
-		<td>400</td>
-	</tr>
-	<tr>
-		<th>9</th>
 		<th>royce</th>
 		<td>4750.45</td>
 		<td>(4507.52)</td>
-		<td>6</td>
+		<td>7</td>
 		<td>6390.03</td>
 		<td>(634837.47)</td>
-		<td>9</td>
+		<td>6</td>
 		<td>8027218.99</td>
 		<td>(58936648.07)</td>
-		<td>8</td>
-		<td>432</td>
+		<td>9</td>
+		<td>378</td>
+	</tr>
+	<tr>
+		<th>9</th>
+		<th>KAIST_OSI</th>
+		<td>4075.10</td>
+		<td>(5182.86)</td>
+		<td>4</td>
+		<td>nan</td>
+		<td>(nan)</td>
+		<td>11</td>
+		<td>nan</td>
+		<td>(nan)</td>
+		<td>11</td>
+		<td>484</td>
 	</tr>
 	<tr>
 		<th>10</th>
+		<th>uofx</th>
+		<td>4853.54</td>
+		<td>(4404.43)</td>
+		<td>9</td>
+		<td>6641.06</td>
+		<td>(634586.44)</td>
+		<td>8</td>
+		<td>7584830.04</td>
+		<td>(59379037.03)</td>
+		<td>7</td>
+		<td>504</td>
+	</tr>
+	<tr>
+		<th>11</th>
 		<th>ark</th>
 		<td>5001.61</td>
 		<td>(4256.36)</td>
-		<td>7</td>
+		<td>10</td>
 		<td>7489.33</td>
 		<td>(633738.17)</td>
 		<td>10</td>
 		<td>8038141.70</td>
 		<td>(58925725.36)</td>
-		<td>9</td>
-		<td>630</td>
+		<td>10</td>
+		<td>1000</td>
 	</tr>
 	</tbody>
 </table>
@@ -1346,7 +1369,7 @@ Configuration task
 		<th colspan="3">item_placement</th>
 		<th colspan="3">load_balancing</th>
 		<th colspan="3">anonymous</th>
-		<th rowspan="1">score</th>
+		<th rowspan="2">score</th>
 	</tr>
 	<tr>
 		<th>primal-dual integral</th>
@@ -1370,27 +1393,13 @@ Configuration task
 		<td>10369.50</td>
 		<td>(-10369.50)</td>
 		<td>1</td>
-		<td>nan</td>
-		<td>(nan)</td>
-		<td>4</td>
-		<td>4</td>
+		<td>720226231.19</td>
+		<td>(-720226231.19)</td>
+		<td>1</td>
+		<td>1</td>
 	</tr>
 	<tr>
 		<th>2</th>
-		<th>MixedInspiringLamePuns</th>
-		<td>15804.51</td>
-		<td>(-15804.51)</td>
-		<td>4</td>
-		<td>21624.00</td>
-		<td>(-21624.00)</td>
-		<td>3</td>
-		<td>843368159.90</td>
-		<td>(-843368159.90)</td>
-		<td>1</td>
-		<td>12</td>
-	</tr>
-	<tr>
-		<th>3</th>
 		<th>ECNUNoah001</th>
 		<td>13867.23</td>
 		<td>(-13867.23)</td>
@@ -1398,10 +1407,24 @@ Configuration task
 		<td>21015.18</td>
 		<td>(-21015.18)</td>
 		<td>2</td>
-		<td>nan</td>
-		<td>(nan)</td>
+		<td>963764632.19</td>
+		<td>(-963764632.19)</td>
+		<td>3</td>
+		<td>12</td>
+	</tr>
+	<tr>
+		<th>3</th>
+		<th>MixedInspiringLamePuns</th>
+		<td>15804.51</td>
+		<td>(-15804.51)</td>
 		<td>4</td>
-		<td>16</td>
+		<td>21624.00</td>
+		<td>(-21624.00)</td>
+		<td>3</td>
+		<td>844133034.19</td>
+		<td>(-844133034.19)</td>
+		<td>2</td>
+		<td>24</td>
 	</tr>
 	<tr>
 		<th>4</th>
@@ -1414,8 +1437,8 @@ Configuration task
 		<td>4</td>
 		<td>nan</td>
 		<td>(nan)</td>
-		<td>4</td>
-		<td>48</td>
+		<td>5</td>
+		<td>60</td>
 	</tr>
 	<tr>
 		<th>5</th>
@@ -1426,14 +1449,15 @@ Configuration task
 		<td>170775.62</td>
 		<td>(-170775.62)</td>
 		<td>5</td>
-		<td>1664225918.57</td>
-		<td>(-1664225918.57)</td>
-		<td>2</td>
-		<td>50</td>
+		<td>1664224165.13</td>
+		<td>(-1664224165.13)</td>
+		<td>4</td>
+		<td>100</td>
 	</tr>
 	</tbody>
 </table>
 
+			</div>
 			<div style="padding-top: 4em; border-top: solid 1px #dddddd;">
 				<h3>Student leaderboard</h3>
 Primal task
@@ -1445,7 +1469,7 @@ Primal task
 		<th colspan="3">item_placement</th>
 		<th colspan="3">load_balancing</th>
 		<th colspan="3">anonymous</th>
-		<th rowspan="1">score</th>
+		<th rowspan="2">score</th>
 	</tr>
 	<tr>
 		<th>primal integral</th>
@@ -1462,45 +1486,45 @@ Primal task
 	<tbody>
 	<tr>
 		<th>1</th>
+		<th>LIM</th>
+		<td>4086.11</td>
+		<td>(-7172.10)</td>
+		<td>3</td>
+		<td>5648.22</td>
+		<td>(-219390.72)</td>
+		<td>1</td>
+		<td>402823419.68</td>
+		<td>(-425144708.70)</td>
+		<td>2</td>
+		<td>6</td>
+	</tr>
+	<tr>
+		<th>1</th>
 		<th>Nuri</th>
 		<td>4006.03</td>
 		<td>(-7092.02)</td>
-		<td>1</td>
+		<td>2</td>
 		<td>8947.16</td>
 		<td>(-222689.66)</td>
-		<td>1</td>
+		<td>3</td>
 		<td>392757636.47</td>
 		<td>(-415078925.49)</td>
 		<td>1</td>
-		<td>1</td>
+		<td>6</td>
 	</tr>
 	<tr>
-		<th>2</th>
-		<th>LIM</th>
-		<td>nan</td>
-		<td>(nan)</td>
-		<td>2</td>
-		<td>nan</td>
-		<td>(nan)</td>
-		<td>2</td>
-		<td>nan</td>
-		<td>(nan)</td>
-		<td>2</td>
-		<td>8</td>
-	</tr>
-	<tr>
-		<th>3</th>
+		<th>1</th>
 		<th>ethz-scuba</th>
-		<td>nan</td>
-		<td>(nan)</td>
+		<td>3999.04</td>
+		<td>(-7085.03)</td>
+		<td>1</td>
+		<td>8865.19</td>
+		<td>(-222607.69)</td>
 		<td>2</td>
 		<td>nan</td>
 		<td>(nan)</td>
-		<td>2</td>
-		<td>nan</td>
-		<td>(nan)</td>
-		<td>2</td>
-		<td>8</td>
+		<td>3</td>
+		<td>6</td>
 	</tr>
 	</tbody>
 </table>
@@ -1513,7 +1537,7 @@ Dual task
 		<th colspan="3">item_placement</th>
 		<th colspan="3">load_balancing</th>
 		<th colspan="3">anonymous</th>
-		<th rowspan="1">score</th>
+		<th rowspan="2">score</th>
 	</tr>
 	<tr>
 		<th>dual integral</th>
@@ -1533,84 +1557,98 @@ Dual task
 		<th>Nuri</th>
 		<td>4098.88</td>
 		<td>(5159.09)</td>
-		<td>1</td>
+		<td>4</td>
 		<td>5675.69</td>
 		<td>(635551.81)</td>
-		<td>2</td>
+		<td>1</td>
 		<td>6786985.80</td>
 		<td>(60176881.27)</td>
 		<td>1</td>
-		<td>2</td>
+		<td>4</td>
 	</tr>
 	<tr>
 		<th>2</th>
-		<th>qqy</th>
-		<td>5366.12</td>
-		<td>(3891.85)</td>
-		<td>5</td>
-		<td>5638.23</td>
-		<td>(635589.27)</td>
-		<td>1</td>
-		<td>7475634.27</td>
-		<td>(59488232.80)</td>
+		<th>lxj24</th>
+		<td>3977.93</td>
+		<td>(5280.03)</td>
+		<td>2</td>
+		<td>6156.28</td>
+		<td>(635071.22)</td>
+		<td>2</td>
+		<td>7460203.85</td>
+		<td>(59503663.22)</td>
 		<td>3</td>
-		<td>15</td>
+		<td>12</td>
 	</tr>
 	<tr>
 		<th>3</th>
-		<th>lxj24</th>
-		<td>6357.95</td>
-		<td>(2900.02)</td>
-		<td>6</td>
-		<td>5779.61</td>
-		<td>(635447.89)</td>
-		<td>3</td>
-		<td>7356549.62</td>
-		<td>(59607317.44)</td>
-		<td>2</td>
-		<td>36</td>
+		<th>qqy</th>
+		<td>3882.78</td>
+		<td>(5375.19)</td>
+		<td>1</td>
+		<td>6898.21</td>
+		<td>(634329.29)</td>
+		<td>5</td>
+		<td>7535266.83</td>
+		<td>(59428600.23)</td>
+		<td>5</td>
+		<td>25</td>
 	</tr>
 	<tr>
 		<th>4</th>
 		<th>Columbia_Combinators</th>
-		<td>4673.36</td>
-		<td>(4584.61)</td>
-		<td>2</td>
-		<td>6378.88</td>
-		<td>(634848.62)</td>
+		<td>4807.43</td>
+		<td>(4450.54)</td>
 		<td>5</td>
-		<td>nan</td>
-		<td>(nan)</td>
-		<td>6</td>
-		<td>60</td>
+		<td>6520.23</td>
+		<td>(634707.27)</td>
+		<td>4</td>
+		<td>7123239.10</td>
+		<td>(59840627.96)</td>
+		<td>2</td>
+		<td>40</td>
 	</tr>
 	<tr>
 		<th>5</th>
 		<th>nf-lzg</th>
 		<td>5002.42</td>
 		<td>(4255.55)</td>
-		<td>4</td>
+		<td>7</td>
 		<td>6366.78</td>
 		<td>(634860.72)</td>
-		<td>4</td>
+		<td>3</td>
 		<td>7524731.62</td>
 		<td>(59439135.44)</td>
 		<td>4</td>
-		<td>64</td>
+		<td>84</td>
 	</tr>
 	<tr>
 		<th>6</th>
+		<th>KAIST_OSI</th>
+		<td>4075.10</td>
+		<td>(5182.86)</td>
+		<td>3</td>
+		<td>nan</td>
+		<td>(nan)</td>
+		<td>7</td>
+		<td>nan</td>
+		<td>(nan)</td>
+		<td>7</td>
+		<td>147</td>
+	</tr>
+	<tr>
+		<th>7</th>
 		<th>ark</th>
 		<td>5001.61</td>
 		<td>(4256.36)</td>
-		<td>3</td>
+		<td>6</td>
 		<td>7489.33</td>
 		<td>(633738.17)</td>
 		<td>6</td>
 		<td>8038141.70</td>
 		<td>(58925725.36)</td>
-		<td>5</td>
-		<td>90</td>
+		<td>6</td>
+		<td>216</td>
 	</tr>
 	</tbody>
 </table>
@@ -1623,7 +1661,7 @@ Configuration task
 		<th colspan="3">item_placement</th>
 		<th colspan="3">load_balancing</th>
 		<th colspan="3">anonymous</th>
-		<th rowspan="1">score</th>
+		<th rowspan="2">score</th>
 	</tr>
 	<tr>
 		<th>primal-dual integral</th>
@@ -1647,8 +1685,8 @@ Configuration task
 		<td>21624.00</td>
 		<td>(-21624.00)</td>
 		<td>1</td>
-		<td>843368159.90</td>
-		<td>(-843368159.90)</td>
+		<td>844133034.19</td>
+		<td>(-844133034.19)</td>
 		<td>1</td>
 		<td>1</td>
 	</tr>
@@ -1661,14 +1699,13 @@ Configuration task
 		<td>170775.62</td>
 		<td>(-170775.62)</td>
 		<td>2</td>
-		<td>1664225918.57</td>
-		<td>(-1664225918.57)</td>
+		<td>1664224165.13</td>
+		<td>(-1664224165.13)</td>
 		<td>2</td>
 		<td>8</td>
 	</tr>
 	</tbody>
 </table>
-
 
 			</div>
 		</div>
