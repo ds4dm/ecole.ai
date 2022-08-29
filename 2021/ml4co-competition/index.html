@@ -83,59 +83,83 @@
 		</div>
 		<div class="spotlight">
 			<div class="content">
-			<p>
-				<b>Update: the final results are out ! (see the <a href="#leaderboard">leaderboard</a>). Congratulations to the winners:</b>
-				<ul>
-					<li>team <b>CUHKSZ_ATD</b> (primal task), 1st on all problem benchmarks</li>
-					<li>team <b>Nuri</b> (dual task), 1st on item_placement and anonymous, 6th on load_balancing</li>
-					<li>team <b>EI-OROAS</b> (configuration task), 1st on all problem benchmarks</li>
-				</ul>
-				Congratulations also to the winners from the student leaderboard:
-				<ul>
-					<li>teams <b>UNIST-LIM-Lab</b> and <b>MixedInspiringLamePuns</b> (1st and 2nd, primal task)</li>
-					<li>teams <b>qqy</b> and <b>KAIST_OSI</b> (1st and 2nd, dual task)</li>
-					<li>teams <b>MixedInspiringLamePuns</b> and <b>MOEA</b> (1st and 2nd, configuration task)</li>
-				</ul>
-			</p>
-			<p id="neurips_schedule">
-				<b>Program of the NeurIPS event on December 9</b> (<a href="https://nips.cc/Register/view-registration">registration</a> required):
+				<h2>Post-competition update</h2>
+				<p>
+				The NeurIPS 2021 ML4CO competition results were presented on
+				<a href="https://neurips.cc/virtual/2021/competition/22444#bookmark-here-21988">December 9th, 2021</a>
+				during the (virtual) NeurIPS conference. The competition ran
+				from July to November 2021.
+
 				<ul>
 					<li>
-						<a href="https://dateful.com/eventlink/2977713745">18:45 GMT</a> - <b>NeurIPS <a href="https://nips.cc/Conferences/2021/Schedule?showEvent=22444">Competition Track Day 3</a> live presentation</b> (20 min)
+						<a href=#proceedings>Proceedings</a> - PMLR paper, contributed papers, and team compositions.
 					</li>
 					<li>
-						<a href="https://dateful.com/eventlink/1890519752">19:05 GMT</a> - <b>ML4CO mini-workshop</b> on <a href="https://neurips.cc/virtual/2021/competition/22444#bookmark-here-21988">Zoom + Gathertown</a> (3 hours)
+						<a href="https://www.youtube.com/playlist?list=PLYWmzh0Y6EOZz3PtMxfaqEnRsfW-TF4nf">Youtube videos</a> - Talks given during the NeurIPS event, including the winner presentations, an invited keynote by Kate Smith-Miles, and a panel discussion.
 					</li>
+				</ul>
+				</p>
+
+				<p>
+				Additional ressources
+				<ul>
+					<li>
+						<a href="https://github.com/ds4dm/ml4co-competition/blob/main/DATA.md">Datasets</a> - All
+						training and evaluation instances used in the competition, for all three problem benchmarks
+						(Balanced Item Placement, Workload Apportionment and Anonymous). <em>Please cite our
+						<a href="https://proceedings.mlr.press/v176/gasse22a.html">PMRL paper</a> if you use these datasets</em>.
+					</li>
+					<li>
+						<a href="https://github.com/ds4dm/ml4co-competition">Official github repository</a> - Contains the base code that was used to run the competition.
+					</li>
+					<li>
+						<a href="https://github.com/ds4dm/ml4co-competition-hidden">Hidden github repository</a> - Contains additional scripts used to generate the benchmark instances, as well as indications to run the evaluation pipeline. Was made public only at the end of the competition.
+					</li>
+					<li>
+						<a href="final_results.zip">Detailled evaluation results</a> - Detailed performance of each team, on each evaluation instance.
+					</li>
+				</ul>
+				</p>
+
+				<p id="neurips_schedule">
+					Program of the NeurIPS event (<a href="https://nips.cc/Register/view-registration">registration</a> required):
 					<ul>
 						<li>
-							<a href="https://dateful.com/eventlink/1890519752">19:05 GMT</a> - <b>Competition wrap-up</b> (15 min)
+							<a href="https://dateful.com/eventlink/2977713745">18:45 GMT</a> - <b>NeurIPS <a href="https://nips.cc/Conferences/2021/Schedule?showEvent=22444">Competition Track Day 3</a> live presentation</b> (20 min)
 						</li>
 						<li>
-							<a href="https://dateful.com/eventlink/2946695029">19:20 GMT</a> - <b>Winner presentation: primal task</b> (10 min) - <em>Team CUHKSZ_ATD</em>
+							<a href="https://dateful.com/eventlink/1890519752">19:05 GMT</a> - <b>ML4CO mini-workshop</b> on <a href="https://neurips.cc/virtual/2021/competition/22444#bookmark-here-21988">Zoom + Gathertown</a> (3 hours)
 						</li>
-						<li>
-							<a href="https://dateful.com/eventlink/1369993363">19:30 GMT</a> - <b>Winner presentation: dual task</b> (10 min) - <em>Team Nuri</em>
-						</li>
-						<li>
-							<a href="https://dateful.com/eventlink/4429192362">19:40 GMT</a> - <b>Winner presentation: configuration task</b> (10 min) - <em>Team EI-OROAS</em>
-						</li>
-						<li>
-							<a href="https://dateful.com/eventlink/3094874106">19:50 GMT</a> - <b>Poster session on Gathertown</b> (30 min)
-						</li>
-						<li>
-							<a href="https://dateful.com/eventlink/5272896272">20:20 GMT</a> - Break (15 min)
-						</li>
-						<li>
-							<a href="https://dateful.com/eventlink/2895657080">20:35 GMT</a> - <b>Keynote</b> (30 min) - <em><a href="https://katesmithmiles.wixsite.com/home">Kate Smith-Miles</a></em><br/>
-							Instance Space Analysis: Machine Learning about Combinatorial Optimisation<br/>
-							Abstract: Instance Space Analysis (ISA) is a recently developed methodology to support objective testing of algorithms. Rather than using machine learning (ML) to replace some components of an optimisation algorithm, it uses ML to gain insights into the strengths and weaknesses of optimisation algorithms under various conditions defined by properties of the test instances. It also provides visualizations of the adequacy of benchmark test suites, and any bias in the chosen test instances, to support algorithmic trust. This talk provides an overview of the ISA methodology, and the online software tools that are enabling its worldwide adoption in many disciplines. A combinatorial optimisation case study on university timetabling is presented to illustrate the methodology and tools.
-						</li>
-						<li>
-							<a href="https://dateful.com/eventlink/2023117003">21:05 GMT</a> - <b>Panel discussion</b> (1 hour) - <em><a href="https://cerc-datascience.polymtl.ca/person/dr-andrea-lodi/">Andrea Lodi</a>, <a href="https://www.zib.de/berthold/">Timo Berthold</a>, <a href="https://www.cs.ubc.ca/~hutter/">Frank Hutter</a>, <a href="http://www.cs.toronto.edu/~vnair/">Vinod Nair</a>, <a href="https://www.cs.ubc.ca/~kevinlb/">Kevin Leyton-Brown</a></em>
-						</li>
+						<ul>
+							<li>
+								<a href="https://dateful.com/eventlink/1890519752">19:05 GMT</a> - <b>Competition wrap-up</b> (15 min)
+							</li>
+							<li>
+								<a href="https://dateful.com/eventlink/2946695029">19:20 GMT</a> - <b>Winner presentation: primal task</b> (10 min) - <em>Team CUHKSZ_ATD</em>
+							</li>
+							<li>
+								<a href="https://dateful.com/eventlink/1369993363">19:30 GMT</a> - <b>Winner presentation: dual task</b> (10 min) - <em>Team Nuri</em>
+							</li>
+							<li>
+								<a href="https://dateful.com/eventlink/4429192362">19:40 GMT</a> - <b>Winner presentation: configuration task</b> (10 min) - <em>Team EI-OROAS</em>
+							</li>
+							<li>
+								<a href="https://dateful.com/eventlink/3094874106">19:50 GMT</a> - <b>Poster session on Gathertown</b> (30 min)
+							</li>
+							<li>
+								<a href="https://dateful.com/eventlink/5272896272">20:20 GMT</a> - Break (15 min)
+							</li>
+							<li>
+								<a href="https://dateful.com/eventlink/2895657080">20:35 GMT</a> - <b>Keynote</b> (30 min) - <em><a href="https://katesmithmiles.wixsite.com/home">Kate Smith-Miles</a></em><br/>
+								Instance Space Analysis: Machine Learning about Combinatorial Optimisation<br/>
+								Abstract: Instance Space Analysis (ISA) is a recently developed methodology to support objective testing of algorithms. Rather than using machine learning (ML) to replace some components of an optimisation algorithm, it uses ML to gain insights into the strengths and weaknesses of optimisation algorithms under various conditions defined by properties of the test instances. It also provides visualizations of the adequacy of benchmark test suites, and any bias in the chosen test instances, to support algorithmic trust. This talk provides an overview of the ISA methodology, and the online software tools that are enabling its worldwide adoption in many disciplines. A combinatorial optimisation case study on university timetabling is presented to illustrate the methodology and tools.
+							</li>
+							<li>
+								<a href="https://dateful.com/eventlink/2023117003">21:05 GMT</a> - <b>Panel discussion</b> (1 hour) - <em><a href="https://cerc-datascience.polymtl.ca/person/dr-andrea-lodi/">Andrea Lodi</a>, <a href="https://www.zib.de/berthold/">Timo Berthold</a>, <a href="https://www.cs.ubc.ca/~hutter/">Frank Hutter</a>, <a href="http://www.cs.toronto.edu/~vnair/">Vinod Nair</a>, <a href="https://www.cs.ubc.ca/~kevinlb/">Kevin Leyton-Brown</a></em>
+							</li>
+						</ul>
 					</ul>
-				</ul>
-			</p>
+				</p>
 			</div>
 		</div>
 		<div class="spotlight">
@@ -1043,7 +1067,7 @@
 			</p>
 			<p>
 				<a href="https://github.com/ds4dm/ml4co-competition">GitHub repository</a>:
-				get started and access the datasets, started packages, and
+				get started and access the datasets, starter packages, and
 				technical documentation.
 			</p>
 		</div>
@@ -1066,9 +1090,6 @@
 					Note: the partial evaluations were using the first 20 instances (10000 to 10019) x 1 random seed for the item_placement and load_balancing benchmarks, and the first 4 instances (119 to 122) x 5 random seeds for the anonymous benchmark.
 				</li>
 			</ul>
-			</p>
-			<p>
-				Last update: November 21st.
 			</p>
 			<p>
 				Note: for each challenge and each benchmark, we report two performance measures:
@@ -1880,7 +1901,6 @@ Configuration task
 			</div>
 			<div style="padding-top: 4em; border-top: solid 1px #dddddd;">
 				<h3>Student leaderboard</h3>
-				Primal task
 Primal task
 <table>
 	<thead>
@@ -2276,10 +2296,23 @@ Configuration task
 	<section id="proceedings" class="main">
 		<div class="content">
 			<header class="major">
-				<h2>Proceedings</h2>
+				<h2>Competition Proceedings</h2>
 			</header>
+			<h3>
+			Main paper (with winner contributions)
+			</h3>
 			<p>
-			In the following, you find detailed descriptions of some the participants' approaches. 
+			(Please cite this when refering to the competition)
+			</p>
+		    <p>
+			<a href="https://proceedings.mlr.press/v176/gasse22a.html">The Machine Learning for Combinatorial Optimization Competition (ML4CO): Results and Insights</a><br/>
+			Maxime Gasse, Simon Bowly, Quentin Cappart, Jonas Charfreitag, Laurent Charlin, Didier Chételat, Antonia Chmiela, Justin Dumouchelle, Ambros Gleixner, Aleksandr M. Kazachkov, Elias Khalil, Pawel Lichocki, Andrea Lodi, Miles Lubin, Chris J. Maddison, Morris Christopher, Dimitri J. Papageorgiou, Augustin Parjadis, Sebastian Pokutta, Antoine Prouvost, Lara Scavuzzo, Giulia Zarpellon, Linxin Yang, Sha Lai, Akang Wang, Xiaodong Luo, Xiang Zhou, Haohan Huang, Shengcheng Shao, Yuanming Zhu, Dong Zhang, Tao Quan, Zixuan Cao, Yang Xu, Zhewei Huang, Shuchang Zhou, Chen Binbin, He Minggui, Hao Hao, Zhang Zhiyu, An Zhiwu, Mao Kun<br/>
+			Proceedings of the NeurIPS 2021 Competitions and Demonstrations Track, PMLR 176:220-231, 2022.<br/>
+		    </p>
+			<h3>
+			Contributed papers
+			</h3>
+			<p>
 			<ul>
 				<li>
 				<a href="https://www.ecole.ai/2021/ml4co-competition/proceedings/1.pdf">Confidence Threshold Neural Diving</a> by Taehyun Yoon.
@@ -2304,7 +2337,6 @@ Configuration task
 				<a href="https://www.ecole.ai/2021/ml4co-competition/proceedings/8.pdf">ML4CO submission EFPP</a> by Edward Lam, Frits de Nijs, Pierre Le Bodic, Peter J. Stuckey.
 				</li>
 				
-				
 				<li>
 				<a href="https://www.ecole.ai/2021/ml4co-competition/proceedings/5.pdf">ML4CO-KIDA: Knowledge Inheritance in Dataset Aggregation</a> by Zixuan Cao, Yang Xu, Zhewei Huang, Shuchang Zhou. 
 				</li>
@@ -2316,6 +2348,76 @@ Configuration task
 				<li>
 				<a href="https://www.ecole.ai/2021/ml4co-competition/proceedings/7.pdf">YORDLE: An Efficient Imitation Learning for Branch and Bound</a> by Qingyu Qu, Xijun Li, Yunfan Zhou.
 				</li>
+			</ul>
+			</p>
+			<h3>
+			List of participants
+			</h3>
+			<p>
+			Primal task
+			<ul>
+<li><b>CUHKSZ_ATD</b><ul><li>Xiaodong Luo, Shenzhen Research Institute of Big Data</li><li>Akang Wang, Shenzhen Research Institute of Big Data</li><li>Zhang Dong, Huawei GTS</li><li>Sha Lai, Shenzhen Research Institute of Big Data</li><li>Tao Quan, Huawei GTS</li><li>Shengcheng Shao, Huawei GTS</li><li>Xiang Zhou, Huawei GTS</li><li>Yuanming Zhu, Huawei GTS</li><li>Linxin Yang, Shenzhen Research Institute of Big Data</li><li>Haohan Huang, Huawei GTS</li></ul></li>
+<li><b>dt</b><ul><li>Ding Tong, Huawei Technologies Co., Ltd.</li><li>Zhang Zhiyu, Huawei Technologies Co., Ltd.</li></ul></li>
+<li><b>EasyML</b><ul><li>Zhendong Zhang, Xidian University</li></ul></li>
+<li><b>EI-OROAS</b><ul><li>Wang pan, Huawei Cloud Computing Technologies Co., Ltd.</li><li>Chen Zihan, Huawei Cloud Computing Technologies Co., Ltd.</li><li>Zhang Zhiyu, Huawei Cloud Computing Technologies Co., Ltd.</li><li>He Minggui, Huawei Cloud Computing Technologies Co., Ltd.</li><li>Hou Zongfu, University of Chinese Academy of Sciences</li><li>Chen Binbin, TsingHua University</li></ul></li>
+<li><b>ethz-scuba</b><ul><li>Daniel Paleka, ETH Zurich</li><li>Carla Rieger, ETH Zurich</li><li>Max Paulus, ETH Zurich</li></ul></li>
+<li><b>generaleyes</b><ul><li>Kushal Tirumala, Caltech</li><li>Anirudh Rangaswamy, Caltech</li><li>Jialin Song, Caltech</li></ul></li>
+<li><b>MDO</b><ul><li>Mou Sun, Alibaba DAMO Academy</li><li>Lei Zhou, Tongji University</li><li>Jialin Liu, Alibaba DAMO Academy</li></ul></li>
+<li><b>MILPandCookies</b><ul><li>Natalia Summerville, SAS Institute</li><li>Rob Pratt, SAS</li><li>Matt Galati, SAS</li><li>Jorge Silva, SAS</li><li>Laci Ladanyi, SAS</li><li>Phillip Christophel, SAS</li></ul></li>
+<li><b>MixedInspiringLamePuns</b><ul><li>Carla Rieger, ETH Zurich</li><li>Federico Gossi, ETH Zurich</li><li>Max B. Paulus, ETH Zurich</li></ul></li>
+<li><b>Mr_Tree</b><ul><li>Jianshu Li, Huawei Co.</li></ul></li>
+<li><b>nf-lzg</b><ul><li>Fei Ni, Tianjin University</li><li>Zhigang Li, Tianjin University</li></ul></li>
+<li><b>Nuri</b><ul><li>Zixuan Cao, Peking University</li><li>Yang Xu, Peking University</li><li>Zhewei Huang, Megvii</li><li>Shuchang Zhou, Megvii</li></ul></li>
+<li><b>UNIST-LIM-Lab</b><ul><li>Taehyun Yoon, Ulsan National Institute of Science and Techonology</li></ul></li>
+			</ul>
+			</p>
+			<p>
+			Dual task
+			<ul>
+<li><b>ark</b><ul><li>Ark Zhu, Soochow University</li></ul></li>
+<li><b>blueterrier</b><ul><li>Pooja Pandey, 1QB Information Technologies, Inc</li><li>Kyle Mills, 1QB Information Technologies, Inc</li></ul></li>
+<li><b>Columbia_Combinators</b><ul><li>Wentao Zhao, Columbia University</li><li>Abhi Gupta, Columbia University</li><li>Yunhao Tang, Columbia University</li><li>Sian Lee, Columbia University</li><li>Amey Pasarkar, Columbia University</li><li>Luocen Wang, Columbia University</li></ul></li>
+<li><b>comeon</b><ul><li>Jingbo Sun, Beijing Institute of Technology</li><li>Zhiqiang He, Northeastern University</li></ul></li>
+<li><b>CUHKSZ_ATD</b><ul><li>Xiaodong Luo, Shenzhen Research Institute of Big Data</li><li>Akang Wang, Shenzhen Research Institute of Big Data</li><li>Linxin Yang, Shenzhen Research Institute of Big Data</li><li>Sha Lai, Shenzhen Research Institute of Big Data</li><li>Zhang Dong (张栋), Huawei GTS</li><li>Quan Tao (权涛)</li><li>Chen Juan (陈娟)</li><li>Shao Shengcheng (邵晟程), Huawei GTS</li><li>Xiang Zhou (周祥), Huawei GTS</li><li>Huang Hiroshi (黄浩瀚)</li><li>Wang Haomao (王浩茂)</li><li>Zhu Yuanming (朱元明), Huawei GTS</li></ul></li>
+<li><b>DaShun</b><ul><li>Zhi Wang, Ant Group</li></ul></li>
+<li><b>EasyML</b><ul><li>Zhendong Zhang, Xidian University</li></ul></li>
+<li><b>EI-OROAS</b><ul><li>Amin Banitalebi-Dehkordi, Huawei Technologies Canada Co., Ltd.</li><li>Yusi Ye, Huawei Technologies</li><li>Tianyu Zhang, Huawei Technologies Canada Co., Ltd.</li><li>Zirui Zhou, Huawei Technologies Canada Co., Ltd.</li><li>Yong Zhang, Huawei Technologies Canada Co., Ltd.</li></ul></li>
+<li><b>gentlemenML4CO</b><ul><li>Wenqing Zheng, UT Austin</li><li>Haoyu Wang, Purdue</li><li>Peihao Wang, UT Austin</li><li>Tianlong Chen, UT Austin</li><li>Xiaohan Chen, UT Austin</li><li>Zhangyang Wang, UT Austin</li><li>Pan Li, Purdue</li></ul></li>
+<li><b>KAIST_OSI</b><ul><li>Seungjoon Park, KAIST</li><li>Mingyu Kim, KAIST</li><li>Minchan Jeong, KAIST</li><li>Minu Kim, KAIST</li><li>Yejin Cho, KAIST</li></ul></li>
+<li><b>KEP-UNIST</b><ul><li>Jinwon Choi, Kakaoenterprise</li><li>Hyunho Lee, Kakaoenterprise</li><li>Kyushik Min, Kakaoenterprise</li><li>Minsub Lee, UNIST</li><li>Keehun Park, UNIST</li><li>Hanbum Ko, UNIST</li></ul></li>
+<li><b>lxj24</b><ul><li>Xijun Li, University of Science and Technology of China</li></ul></li>
+<li><b>Monkey</b><ul><li>Jingbo Sun</li><li>Zhiqiang He</li><li>Xiaomin Yuan</li></ul></li>
+<li><b>nf-lzg</b><ul><li>Fei Ni, Tianjin University</li><li>Zhigang Li, Tianjin University</li></ul></li>
+<li><b>null_</b><ul><li>Jiaxuan He, Tsinghua University</li></ul></li>
+<li><b>Nuri</b><ul><li>Zixuan Cao, Peking University</li><li>Yang Xu, Peking University</li><li>Zhewei Huang, Megvii</li><li>Shuchang Zhou, Megvii</li></ul></li>
+<li><b>qqy</b><ul><li>Qingyu Qu, Beihang University</li></ul></li>
+<li><b>shg</b><ul><li>Rang Jun, GuiZhou University</li></ul></li>
+<li><b>Superfly</b><ul><li>Yafei Zhang</li></ul></li>
+<li><b>sylvia</b></li>
+<li><b>THUML-RL</b><ul><li>Jincheng Zhong, Tsinghua University</li><li>Jialong Wu, Tsinghua University</li><li>Haoyu Ma, Tsinghua University</li></ul></li>
+<li><b>uofx</b></li>
+<li><b>wanghaha</b><ul><li>Wang Haha</li></ul></li>
+			</ul>
+			</p>
+			<p>
+			Configuration task
+			<ul>
+<li><b>Cho</b><ul><li>Hyunsoo Cho, Pusan National University</li></ul></li>
+<li><b>DaShun</b><ul><li>Zhi Wang, Ant Group</li><li>Qi Zhang, Ant Group</li></ul></li>
+<li><b>EasyML</b><ul><li>Zhendong Zhang, Xidian University</li></ul></li>
+<li><b>ECNUNoah001</b><ul><li>Hao Hao, East China Normal University</li></ul></li>
+<li><b>EFPP</b><ul><li>Edward Lam, Monash University</li><li>Frits de Nijs, Monash University</li><li>Pierre Le Bodic, Monash University</li><li>Peter Stuckey, Monash University</li></ul></li>
+<li><b>EI-OROAS</b><ul><li>Chen Binbin, TsingHua University</li><li>He Minggui, Huawei Cloud Computing Technologies Co., Ltd.</li><li>Hao Hao, Huawei Noah's ark lab</li><li>Zhang Zhiyu, Huawei Cloud Computing Technologies Co., Ltd.</li><li>An Zhiwu, Huawei Cloud Computing Technologies Co., Ltd.</li><li>Mao Kun, Huawei Cloud Computing Technologies Co., Ltd.</li></ul></li>
+<li><b>KAIST_OSI</b><ul><li>Seungjoon Park, KAIST</li><li>Mingyu Kim, KAIST</li><li>Minchan Jeong, KAIST</li><li>Minu Kim, KAIST</li><li>Yejin Cho, KAIST</li></ul></li>
+<li><b>KEP-UNIST</b><ul><li>Jinwon Choi, Kakaoenterprise</li><li>Hyunho Lee, Kakaoenterprise</li><li>Kyushik Min, Kakaoenterprise</li><li>Minsub Lee, UNIST</li><li>Keehun Park, UNIST</li><li>Hanbum Ko, UNIST</li></ul></li>
+<li><b>MDO</b><ul><li>Mengyuan Zhang, Alibaba DAMO Academy</li></ul></li>
+<li><b>MixedInspiringLamePuns</b><ul><li>Romeo Valentin, ETH Zurich</li><li>Claudio Ferrari, ETH Zurich</li><li>Jeremy Scheuer, ETH Zurich</li><li>Andisheh Amrollahi, ETH Zurich</li><li>Chris Wendler, ETH Zurich</li><li>Max B. Paulus, ETH Zurich</li></ul></li>
+<li><b>MOEA</b><ul><li>Wang Shuai, East China Normal University</li></ul></li>
+<li><b>nf-lzg</b><ul><li>Fei Ni, Tianjin University</li><li>Zhigang Li, Tianjin University</li></ul></li>
+<li><b>null_</b><ul><li>Jiaxuan He, Tsinghua University</li></ul></li>
+<li><b>Nuri</b><ul><li>Zixuan Cao, Peking University</li><li>Yang Xu, Peking University</li><li>Zhewei Huang, Megvii</li><li>Shuchang Zhou, Megvii</li></ul></li>
+<li><b>shg</b><ul><li>Rang Jun, GuiZhou University</li></ul></li>
+<li><b>THUML-RL</b><ul><li>Jincheng Zhong, Tsinghua University</li><li>Jialong Wu, Tsinghua University</li><li>Haoyu Ma, Tsinghua University</li></ul></li>
 			</ul>
 			</p>
 		</div>
